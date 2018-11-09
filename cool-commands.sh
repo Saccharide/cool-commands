@@ -8,3 +8,6 @@ sort -R playlist -o playlist
 
 # Convert Chinese unreadable filename to correct filename (AWESOME)
 7z x -scs903 ZIPFILE.zip
+
+# Find a string in current directory (-w stand for whole word, -r recursive)
+grep -rnw . -e "STRING"
