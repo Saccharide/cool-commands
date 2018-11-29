@@ -18,3 +18,5 @@ sed -i '/SOME_LINE/i \n' foo.txt
 # Read all files in a directory line by line
 ls | while read f; do while read -r line; do echo $line; done < $f ; done
 
+# Copy an entire directory to another dicretory
+cp -R source dest
