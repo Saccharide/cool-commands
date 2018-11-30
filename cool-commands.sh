@@ -20,3 +20,6 @@ ls | while read f; do while read -r line; do echo $line; done < $f ; done
 
 # Copy an entire directory to another dicretory
 cp -R source dest
+
+# Get the size of a directory with du -s (summary) -h human readable
+du -h --max-depth=1 path | sort -hr
