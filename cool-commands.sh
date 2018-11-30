@@ -23,3 +23,9 @@ cp -R source dest
 
 # Get the size of a directory with du -s (summary) -h human readable
 du -h --max-depth=1 path | sort -hr
+
+# Find all file with certain extension
+find `pwd` -type f -name "*.txt"
+
+# Save the output of a command to a variable
+cwd=$(pwd)
