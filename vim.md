@@ -2,13 +2,19 @@
 ```
 gUw
 ```
-* Copy to clipboard (* register only works within vim, use + register for system clipbaord)
+* Copy to clipboard (* only works within vim, use + for system clipbaord)
 ```
 "+y
 ```
-
 * Paste from clipbaord
 ```
 "+p
 ```
-
+* Access all register values
+```
+:reg
+```
+* Append to a register using a capitalized letter
+```
+"Zyy
+```
