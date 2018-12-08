@@ -47,3 +47,19 @@ find `pwd` -type f -name "*.txt"
 ```bash
 cwd=$(pwd)
 ```
+
+* Run a process in the background using &
+```bash
+tar -czf file.tar.gz . &
+```
+
+* Check current running processes
+```bash
+jobs
+```
+
+* Use nohup to enable a process to continue running in the background when a user exits shell (DETACH FULLY)
+```bash
+nohup tar -czf file.tar.gz &
+```
+
