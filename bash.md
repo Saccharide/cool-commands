@@ -63,3 +63,8 @@ jobs
 nohup tar -czf file.tar.gz &
 ```
 
+* Copy a file content to system clipboard
+```bash
+xclip -sel clip < FILE
+```
+
