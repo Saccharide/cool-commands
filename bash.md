@@ -67,4 +67,13 @@ nohup tar -czf file.tar.gz &
 ```bash
 xclip -sel clip < FILE
 ```
+* kill a process with ps
+```bash
+ps -eaf | grep vim
+kill 1337
+```
+* kill a process with pkill
+```bash
+pkill vim
+```
 
