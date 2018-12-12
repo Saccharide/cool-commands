@@ -18,3 +18,7 @@ gUw
 ```
 "Zyy
 ```
+* Paste over a word with a yanked one
+```
+viwp
+```
