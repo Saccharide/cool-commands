@@ -10,7 +10,7 @@ sort -R playlist -o playlist
 
 * Shuffles the fast way 
 ```bash
-shuf FILE
+shuf FILE | tee FILE
 ```
 
 * Convert Chinese unreadable filename to correct filename (AWESOME)
