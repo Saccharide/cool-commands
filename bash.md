@@ -81,4 +81,8 @@ kill 1337
 ```bash
 pkill vim
 ```
-
+* kill a background process
+```bash
+jobs
+kill %1
+```
