@@ -8,6 +8,11 @@ find . -name "*.mp3" -exec echo "play" {} \; > playlist
 sort -R playlist -o playlist
 ```
 
+* Shuffles the fast way 
+```bash
+shuf FILE
+```
+
 * Convert Chinese unreadable filename to correct filename (AWESOME)
 ```bash
 7z x -scs903 ZIPFILE.zip
