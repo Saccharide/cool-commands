@@ -86,3 +86,8 @@ pkill vim
 jobs
 kill %1
 ```
+* Unzip a tarball
+```bash
+tar xf FILE.tar.xz
+```
+
