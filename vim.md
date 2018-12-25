@@ -1,6 +1,6 @@
 * Capitalize the whole word
 ```
-gUw
+gUaw
 ```
 * Copy to clipboard (* only works within vim, use + for system clipbaord)
 ```
