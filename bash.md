@@ -90,4 +90,15 @@ kill %1
 ```bash
 tar xf FILE.tar.xz
 ```
+* Change directory to the output of a command
+```bash
+cd "$(dirname "$(which FILE)" )"
+```
+
+* Change directory to the previous directory!
+```bash
+cd ${cd -}
+||
+cd $OLDPWD
+```
 
