@@ -101,4 +101,12 @@ cd ${cd -}
 ||
 cd $OLDPWD
 ```
+* Awk with print. echo "Hello World" | awk '{print $1}', prints first field.
+```bash
+echo "Hello World" | awk '{print $1}'
+```
+* echo with -e interpretation of back slashes
+```bash
+echo -e "Hello \n World"
+```
 
