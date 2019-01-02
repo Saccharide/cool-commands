@@ -109,4 +109,8 @@ echo "Hello World" | awk '{print $1}'
 ```bash
 echo -e "Hello \n World"
 ```
+* Replace HTTPS with SSH git push
+```bash
+git remote set-url origin git@github.com:saccharide/google-ctf-2018
+```
 
