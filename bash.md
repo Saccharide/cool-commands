@@ -113,4 +113,12 @@ echo -e "Hello \n World"
 ```bash
 git remote set-url origin git@github.com:saccharide/google-ctf-2018
 ```
-
+* Install .deb packages
+```bash
+dpkg -x file.deb
+```
+* Install / open .rpm files
+```bash
+sudo apt install rpm2cpio
+rpm2cpio /path-to-file.rpm | cpio -i --make-directories
+```
