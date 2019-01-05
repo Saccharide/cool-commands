@@ -18,7 +18,7 @@ shuf FILE | tee FILE
 7z x -scs903 ZIPFILE.zip
 ```
 
-* Find a string in current directory (-w stand for whole word, -r recursive)
+* Find /Search a string in current directory (-w stand for whole word, -r recursive)
 ```bash
 grep -rnw . -e "STRING"
 ```
@@ -40,7 +40,7 @@ cp -R source dest
 
 * Get the size of a directory with du -s (summary) -h human readable
 ```bash
-du -h --max-depth=1 path | sort -hr
+ls -hal
 ```
 
 * Find all file with certain extension
