@@ -22,4 +22,14 @@ gUaw
 ```
 viwp
 ```
+* Copy / cut / change  inside quote / bracket / parenthesis
+```
+yi"
+```
+
+* Fix spelling error in vim, place cursor on the misspelled word and:
+```
+z=
+```
+
 
