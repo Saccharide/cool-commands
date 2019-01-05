@@ -42,6 +42,10 @@ cp -R source dest
 ```bash
 ls -hal
 ```
+OR (need to map ll to ls -l)
+```bash
+ll -ha 
+```
 
 * Find all file with certain extension
 ```bash
