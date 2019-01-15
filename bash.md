@@ -8,7 +8,7 @@ find . -name "*.mp3" -exec echo "play" {} \; > playlist
 sort -R playlist -o playlist
 ```
 
-* Shuffles the fast way 
+* Shuffles the fast way (ONLY WORKS with file that has run permission for some reason)
 ```bash
 shuf FILE | tee FILE
 ```
