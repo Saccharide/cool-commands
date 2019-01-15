@@ -72,6 +72,11 @@ jobs
 nohup tar -czf file.tar.gz &
 ```
 
+* Does the above without creating nohup.out 
+```bash
+nohup COMMAND >/dev/null 2>&1 &
+```
+
 * Copy a file content to system clipboard
 ```bash
 xclip -sel clip < FILE
