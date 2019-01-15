@@ -126,3 +126,28 @@ dpkg -x file.deb
 sudo apt install rpm2cpio
 rpm2cpio /path-to-file.rpm | cpio -i --make-directories
 ```
+
+* Clear from cursor to the beginning of a line
+```bash
+CTRL + u
+```
+
+* Clear from cursor to the end of a line
+```bash
+CTRL + k
+```
+
+* Clears one character to the right of cursor 
+```bash
+CTRL + d
+```
+
+* Clears one word to the left of the cursor
+```bash
+ESC + Backspace
+```
+
+* Clears one word to the right of the cursor
+```bash
+ESC + d
+```
