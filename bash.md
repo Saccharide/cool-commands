@@ -1,6 +1,6 @@
 * find all mp3 files in current directory and create a playlist of it
 ```bash
-find . -name "*.mp3" -exec echo "play" {} \; > playlist
+find . -maxdepth 1 -name "*.mp3" -exec echo "play" {} \; > playlist
 ```
 
 * Shuffles the lines of a file -R = random
@@ -65,6 +65,15 @@ tar -czf file.tar.gz . &
 * Check current running processes
 ```bash
 jobs
+||
+ps
+```
+
+* Retrive the first word from stdout
+```bash
+echo "hello world" | awk '{print $1;}'
+||
+echo "hello world" | cut -f 1 -d " "
 ```
 
 * Use nohup to enable a process to continue running in the background when a user exits shell (DETACH FULLY)
@@ -81,24 +90,31 @@ nohup COMMAND >/dev/null 2>&1 &
 ```bash
 xclip -sel clip < FILE
 ```
+
 * kill a process with ps
 ```bash
 ps -eaf | grep vim
 kill 1337
+||
+kill $(ps | grep play | awk '{print $1;}')
 ```
-* kill a process with pkill
+
+* kill a process with pkill (MUCH EASIER :D)
 ```bash
 pkill vim
 ```
+
 * kill a background process
 ```bash
 jobs
 kill %1
 ```
+
 * Unzip a tarball
 ```bash
 tar xf FILE.tar.xz
 ```
+
 * Change directory to the output of a command
 ```bash
 cd "$(dirname "$(which FILE)" )"
@@ -110,22 +126,27 @@ cd ${cd -}
 ||
 cd $OLDPWD
 ```
+
 * Awk with print. echo "Hello World" | awk '{print $1}', prints first field.
 ```bash
 echo "Hello World" | awk '{print $1}'
 ```
+
 * echo with -e interpretation of back slashes
 ```bash
 echo -e "Hello \n World"
 ```
+
 * Replace HTTPS with SSH git push
 ```bash
 git remote set-url origin git@github.com:saccharide/google-ctf-2018
 ```
+
 * Install .deb packages
 ```bash
 dpkg -x file.deb
 ```
+
 * Install / open .rpm files
 ```bash
 sudo apt install rpm2cpio
