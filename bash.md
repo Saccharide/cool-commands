@@ -177,3 +177,7 @@ ESC + Backspace
 ```bash
 ESC + d
 ```
+* String manipulation with cut (returns Hello) -d = deliminiter, -f = field
+```bash
+echo "Hello World" | cut -d ' ' -f 1
+```
