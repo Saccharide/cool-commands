@@ -194,3 +194,8 @@ find . -type f -name "*.mp3" -print0 | xargs -0 -I file cp file dir/
 ls | grep mp3 | xargs -I file cp file dir/
 ls | grep -avf "BLACKLIST" | xargs -I file COMMANDS file
 ```
+
+* 7z is officially weird... the arguments it take have to be right afterwards...
+```bash
+7z x ZIP.zip -oEXTRACTED
+```
