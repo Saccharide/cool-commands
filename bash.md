@@ -181,3 +181,16 @@ ESC + d
 ```bash
 echo "Hello World" | cut -d ' ' -f 1
 ```
+
+* grep exclude a file of strings
+```bash
+grep -avf "FILE.txt"
+```
+
+* Xargs usage, useful pipes, but require the flag -print0
+```bash
+find . -type f -name "*.mp3" -print0 | xargs -0 -I file cp file dir/
+||
+ls | grep mp3 | xargs -I file cp file dir/
+ls | grep -avf "BLACKLIST" | xargs -I file COMMANDS file
+```
