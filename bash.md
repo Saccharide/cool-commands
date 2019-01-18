@@ -39,12 +39,9 @@ cp -R source dest
 ```
 
 * Get the size of a directory with du -s (summary) -h human readable
+* Get details of a directory -h human readable, -a show hidden, -l print details, -s sort by date
 ```bash
-ls -hal
-```
-OR (need to map ll to ls -l)
-```bash
-ll -ha 
+ls -halt
 ```
 
 * Find all file with certain extension
@@ -199,3 +196,4 @@ ls | grep -avf "BLACKLIST" | xargs -I file COMMANDS file
 ```bash
 7z x ZIP.zip -oEXTRACTED
 ```
+
