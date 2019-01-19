@@ -197,3 +197,10 @@ ls | grep -avf "BLACKLIST" | xargs -I file COMMANDS file
 7z x ZIP.zip -oEXTRACTED
 ```
 
+* tr. It translates and/or deletes chars from stdin input, and writes to stdout. -d: deletes all occurance, -s: make repeated sequential characters only appear once
+```bash
+tr [a-z] [A-Z] < lowercase.txt > uppercase.txt
+cat file.txt | tr -d ' '
+cat file.txt | tr -s '.'
+```
+
