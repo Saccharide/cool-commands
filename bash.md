@@ -54,9 +54,9 @@ find `pwd` -type f -name "*.txt"
 cwd=$(pwd)
 ```
 
-* Run a process in the background using &
+* Run a process in the background using & (-c: create a new archive; -x: extract; -z: gunzip; -f : file)
 ```bash
-tar -czf file.tar.gz . &
+tar -cxzf file.tar.gz . &
 ```
 
 * Check current running processes
