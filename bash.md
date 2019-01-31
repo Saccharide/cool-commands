@@ -32,6 +32,10 @@ sed -i '/SOME_LINE/i \n' foo.txt
 ```bash
 ls | while read f; do while read -r line; do echo $line; done < $f ; done
 ```
+* Search though a directory recursively with grep, kind of like reading line by line
+```bash
+grep -r --include '*.py' STRING .
+```
 
 * Copy an entire directory to another dicretory
 ```bash
