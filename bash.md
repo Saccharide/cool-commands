@@ -208,3 +208,7 @@ cat file.txt | tr -d ' '
 cat file.txt | tr -s '.'
 ```
 
+* grip. Using grip to build markdown files locally. -b: opens up a broswer tab.
+```bash
+grip -b FILE.md
+```
