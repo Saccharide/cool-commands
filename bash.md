@@ -227,3 +227,14 @@ do
 cat $file
 done
 ```
+
+* Redirection
+```bash
+ls DIR > dirlist
+">" Redirects output
+">>" Appends output to an existing file
+"<" Takes in input
+">&" Redirects output of one file to another, e.g. "2>&1" redirects error to output (pre bash 4.0)
+"&>>" does the above in post Bash 4.0 and apending it to a file
+"&>" does the above but overwrites the target file
+```
