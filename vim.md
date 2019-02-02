@@ -32,4 +32,8 @@ yi"
 z=
 ```
 
-
+* Jump to next misspelled word. ]s = next misspelled word; [s = previous misspelled word.
+```
+]s
+[s
+```
