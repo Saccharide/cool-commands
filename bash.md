@@ -1,4 +1,4 @@
-* find all mp3 files in current directory and create a playlist of it
+* find all mp3 files in current directory and create a playlist. \; denotes the end of command
 ```bash
 find . -maxdepth 1 -name "*.mp3" -exec echo "play" {} \; > playlist
 ```
@@ -25,14 +25,14 @@ grep -rnw . -e "STRING"
 
 * Insert a newline at a specific line with sed -i [--in-place]
 ```bash
-sed -i '/SOME_LINE/i \n' foo.txt 
+sed -i '$LINE_NUMi \n' foo.txt 
 ```
 
 * Read all files in a directory line by line
 ```bash
 ls | while read f; do while read -r line; do echo $line; done < $f ; done
 ```
-* Search though a directory recursively with grep, kind of like reading line by line
+* Search though a directory recursively with grep, kind of like reading line by line, -i ignore case, -l output filename that match, -L filename that doesnt match
 ```bash
 grep -r --include '*.py' STRING .
 ```
@@ -188,7 +188,7 @@ echo "Hello World" | cut -d ' ' -f 1
 grep -avf "FILE.txt"
 ```
 
-* Xargs usage, useful pipes, but require the flag -print0
+* Xargs usage, useful pipes, but require the flag -print0, -I: replaces occurance of replace-str in the initial arguments with names read from std in
 ```bash
 find . -type f -name "*.mp3" -print0 | xargs -0 -I file cp file dir/
 ||
@@ -211,4 +211,19 @@ cat file.txt | tr -s '.'
 * grip. Using grip to build markdown files locally. -b: opens up a broswer tab.
 ```bash
 grip -b FILE.md
+```
+
+* cut with tabs ... there is an easy way... cut by default split by tabs...
+```bash
+cat FILE | cut -d $'\t' -f 2
+||
+cat FILE | cut -f 2
+```
+
+* Reading certain types of file line by line with find
+```bash
+for file in $(find . -type f -name "*.txt")
+do
+cat $file
+done
 ```
