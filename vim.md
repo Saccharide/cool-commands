@@ -37,3 +37,9 @@ z=
 ]s
 [s
 ```
+
+* Increment a number Ctrl + A; Decrement a number Ctrl + X
+```
+Ctrl + A
+Ctrl + X
+```
