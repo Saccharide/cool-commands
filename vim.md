@@ -43,3 +43,10 @@ z=
 Ctrl + A
 Ctrl + X
 ```
+
+* Ctrl + S enables terminal scroll lock, which will make vim "hang", Ctrl + Q disables the lock.
+```
+Ctrl + S
+Ctrl + Q
+```
+
