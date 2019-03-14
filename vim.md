@@ -50,3 +50,7 @@ Ctrl + S
 Ctrl + Q
 ```
 
+* After selecting a word, a possible command, you can use SHIFT + K to look at the manual for it.
+```
+Shift + K
+```

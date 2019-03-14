@@ -42,7 +42,16 @@ grep -r --include '*.py' STRING .
 cp -R source dest
 ```
 
-* Get the size of a directory with du -s (summary) -h human readable
+* Get the size of a directory with du, disk usage, -s (summary) -h human readable
+```bash
+du -sh 
+```
+
+* Get the size of free space with df, disk free, -h human readable in 1024 power, -H in 1000 power
+```bash
+df -h 
+```
+
 * Get details of a directory -h human readable, -a show hidden, -l print details, -s sort by date
 ```bash
 ls -halt
