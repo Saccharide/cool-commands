@@ -292,6 +292,6 @@ head -n X FILE
 ```
 
 * Getting the current directory name in a cool way, it can be VERY USEFUL!
-```
+```bash
 basename $PWD
 ```
