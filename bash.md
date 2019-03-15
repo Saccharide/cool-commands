@@ -290,3 +290,8 @@ sed -n 100,110p FILE
 sed 'X{p;q}' FILE
 head -n X FILE
 ```
+
+* Getting the current directory name in a cool way, it can be VERY USEFUL!
+```
+basename $PWD
+```
