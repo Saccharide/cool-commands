@@ -295,3 +295,8 @@ head -n X FILE
 ```bash
 basename $PWD
 ```
+
+* List all the graphics card
+```bash
+lspci -vnn | grep VGA -A 12
+```
