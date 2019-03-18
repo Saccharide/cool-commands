@@ -296,7 +296,16 @@ head -n X FILE
 basename $PWD
 ```
 
-* List all the graphics card
+* List all the graphics card, `-nn` Show PCI vendor and device codes, `-v` verbose.
 ```bash
 lspci -vnn | grep VGA -A 12
+```
+* AWESOME grep FLAG, `-A NUM`, print NUM lines of trailing context after matching line
+```bash
+grep VGA -A 12
+```
+
+* Show CPU info
+```bash
+lscpu
 ```
