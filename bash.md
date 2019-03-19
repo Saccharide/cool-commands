@@ -309,3 +309,8 @@ grep VGA -A 12
 ```bash
 lscpu
 ```
+* Show USB info, to determine the version of USB a flash drive is using, `-D` list devices.
+```bash
+lsusb
+lsusb -D /dev/bus/usb/003/023
+```
