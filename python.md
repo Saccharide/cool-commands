@@ -56,3 +56,18 @@ driver.implicitly_wait(10)
 ```python
 driver.get_screenshot_as_file("screenshot.png")
 ```
+
+* Take an awesome screenshot (more than just the current window)
+```python
+element = driver.find_element_by_id('readme')
+element_png = element.screenshot_as_png
+with open("test2.png", "wb") as file:
+    file.write(element_png)                  
+
+```
+* Login to a website
+```python
+driver.find_element_by_id('email').send_keys('sample@email.com')
+driver.find_element_by_id('pass').send_keys('password')
+driver.find_element_by_id('login_button').click()
+```
