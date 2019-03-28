@@ -257,3 +257,8 @@ dpkg --print-architecture
 ```bash
 lsb_release -a
 ```
+* Copy to  a target directory and make ihe directory if it does not exist. `mkdir`, `-p` creates all directories
+```
+mkdir -p PATH && cp FILE PATH
+
+```
