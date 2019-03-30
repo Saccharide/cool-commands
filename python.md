@@ -17,16 +17,10 @@ with open ("csv_file.csv", "w") as csv_file:
     combined = col_1 + "," + '\"' + col_2 + '\"\n'
     csv_file.write(combined)
 ```
-
-# Pip
-* List of pip environments
-```bash
-pip freeze
-```
-
-* Install all pip environment recursively 
-```bash
-pip install -r requirements.txt
+# Plain python commands
+* Iterate through a dictionary
+```python
+for key, value in d.items()
 ```
 
 # Selenium

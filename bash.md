@@ -319,3 +319,13 @@ lsusb -D /dev/bus/usb/003/023
 ```
 mkdir -p PATH && cp FILE PATH
 ```
+
+* List of pip environments
+```bash
+pip freeze
+```
+
+* Install all pip environment recursively 
+```bash
+pip install -r requirements.txt
+```
