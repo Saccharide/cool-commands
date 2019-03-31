@@ -22,6 +22,16 @@ with open ("csv_file.csv", "w") as csv_file:
 ```python
 for key, value in d.items()
 ```
+* Sort a dictionary base on its value
+```python2
+import operator
+x = {1:2, 3:4, 4:3}
+sorted_x = sorted(x.items(), key=operator.itemgetter(1))
+```
+```python3
+x = {1: 2, 3: 4, 4: 3, 2: 1, 0: 0}
+sorted_x = sorted(x.items(), key=lambda kv: kv[1])
+```
 
 # Selenium
 
