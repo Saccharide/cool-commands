@@ -329,3 +329,12 @@ pip freeze
 ```bash
 pip install -r requirements.txt
 ```
+* Scanning all services given a server with `nmap`
+```bash
+nmap -A 192.168.0.1
+```
+
+* Show possible mount point given a server that is running NFS
+```bash
+showmount -e 192.168.0.1
+```
