@@ -54,3 +54,7 @@ Ctrl + Q
 ```
 Shift + K
 ```
+* ANOTHER COOL WAY TO SAVE AND EXIT VIM equivalent to `:x`
+```
+ZZ
+```
