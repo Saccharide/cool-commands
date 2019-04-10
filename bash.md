@@ -338,3 +338,12 @@ nmap -A 192.168.0.1
 ```bash
 showmount -e 192.168.0.1
 ```
+
+* List all the all current directories
+```bash
+ls -d */
+echo */
+ls -l | grep "^d"
+ll | grep "^d"
+for i in $(ls -d */); do echo ${i%%/}; done
+```
