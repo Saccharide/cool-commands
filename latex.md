@@ -16,3 +16,26 @@
 \tikzexternalize[prefix=tikz/]
 
 ```
+* Inserting a figure
+```
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=2.8in]{figs/path} 
+    \caption{}
+\label{fig:figlabel}
+\end{figure}
+```
+* Referencing a figure inside latex
+```
+\figref{fig:FIGLABEL}
+```
+
+* Referencing another section
+```
+\ref{sec:SECLABEL}
+```
+
+* Normal in-text citation
+```
+\cite{smartthings}
+```
