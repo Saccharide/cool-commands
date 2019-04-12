@@ -64,6 +64,11 @@ Ctrl + s
 Ctrl + q
 ```
 
+* Merge next line with current line. (VERY USEFUL!)
+```
+J
+```
+
 * After selecting a word, a possible command, you can use `SHIFT + k` to look at the manual for it.
 ```
 Shift + k
