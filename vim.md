@@ -5,7 +5,7 @@
 gUaw
 ```
 
-* Copy to clipboard (* only works within vim, use + for system clipbaord)
+* Copy to clipboard (`*` only works within vim, use `+` for system clipbaord)
 ```
 "+y
 ```
@@ -40,33 +40,33 @@ yi"
 z=
 ```
 
-* Jump to next misspelled word. ]s = next misspelled word; [s = previous misspelled word.
+* Jump to next misspelled word. `]s` : next misspelled word; `[s` : previous misspelled word.
 ```
 ]s
 [s
 ```
 
-* Previous modified location (O) and next modified location (I)
+* Previous modified location `Ctrl + o`  and next modified location `Ctrl + i`
 ```
-Ctrl + O
-Ctrl + I
-```
-
-* Increment a number Ctrl + A; Decrement a number Ctrl + X
-```
-Ctrl + A
-Ctrl + X
+Ctrl + o
+Ctrl + i
 ```
 
-* Ctrl + S enables terminal scroll lock, which will make vim "hang", Ctrl + Q disables the lock.
+* Increment a number `Ctrl + a`; Decrement a number `Ctrl + x`
 ```
-Ctrl + S
-Ctrl + Q
+Ctrl + a
+Ctrl + x
 ```
 
-* After selecting a word, a possible command, you can use SHIFT + K to look at the manual for it.
+* `Ctrl + s` enables terminal scroll lock, which will make vim "hang", `Ctrl + q` disables the lock.
 ```
-Shift + K
+Ctrl + s
+Ctrl + q
+```
+
+* After selecting a word, a possible command, you can use `SHIFT + k` to look at the manual for it.
+```
+Shift + k
 ```
 
 * ANOTHER COOL WAY TO SAVE AND EXIT VIM equivalent to `:x`
