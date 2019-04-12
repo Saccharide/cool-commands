@@ -1,27 +1,35 @@
+# Inside `NORMAL` mode
+
 * Capitalize the whole word
 ```
 gUaw
 ```
+
 * Copy to clipboard (* only works within vim, use + for system clipbaord)
 ```
 "+y
 ```
+
 * Paste from clipbaord
 ```
 "+p
 ```
+
 * Access all register values
 ```
 :reg
 ```
+
 * Append to a register using a capitalized letter
 ```
 "Zyy
 ```
+
 * Paste over a word with a yanked one
 ```
 viwp
 ```
+
 * Copy / cut / change  inside quote / bracket / parenthesis
 ```
 yi"
@@ -36,6 +44,12 @@ z=
 ```
 ]s
 [s
+```
+
+* Previous modified location (O) and next modified location (I)
+```
+Ctrl + O
+Ctrl + I
 ```
 
 * Increment a number Ctrl + A; Decrement a number Ctrl + X
@@ -60,7 +74,7 @@ Shift + K
 ZZ
 ```
 
-## Inside INSERT mode
+## Inside `INSERT` mode
 * Start a newline starting from cursor
 ```
 Ctrl + j
