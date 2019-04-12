@@ -54,7 +54,40 @@ Ctrl + Q
 ```
 Shift + K
 ```
+
 * ANOTHER COOL WAY TO SAVE AND EXIT VIM equivalent to `:x`
 ```
 ZZ
 ```
+
+## Inside INSERT mode
+* Start a newline starting from cursor
+```
+Ctrl + j
+```
+
+* Backspace one character
+```
+Ctrl + h
+```
+
+* Backspace one word
+```
+Ctrl + w
+```
+
+* Indent / Tab the whole line
+```
+Ctrl + t
+```
+
+* Copy the character from previous line
+```
+Ctrl + y
+```
+
+* Search for completion
+```
+Ctrl + n
+```
+
