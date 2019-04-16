@@ -115,3 +115,12 @@ Ctrl + n
 - `z` `Shift + o` opens all folds at cursor
 - `z` `c` closes a fold at cursor
 - `z` `Shift + m` closes all folds at cursor
+
+# SEARCHING FOR WORDS
+- `\<` beginning of a word
+- `\>` end of a word
+- `/`  forward search
+- `?`  backwards search
+
+
+
