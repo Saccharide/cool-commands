@@ -114,6 +114,11 @@ Ctrl + y
 Ctrl + n
 ```
 
+* Execute one command and return to Insert mode
+```
+Ctrl + o
+```
+
 # FOLDING
 - `z` `o` opens a fold at cursor
 - `z` `Shift + o` opens all folds at cursor
