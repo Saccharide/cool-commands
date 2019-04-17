@@ -133,4 +133,8 @@ Ctrl + o
 - `?`  backwards search
 
 
-
+# Vim LaTex
+* Goes to next `<++>` and replace it
+```
+Ctrl + j
+```
