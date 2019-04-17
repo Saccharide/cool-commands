@@ -79,7 +79,7 @@ Shift + k
 ZZ
 ```
 
-## Inside `INSERT` mode
+# Inside `INSERT` mode
 * Start a newline starting from cursor
 ```
 Ctrl + j
@@ -99,6 +99,10 @@ Ctrl + w
 ```
 Ctrl + t
 ```
+* Deindent / remove tab 
+```
+Ctrl + d
+```
 
 * Copy the character from previous line
 ```
@@ -117,6 +121,7 @@ Ctrl + n
 - `z` `Shift + m` closes all folds at cursor
 
 # SEARCHING FOR WORDS
+* Inside `;%s/SEARCH/REPLACE/gc`
 - `\<` beginning of a word
 - `\>` end of a word
 - `/`  forward search
