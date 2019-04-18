@@ -35,15 +35,15 @@ viwp
 yi"
 ```
 
-* Fix spelling error in vim, place cursor on the misspelled word and:
-```
-z=
-```
-
 * Jump to next misspelled word. `]s` : next misspelled word; `[s` : previous misspelled word.
 ```
 ]s
 [s
+```
+
+* Fix spelling error in vim, place cursor on the misspelled word and:
+```
+z=
 ```
 
 * Previous modified location `Ctrl + o`  and next modified location `Ctrl + i`
@@ -78,6 +78,10 @@ Shift + k
 ```
 ZZ
 ```
+# Rotation
+- `Ctrl + w  J/K` split veritical (`J` new screen on bottom)
+- `Ctrl + w  H/L` split veritical (`H` new screen on right) 
+- `Ctrl + w  Ctrl + r` rotate screens  
 
 # Inside `INSERT` mode
 * Start a newline starting from cursor
