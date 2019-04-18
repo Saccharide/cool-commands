@@ -5,6 +5,34 @@
 gUaw
 ```
 
+* Merge next line with current line. (VERY USEFUL!)
+```
+J
+```
+
+* After selecting a word, a possible command, you can use `SHIFT + k` to look at the manual for it.
+```
+Shift + k
+```
+
+* ANOTHER COOL WAY TO SAVE AND EXIT VIM equivalent to `:x`
+```
+ZZ
+```
+
+# Navigation
+`_`   move to first non-blank character of the line
+`g_`  move to last non-blank character of the line
+`H`   move to top of screen
+`M`   move to middle of screen
+`L`   move to bottom of screen
+`Ctrl + d`  move half-page down
+`Ctrl + u`  move half-page up
+`Ctrl + b`  page up
+`Ctrl + f`  page down
+
+
+# Register manipulations
 * Copy to clipboard (`*` only works within vim, use `+` for system clipbaord)
 ```
 "+y
@@ -35,6 +63,7 @@ viwp
 yi"
 ```
 
+# Spell checks
 * Jump to next misspelled word. `]s` : next misspelled word; `[s` : previous misspelled word.
 ```
 ]s
@@ -64,20 +93,6 @@ Ctrl + s
 Ctrl + q
 ```
 
-* Merge next line with current line. (VERY USEFUL!)
-```
-J
-```
-
-* After selecting a word, a possible command, you can use `SHIFT + k` to look at the manual for it.
-```
-Shift + k
-```
-
-* ANOTHER COOL WAY TO SAVE AND EXIT VIM equivalent to `:x`
-```
-ZZ
-```
 # Rotation
 - `Ctrl + w  J/K` split veritical (`J` new screen on bottom)
 - `Ctrl + w  H/L` split veritical (`H` new screen on right) 
