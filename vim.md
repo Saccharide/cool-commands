@@ -138,3 +138,57 @@ Ctrl + o
 ```
 Ctrl + j
 ```
+
+# VimIncr
+* Use to generate a coloumn of increasing number by 1, first select the column
+```
+:I
+```
+Examples:
+        :I
+                    Use ctrl-V to
+        Original    Select, :I
+           8            8
+           8            9
+           8            10
+           8            11
+           8            12
+
+        :I -1
+                    Use ctrl-V to
+        Original    Select, :I -1
+           8            8
+           8            7
+           8            6
+           8            5
+           8            4
+
+        :II
+                    Use ctrl-V to
+        Original    Select, :II
+           8             8
+           8             9
+           8            10
+           8            11
+           8            12
+
+
+        :ID
+                  Use ctrl-V to
+        Original  Select, :ID
+          Sun       Sun
+          Sun       Mon
+          Sun       Tue
+          Sun       Wed
+          Sun       Thu
+
+
+        :IA
+                  Use ctrl-V to
+        Original  Select, :IA
+           a          a
+           a          b
+           a          c
+           a          d
+           a          e
+
