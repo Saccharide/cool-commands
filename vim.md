@@ -138,7 +138,7 @@ Ctrl + o
 
 
 # Vim LaTex
-* Goes to next `<++>` and replace it
+* Goes to next `<++>` and replace it (WARNING: this will break screen movement, need to use `<c-w>` instead
 ```
 Ctrl + j
 ```
