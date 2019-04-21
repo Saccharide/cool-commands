@@ -25,6 +25,16 @@
 \label{fig:figlabel}
 \end{figure}
 ```
+* Inserting a figure that spans two columns
+```
+\begin{figure*}[t]
+    \centering
+    \includegraphics[width=\textwidth]{figs/path} 
+    \caption{}
+\label{fig:figlabel}
+\end{figure*}
+```
+
 * Referencing a figure inside latex
 ```
 \figref{fig:FIGLABEL}
