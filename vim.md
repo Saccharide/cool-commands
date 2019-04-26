@@ -1,6 +1,6 @@
 # Inside `NORMAL` mode
 
-* Capitalize the whole word
+* Capitalize the whole word `a`: around, `i`: inner, `s`: sentence, `p`: paragraph
 ```
 gUaw
 ```
@@ -33,12 +33,12 @@ ZZ
 
 
 # Register manipulations
-* Copy to clipboard (`*` only works within vim, use `+` for system clipbaord)
+* Copy to clipboard (`*` only works within vim, use `+` for system clipboard)
 ```
 "+y
 ```
 
-* Paste from clipbaord
+* Paste from clipboard
 ```
 "+p
 ```
@@ -94,8 +94,8 @@ Ctrl + q
 ```
 
 # Rotation
-- `Ctrl + w  J/K` split veritical (`J` new screen on bottom)
-- `Ctrl + w  H/L` split veritical (`H` new screen on right) 
+- `Ctrl + w  J/K` split vertical (`J` new screen on bottom)
+- `Ctrl + w  H/L` split vertical (`H` new screen on right) 
 - `Ctrl + w  Ctrl + r` rotate screens  
 
 # Inside `INSERT` mode
