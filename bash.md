@@ -1,9 +1,9 @@
 # Bash Navigation
 
-`Ctrl A`: Move to the beginning of the command
-`Ctrl E`: Move to the end of the command
-`Alt F`: Move forward one word in command line 
-`Alt B`: Move backward one word in command line 
+* `Ctrl A`: Move to the beginning of the command
+* `Ctrl E`: Move to the end of the command
+* `Alt F`: Move forward one word in command line 
+* `Alt B`: Move backward one word in command line 
 
 * Clear from cursor to the beginning of a line
 ```bash
