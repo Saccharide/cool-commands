@@ -29,11 +29,10 @@ ESC + Backspace
 ```bash
 ESC + d
 ```
-* Reverse Search
-`Ctrl R`: Start reverse search
-`Ctrl R`: Once started, will bring you to the next recent match
-
-`Ctrl G`: Quits reverse search, and preserve the command already typed
+## Reverse Search
+* `Ctrl R`: Start reverse search
+* `Ctrl R`: Once started, will bring you to the next recent match
+* `Ctrl G`: Quits reverse search, and preserve the command already typed
 
 # Network commands
 * nmap -A: Aggressive mode
