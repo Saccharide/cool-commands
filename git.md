@@ -23,3 +23,15 @@ git reset --hard HEAD
 ```bash
 git log
 ```
+
+* `git` download with SSH (github)
+```bash
+git clone git@github.com:saccharide/
+```
+
+* Replace HTTPS with SSH git push
+```bash
+git remote set-url origin git@github.com:saccharide/
+```
+
+

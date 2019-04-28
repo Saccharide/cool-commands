@@ -15,7 +15,7 @@ CTRL + u
 CTRL + k
 ```
 
-* Clears one character to the right of cursor 
+* Clears one character to the right of cursor (WARNING: will close the current session when the command line is empty!)
 ```bash
 CTRL + d
 ```
@@ -76,6 +76,12 @@ echo -e "Hello \n World"
 echo "Hello World" | cut -d ' ' -f 1
 ```
 
+* `awk`, prints the rest of the argument. `$1` the first word, `$0` is the entire line.
+```bash
+awk '{$1 = ""; print $0;}'
+```
+
+
 * `tr`: translates and/or deletes chars from `stdin`, and writes to `stdout`. `-d`: deletes all occurrence, `-s`: make repeated sequential characters only appear once
 ```bash
 tr [a-z] [A-Z] < lowercase.txt > uppercase.txt
@@ -91,7 +97,7 @@ cat FILE | cut -d $'\t' -f 2
 cat FILE | cut -f 2
 ```
 
-* Print out the content of a file at `LINE` number `-n` in sed is quiet), `p`: print
+* Print out the content of a file at `LINE` number `-n` in sed is quiet, `p`: print
 ```bash
 awk 'NR=LINE{print}' FILE
 sed -n -e LINEp FILE
@@ -105,11 +111,6 @@ sed -n -e '100,110 p' FILE
 sed -n 100,110p FILE
 ```
 
-* Output the first `NUM` line of a file
-```bash
-sed 'NUM{p;q}' FILE
-head -n NUM FILE
-```
 # Search Manipulation
 
 * AWESOME `grep` FLAG, `-A NUM`, print `NUM` lines of trailing context after matching line
@@ -169,6 +170,12 @@ sed -n 100,110p FILE
 ```bash
 sed 'X{p;q}' FILE
 head -n X FILE
+```
+
+* Getting the exact number of line from the bottom or the top of a output (In this case, 2nd line from the bottom)
+(WARNING: THIS ONLY WORK ONCE HAHA, )
+```bash
+history | grep clone | tail -n 2 | head -n 1
 ```
 
 # File Manipulation
@@ -295,11 +302,6 @@ cd ${cd -}
 ```
 ```
 cd $OLDPWD
-```
-
-* Replace HTTPS with SSH git push
-```bash
-git remote set-url origin git@github.com:saccharide/google-ctf-2018
 ```
 
 * Install .deb packages
