@@ -399,4 +399,12 @@ ll | grep "^d"
 for i in $(ls -d */); do echo ${i%%/}; done
 ```
 
+* Convert PDFs to ppms
+```bash
+pdftoppm main.pdf outputname -png
+```
 
+* Convert pngs to pdf
+```bash
+convert *.png output.pdf
+```
