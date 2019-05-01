@@ -17,6 +17,21 @@ with open ("csv_file.csv", "w") as csv_file:
     combined = col_1 + "," + '\"' + col_2 + '\"\n'
     csv_file.write(combined)
 ```
+
+* Saving data as a pickle file
+```python
+from sklearn.external import joblib
+output_file = "output.pkl"
+joblib.dump(clf_pipeline, output_file)
+```
+
+* Loading model from a pickle file
+```python
+from sklearn.external import joblib
+with open(r"saved_model.pickle","rb") as input_file:
+    loaded_model = pickle.load(input_file)
+```
+
 # Plain python commands
 * Iterate through a dictionary
 ```python
