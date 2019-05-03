@@ -27,7 +27,7 @@ joblib.dump(clf_pipeline, output_file)
 
 * Loading model from a pickle file
 ```python
-from sklearn.external import joblib
+import pickle
 with open(r"saved_model.pickle","rb") as input_file:
     loaded_model = pickle.load(input_file)
 ```
