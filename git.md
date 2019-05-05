@@ -34,4 +34,17 @@ git clone git@github.com:saccharide/
 git remote set-url origin git@github.com:saccharide/
 ```
 
+* Stashing: if you want to switch branches, but you don't want to commit what you have been working on. 
+```bash
+git stash
+```
 
+* You can switch between branches and do work elsewhere. To see which stashes stored, you can use
+```bash
+git stash list
+```
+
+* If you have multiple stashes, you can reapply them with `git stash apply`
+```bash
+git stash apply stash@{2}
+```
