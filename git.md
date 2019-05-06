@@ -48,3 +48,14 @@ git stash list
 ```bash
 git stash apply stash@{2}
 ```
+```bash
+git stash pop
+```
+
+* If you want to un-apply a stashed change
+```bash
+git stash show -p stash@{0} | git apply -R
+```
+```bash
+git stash show -p | git apply -R
+```
