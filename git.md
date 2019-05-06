@@ -59,3 +59,16 @@ git stash show -p stash@{0} | git apply -R
 ```bash
 git stash show -p | git apply -R
 ```
+
+* Merge a change
+```bash
+git mergetool
+```
+* If just wanted to use ours changes
+```bash
+git checkout --ours filename.c
+```
+* If just wanted to use theirs changes
+```bash
+git checkout --theirs filename.c
+```
