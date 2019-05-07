@@ -14,6 +14,11 @@ J
 ```
 Shift + k
 ```
+* Indent commands `=` (re-indent), `<`, `>`
+* `>G` Indents until end of file
+* `>}` Indents until next paragraph
+* `>iB` Indents contents of current {  } block, `i`: inner, `B`: Block
+
 
 * ANOTHER COOL WAY TO SAVE AND EXIT VIM equivalent to `:x`
 ```
