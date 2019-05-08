@@ -4,7 +4,7 @@ git config --global user.name saccharide
 git config --global user.email $EMAIL
 ```
 
-* Modify the current commit after comitted (i.e., remove a file being uploaded)
+* Modify the current commit after committed (i.e., remove a file being uploaded)
 ```bash
 git commit --amend
 ```
@@ -34,11 +34,11 @@ git clone git@github.com:saccharide/
 git remote set-url origin git@github.com:saccharide/
 ```
 
-* See what is changed in the current local copy (pretty cool)
+* See what is changed in the current local copy (pretty convenient way to check difference)
 ```bash
 git diff
 ```
-* Stashing: if you want to switch branches, but you don't want to commit what you have been working on. 
+* Stashing: if you want to switch branches, but you don't want to commit what you have been working on. It also reverts back to HEAD
 ```bash
 git stash
 ```
