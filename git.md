@@ -34,6 +34,10 @@ git clone git@github.com:saccharide/
 git remote set-url origin git@github.com:saccharide/
 ```
 
+* See what is changed in the current local copy (pretty cool)
+```bash
+git diff
+```
 * Stashing: if you want to switch branches, but you don't want to commit what you have been working on. 
 ```bash
 git stash
@@ -63,6 +67,7 @@ git stash show -p | git apply -R
 * Merge a change
 ```bash
 git mergetool
+
 ```
 * If just wanted to use ours changes
 ```bash
