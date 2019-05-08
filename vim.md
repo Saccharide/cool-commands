@@ -68,7 +68,7 @@ viwp
 yi"
 ```
 
-# Spell checks
+# Spelling
 * Jump to next misspelled word. `]s` : next misspelled word; `[s` : previous misspelled word.
 ```
 ]s
@@ -96,6 +96,16 @@ Ctrl + x
 ```
 Ctrl + s
 Ctrl + q
+```
+
+* Add a word to the internal word list.
+```
+zG
+```
+
+* Undo the adding of a new word to the internal word list
+```
+zuG
 ```
 
 # Rotation
@@ -141,6 +151,16 @@ Ctrl + n
 * Execute one command and return to Insert mode
 ```
 Ctrl + o
+```
+
+* Paste current buffer 
+```
+Ctrl + a
+```
+
+* Delete left of the cursor till the begining of the line
+```
+Ctrl + u
 ```
 
 # FOLDING
