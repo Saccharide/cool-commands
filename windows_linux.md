@@ -10,7 +10,7 @@ ubuntu config --default-user $USER
 ```
 /mnt/c/texlive/2017/bin/win32/pdflatex.exe $1
 ```
-* Using `start`
+* Using `start` by inserting it in bashrc
 ```bash
 function start(){
     /mnt/c/Windows/System32/cmd.exe /c start $1
