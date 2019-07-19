@@ -37,6 +37,17 @@ ESC + d
 * `Ctrl R`: Once started, will bring you to the next recent match
 * `Ctrl G`: Quits reverse search, and preserve the command already typed
 
+
+
+# Bash scripting
+* `$1`, `$2`, `$3`... are the parameters
+* `"$@"` is an array of all parameters. Can expanded as "$1" "$2" "$3" ... when you print it
+* `"$*"` is the `IFS`, Internal Field Separator, expansion of all parameters into one variable with IFS in between. (pretty useful)
+* `$#` gives the number of parameters
+* `$0` gives the name of the shell script
+
+
+
 # Network commands
 * nmap -A: Aggressive mode
 ```bash
@@ -63,8 +74,9 @@ nmap -A 192.168.0.1
 showmount -e 192.168.0.1
 ```
 
-# String Manipulation
 
+
+# String Manipulation
 * `awk` with print. prints first field.
 ```bash
 echo "Hello World" | awk '{print $1}'
@@ -84,7 +96,6 @@ echo "Hello World" | cut -d ' ' -f 1
 ```bash
 awk '{$1 = ""; print $0;}'
 ```
-
 
 * `tr`: translates and/or deletes chars from `stdin`, and writes to `stdout`. `-d`: deletes all occurrence, `-s`: make repeated sequential characters only appear once
 ```bash
@@ -115,8 +126,9 @@ sed -n -e '100,110 p' FILE
 sed -n 100,110p FILE
 ```
 
-# Search Manipulation
 
+
+# Search Manipulation
 * AWESOME `grep` FLAG, `-A NUM`, print `NUM` lines of trailing context after matching line
 ```bash
 grep VGA -A 12
@@ -182,8 +194,9 @@ head -n X FILE
 history | grep clone | tail -n 2 | head -n 1
 ```
 
-# File Manipulation
 
+
+# File Manipulation
 * Shuffles the lines of a file `-R`: random
 ```bash
 sort -R playlist -o playlist
@@ -338,7 +351,6 @@ done
 ```
 
 ## Redirection
-
 `ls DIR > dirlist`
 `>` Redirects output
 `>>` Appends output to an existing file
@@ -346,7 +358,6 @@ done
 `>&` Redirects output of one file to another, e.g. `2>&1` redirects error to output (pre bash 4.0)
 `&>>` does the above in post Bash 4.0 and apending it to a file
 `&>` does the above but overwrites the target file
-
 
 * Check architecture
 ```bash
@@ -357,7 +368,6 @@ dpkg --print-architecture
 ```bash
 lsb_release -a
 ```
-
 
 * Getting the current directory name in a cool way, it can be VERY USEFUL!
 ```bash
@@ -392,7 +402,6 @@ pip freeze
 ```bash
 pip install -r requirements.txt
 ```
-
 
 * List all the all current directories
 ```bash
