@@ -32,6 +32,11 @@ CTRL + w
 ```bash
 ESC + d
 ```
+* Types x number of the same character!! very useful for buffer overflow
+```bash
+left-Alt + x + character
+```
+
 ## Reverse Search
 * `Ctrl R`: Start reverse search
 * `Ctrl R`: Once started, will bring you to the next recent match
