@@ -32,6 +32,7 @@ CTRL + w
 ```bash
 ESC + d
 ```
+
 * Types x number of the same character!! very useful for buffer overflow
 ```bash
 left-Alt + x + character
@@ -109,6 +110,8 @@ cat file.txt | tr -d ' '
 cat file.txt | tr -s '.'
 ```
 
+* `paste` merges lines of files
+
 * `cut` with tabs; `cut` by default split by tabs...
 ```bash
 cat FILE | cut -d $'\t' -f 2
@@ -131,6 +134,11 @@ sed -n -e '100,110 p' FILE
 sed -n 100,110p FILE
 ```
 
+* Prints every line multiple times
+```bash
+sed 'p;p;p' FILE
+awk '1;1;1;1' FILE
+```
 
 
 # Search Manipulation
