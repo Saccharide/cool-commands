@@ -136,8 +136,8 @@ sed -n 100,110p FILE
 
 * Prints every line multiple times
 ```bash
-sed 'p;p;p' FILE
-awk '1;1;1;1' FILE
+sed 'p;p;p;' FILE | tee -a FILE; shuf FILE -o FILE
+awk '1;1;1;1;' FILE | tee FILE; shuf FILE -o FILE
 ```
 
 
