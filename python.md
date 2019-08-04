@@ -32,6 +32,15 @@ with open(r"saved_model.pickle","rb") as input_file:
     loaded_model = pickle.load(input_file)
 ```
 
+# Python in Terminal
+* Using data in stdin as the input for python code
+```bash
+cat FILE | grep TEXT | python2 -c "import sys; print ''.join(sys.stdin.readlines())"
+```
+
+
+
+
 # Plain python commands
 * Iterate through a dictionary
 ```python
@@ -43,6 +52,7 @@ import operator
 x = {1:2, 3:4, 4:3}
 sorted_x = sorted(x.items(), key=operator.itemgetter(1))
 ```
+
 ```python3
 x = {1: 2, 3: 4, 4: 3, 2: 1, 0: 0}
 sorted_x = sorted(x.items(), key=lambda kv: kv[1])
