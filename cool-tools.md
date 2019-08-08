@@ -48,3 +48,17 @@ nmap -A 192.168.1.1
 ```bash
 showmount -e 192.168.1.1
 ```
+
+# Figlet!
+
+* Centering with `-c`
+```bash
+figlet -c test
+```
+
+* Specifying font with `-f`
+```bash
+figlet -f script/shadow/slant
+```
+
+
