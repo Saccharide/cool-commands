@@ -4,7 +4,7 @@ git config --global user.name saccharide
 git config --global user.email $EMAIL
 ```
 
-* Modify the current commit after committed (i.e., remove a file being uploaded)
+* Modify the current commit after committed (i.e., remove a file being uploaded or add a file or change the commit message)
 ```bash
 git commit --amend
 ```
