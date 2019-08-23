@@ -43,6 +43,11 @@ git diff
 git stash
 ```
 
+* Revert a commit
+```bash
+git revert
+```
+
 * You can switch between branches and do work elsewhere. To see which stashes stored, you can use
 ```bash
 git stash list
@@ -77,3 +82,9 @@ git checkout --ours filename.c
 ```bash
 git checkout --theirs filename.c
 ```
+
+* If want to discard change on one file and revert back to original after editing
+```bash
+git checkout -- FILENAME
+```
+
