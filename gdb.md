@@ -28,4 +28,42 @@ set $eax=0
 ni
 ```
 
+* Send an interrupt signal after 'run'
+```
+run
+```
 
+* Backtrace displays the call stack of the program before the program ended(VERY USEFUL)
+```
+bt
+```
+
+* Examine the memory
+```
+x
+x/10i 0xAAAAAAA (dumps the 10 instructions after then memory address 0xAAAAAA)
+x/1s  0xAAAAAAA prints the strings at location
+```
+
+* invoke shell in gdb
+```
+shell man scanf
+```
+
+* step into next instruction
+```
+stepi 
+```
+
+* temporary break, will delete the breakpoint whenever we hit the address
+```
+tbreak *0xAAAAAA
+```
+
+* dumps the mapping of the program
+```
+info mapping
+info b
+```
+
+* `si`, executing the next instruction, then`finish` to finish the current function and goes back to the parent function
