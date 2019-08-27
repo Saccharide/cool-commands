@@ -5,7 +5,7 @@ git config --global user.email $EMAIL
 git config core.editor
 ```
 
-* Modify the current commit after committed (i.e., remove a file being uploaded)
+* Modify the current commit after committed (i.e., remove a file being uploaded or add a file or change the commit message)
 ```bash
 git commit --amend
 ```
