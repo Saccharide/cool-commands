@@ -2,7 +2,7 @@
 ```bash
 git config --global user.name saccharide
 git config --global user.email $EMAIL
-git config core.editor
+git config --global core.editor vim
 ```
 
 * Modify the current commit after committed (i.e., remove a file being uploaded or add a file or change the commit message)
