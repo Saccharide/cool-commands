@@ -89,3 +89,17 @@ git checkout --theirs filename.c
 git checkout -- FILENAME
 ```
 
+* See what changes have been made BEFORE `git add`
+```bash
+git diff FILE
+```
+
+* See what changes have been made AFTER `git add`
+```bash
+git diff --cached FILE
+```
+
+* See what changes have been made AFTER `git commit`
+```bash
+git diff master^^ FILE
+```
