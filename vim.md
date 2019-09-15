@@ -1,3 +1,24 @@
+# TABS!
+* Open file in a new tab!!!
+```
+:tabnew [FILENAME]
+```
+
+* Move split current split window into its own tab!
+```
+Ctrl + w, T
+```
+
+* Go to next tab
+```
+gt / gT
+```
+
+* Go to any tab
+```
+#gt
+```
+
 # Inside `NORMAL` mode
 
 * Capitalize the whole word `a`: around, `i`: inner, `s`: sentence, `p`: paragraph
