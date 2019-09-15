@@ -32,6 +32,10 @@ function clip(){
     /mnt/c/Windows/System32/clip.exe $1
 }
 ```
+* Usage for `clip` in wsl
+```bash
+cat FILE | clip
+```
 
 * Using `start` by inserting it in bashrc
 ```bash
