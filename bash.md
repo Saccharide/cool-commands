@@ -299,6 +299,8 @@ nohup COMMAND >/dev/null 2>&1 &
 * Copy a file content to system clipboard
 ```bash
 xclip -sel clip < FILE
+|
+cat data.txt | xclip -selection c
 ```
 
 * kill a process with `ps`

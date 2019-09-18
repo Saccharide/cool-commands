@@ -179,7 +179,7 @@ Ctrl + o
 Ctrl + a
 ```
 
-* Delete left of the cursor till the begining of the line
+* Delete left of the cursor till the beginning of the line
 ```
 Ctrl + u
 ```
