@@ -43,3 +43,8 @@ function start(){
     /mnt/c/Windows/System32/cmd.exe /c start $1
 }
 ```
+
+*  Replace system sound
+```command prompt
+net stop beep
+```

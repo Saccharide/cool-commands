@@ -196,6 +196,8 @@ Ctrl + u
 - `\>` end of a word
 - `/`  forward search
 - `?`  backwards search
+- `*` next whole word under cursor!
+- `#` previous whole word under cursor
 
 
 # Vim LaTex
