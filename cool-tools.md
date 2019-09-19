@@ -61,4 +61,8 @@ figlet -c test
 figlet -f script/shadow/slant
 ```
 
-
+# BZCAT
+* `bzcat` allow you to see the content of a bz zipped file without the need to uncompress it
+```bash
+bzcat file.bz2
+```
