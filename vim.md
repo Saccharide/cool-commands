@@ -58,6 +58,16 @@ ZZ
 `Ctrl + f`  page down
 
 
+# String replace
+* Replace all occurance of search string, `g` gloabl, `c` confirmation
+```
+:%s/search_string/replace_string/gc
+```
+
+* String replace on certain range, `:&&` repeats the last subsitution with the same flag
+```
+:6,10s/<search_string>/<replace_string>/g | 14,18&&
+```
 # Register manipulations
 * Copy to clipboard (`*` only works within vim, use `+` for system clipboard)
 ```
