@@ -9,7 +9,7 @@ for file in files:
             print(line)
 ```
 
-* Write to a CSV
+* Write to a CSV, no need to import os
 ```python
 with open ("csv_file.csv", "w") as csv_file:
     col_1    = "col 1"

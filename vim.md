@@ -33,7 +33,7 @@ J
 
 * After selecting a word, a possible command, you can use `SHIFT + k` to look at the manual for it.
 ```
-Shift + k
+K
 ```
 * Indent commands `=` (re-indent), `<`, `>`
 * `>G` Indents until end of file

@@ -48,3 +48,8 @@ function start(){
 ```command prompt
 net stop beep
 ```
+
+* `tasklist` displays list of running process in windows command prompt
+```
+tasklist
+```
