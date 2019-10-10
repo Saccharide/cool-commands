@@ -142,15 +142,14 @@ awk '1;1;1;1;' FILE | tee FILE; shuf FILE -o FILE
 
 
 # Search Manipulation
-* AWESOME `grep` FLAG, `-A NUM`, prins `NUM` lines of After context after matching line
+* `grep` multiple words without storing them to a file 
 ```bash
-grep target_word -A 2
+grep "word1\|word2"
 ```
-* Additional `grep` flag: `-B NUM`, prints `NUM` lines Before the match, `-C NUM` prints before AND after the match
+* `grep` with `-A NUM`, prints `NUM` lines after match, `-B`, prints lines Before the match, `-C NUM` prints before AND after the match
 ```bash
 grep target_word -C 2
 ```
-
 
 * `grep` Search a string in current directory. `-w` stand for whole word, `-r` recursive, `-e` regular expression
 ```bash
