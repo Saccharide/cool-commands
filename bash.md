@@ -162,6 +162,9 @@ grep -rnw . -e "STRING"
 grep -r --include '*.py' STRING .
 ```
 
+* `grep` with `-o` only output the match parts, `-h` only outputs the result without file name, `-f` indicates the fileanme of the list of words to grep for
+
+
 * `find` all mp3 files in current directory and create a playlist. `\;` denotes the end of command
 ```bash
 find . -maxdepth 1 -name "*.mp3" -exec echo "play" {} \; > playlist
@@ -438,4 +441,12 @@ sh=b"\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\x53\x89\xe
 
 sh=b"\x31\xc0\x48\xbb\xd1\x9d\x96\x91\xd0\x8c\x97\xff\x48\xf7\xdb\x53\x54\x5f\x99\x52\x57\x54\x5e\xb0\x3b\x0f\x05" (27 bytes)
 ```
-# Run a linux program at start 
+
+# For loop in bash
+```
+for value in {1..5}
+do
+    echo $value
+done
+echo Will print 5 numbers starting from 1 to 5
+```
