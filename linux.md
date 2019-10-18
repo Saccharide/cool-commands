@@ -29,6 +29,16 @@ showmount -e 192.168.0.1
 sudo iptables-save
 ```
 
+* Disable a network interface card
+```bash
+sudo ifconfig eth0 down
+```
+
+* Enable a network interface card
+```bash
+sudo ifconfig eth0 up
+```
+
 # File Manipulation
 * Shuffles the lines of a file `-R`: random
 ```bash
@@ -116,6 +126,11 @@ nohup COMMAND >/dev/null 2>&1 &
 xclip -sel clip < FILE
 |
 cat data.txt | xclip -selection c
+```
+
+* Information of process `ps`, `-e` or `-A`  list all process, `-f` do full format listing, include arguments with the command.
+```bash
+ps -eaf
 ```
 
 * kill a process with `ps`
