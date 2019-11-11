@@ -53,3 +53,9 @@ net stop beep
 ```
 tasklist
 ```
+
+# Launch a program with graphics into windows system. (plotting inside bash)
+* To display a python tk output, we will need to install [Xming](https://sourceforge.net/projects/xming/) first, and then export the display
+```
+export DISPLAY=:0
+```
