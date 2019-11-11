@@ -67,3 +67,8 @@ info b
 ```
 
 * `si`, executing the next instruction, then`finish` to finish the current function and goes back to the parent function
+
+* Launch gdb with a list of gdb commands: `-x`
+```bash
+gdb -x breaklist
+```

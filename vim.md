@@ -57,6 +57,15 @@ ZZ
 `Ctrl + b`  page up
 `Ctrl + f`  page down
 
+# Resize split screen
+* Equal split window size
+```
+Ctrl + w =
+```
+* Increase a vertical split
+```
+Ctrl + w [ < / > ]
+```
 
 # String replace
 * Replace all occurance of search string, `g` gloabl, `c` confirmation

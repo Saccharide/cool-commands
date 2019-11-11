@@ -262,3 +262,10 @@ ll | grep "^d"
 for i in $(ls -d */); do echo ${i%%/}; done
 ```
 
+* Shellshock with curl or wget
+    
+# root
+* Login in as root with `sudo`, `-s` is short for shell, which makes a lot of sense
+```bash
+sudo -s
+```

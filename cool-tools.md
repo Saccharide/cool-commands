@@ -66,3 +66,50 @@ figlet -f script/shadow/slant
 ```bash
 bzcat file.bz2
 ```
+
+
+# Bettercap
+* Probe the network first and then see the list of connected host
+```bash
+net.probe on
+net.show
+```
+
+* Setting up and running sniffer
+```bash
+set net.sniff.verbose true
+set net.sniff.output ~/bettercap_sniff.pcap
+net.sniff on
+```
+
+
+# apktool
+* Recompile apk files
+```bash
+apktool d APP.apk
+apktool b APP/ -o newAPP.apk
+```
+
+### keytool
+* Use `keytool` to generate a public and private key pair, the `my-release-key.keystore` can store multiple keys, each identified by the alias name, which we will use later when signing the app
+```bash
+keytool -alias KEY_ALIAS -genkey -v -keystore my-release-key.keystore -keyalg RSA -keysize 2048 -validity 10000
+```
+
+* Use `jarsigner` to sign the new APK file with the key generated with `keytool`
+```bash
+jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore my-release-key.keystore newAPP.apk KEY_ALIAS
+```
+
+# adb
+* Install an app
+```bash
+adb install APP.apk
+```
+
+* Use logcat to see log message of a particular app
+```bash
+adb logcat | grep -F "`adb shell ps | grep APP_NAME  | tr -s [:space:] ' ' | cut -d' ' -f2`""`'`"
+```
+
+

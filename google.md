@@ -12,3 +12,40 @@
 ```bash
 google-chrome-stable %U --password-store=basic
 ```
+
+# Google searches
+* Search a sepcific type of a file 
+```
+filetype:pdf "computer network"
+```
+
+* Search for a file type on a particiular website!!
+```
+site:google.com filetype:pdf
+```
+
+## Google dorking
+* See a previous version of a website
+```
+cache: google.com
+```
+
+* Search a particular text inside a log file
+```
+allintext:username filetype:log
+```
+
+* Find ftp servers
+```
+intitle:"index of" inurl:ftp
+```
+
+* Find webcams
+```
+intitle:"webcamXP 5"
+```
+
+* Find database passwords
+```
+db_password filetype:env
+```
