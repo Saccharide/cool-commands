@@ -8,6 +8,11 @@
 ```
 ![Label](file.PNG)
 ```
+* Change the image scale
+```
+![Label](file.PNG =100x20)
+![Label](file.PNG =100x)
+```
 
 ## Links
 * There are a couple of ways to create links in markdown
