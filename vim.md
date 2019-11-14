@@ -64,7 +64,7 @@ Ctrl + w =
 ```
 * Increase a vertical split
 ```
-Ctrl + w [ < / > ]
+Ctrl + w + <  or Ctrl + w + >
 ```
 
 # String replace
@@ -77,6 +77,17 @@ Ctrl + w [ < / > ]
 ```
 :6,10s/<search_string>/<replace_string>/g | 14,18&&
 ```
+
+* String replace words with starting
+```
+:%s/\<string/replace_string/g
+```
+
+* String replace words with ending
+```
+:%s/string\>/replace_string/g
+```
+
 # Register manipulations
 * Copy to clipboard (`*` only works within vim, use `+` for system clipboard)
 ```
