@@ -8,6 +8,15 @@ for file in files:
         for line in f:
             print(line)
 ```
+* Find a list of files with the same extension type
+```python
+import os
+import glob
+path = "C:\\Users\\%username%\\Desktop"
+extension = 'csv'
+os.chdir(path)
+result = glob.glob('*.{}'.format(extension))
+```
 
 * Write to a CSV, no need to import os
 ```python
@@ -30,6 +39,19 @@ joblib.dump(clf_pipeline, output_file)
 import pickle
 with open(r"saved_model.pickle","rb") as input_file:
     loaded_model = pickle.load(input_file)
+```
+
+# Numpy commands
+* remove the first row of a numpy array
+```
+data = np.delete(data, (0), axis=0)
+```
+
+# Image IO
+* Write a numpy array to an image
+```
+import imageio
+imageio.imwrte(file_name, data[:, :])
 ```
 
 # Python in Terminal
