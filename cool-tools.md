@@ -113,3 +113,16 @@ adb logcat | grep -F "`adb shell ps | grep APP_NAME  | tr -s [:space:] ' ' | cut
 ```
 
 
+# screen
+* Use `^A to start screen commands`, `^A ?` for help
+```bash
+^A ?    help
+^A S    split
+^A |    vertical split
+^A tab  switch screen
+^A d    detach
+^A k    kill
+^A Q    only that screen
+^A C    Create a new screen
+```
+

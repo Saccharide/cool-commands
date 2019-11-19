@@ -27,6 +27,13 @@ with open ("csv_file.csv", "w") as csv_file:
     csv_file.write(combined)
 ```
 
+* Read a file line by line
+```python
+with open ("csv_file.csv", "r") as csv_file:
+    for line in csv_file.readlines():
+        print(line)
+```
+
 * Saving data as a pickle file
 ```python
 from sklearn.external import joblib
