@@ -28,3 +28,20 @@ openssl x509 -in cert.pem -noout -issuer
 ```bash
 openssl verify -CAfile ca-root.pem cert.pem
 ```
+
+* Convert PEM to CRT format
+```bash
+openssl x509 -outform der -in your-cert.pem -out your-cert.crt
+```
+
+### Adding self signed certificate to the list of root ca
+* Must be in crt format
+```bash
+sudo cp YOUR_CERT.crt /usr/local/share/ca-certificates/
+sudo update-ca-certificates
+```
+
+* Restarting Apache2 server
+```bash
+sudo systemctl restart apache2
+```
