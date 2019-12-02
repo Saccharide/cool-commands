@@ -16,3 +16,17 @@ if (your_string.indexOf('TARGET_STRING') > -1){
     alert('TARGET_STRING' found inside your string!);
 }
 ```
+
+* Submitting a form without reloading the page
+```javascript
+function submitForm(){
+    var http = new XMLHttpRequest();
+    http.open("POST", "http://example.org/index.php", true);
+    http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    var params = ""
+    http.send(params);
+    http.onload = function(){
+        alert(http.responseText);
+    }
+}
+```
