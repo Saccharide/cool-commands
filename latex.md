@@ -18,7 +18,7 @@
 ```
 * Inserting a figure
 ```
-\begin{figure}[t]
+\begin{figure}[h]
     \centering
     \includegraphics[width=2.8in]{figs/path} 
     \caption{}
