@@ -289,10 +289,16 @@ certutil -d sql:$HOME/.pki/nssdb -A -t "C,," -n <certificate nickname> -i <certi
 ```bash
 certutil -d sql:$HOME/.pki/nssdb -L -n <certificate nickname>
 ```
+## Environment Variable
+* Remove or unset an environment variable
+```bash
+unset REMOTE
+```
 
 # root
 * Login in as root with `sudo`, `-s` is short for shell, which makes a lot of sense
 ```bash
 sudo -s
 ```
+
 

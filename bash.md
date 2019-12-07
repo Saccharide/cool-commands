@@ -75,6 +75,11 @@ echo "Hello World" | cut -d ' ' -f 1
 awk '{$1 = ""; print $0;}'
 ```
 
+* `awk` prints even number line of an input file, and it execute the default rule for them `{print $0}`
+```bash
+awk 'NR%2==0' INPUT.txt
+```
+
 * `tr`: translates and/or deletes chars from `stdin`, and writes to `stdout`. `-d`: deletes all occurrence, `-s`: make repeated sequential characters only appear once
 ```bash
 tr [a-z] [A-Z] < lowercase.txt > uppercase.txt
