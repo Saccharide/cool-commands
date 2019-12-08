@@ -1,3 +1,27 @@
+# Plain python commands
+* Iterate through a dictionary
+```python
+for key, value in d.items()
+```
+* Sort a dictionary base on its value
+```python2
+import operator
+x = {1:2, 3:4, 4:3}
+sorted_x = sorted(x.items(), key=operator.itemgetter(1))
+```
+```python3
+x = {1: 2, 3: 4, 4: 3, 2: 1, 0: 0}
+sorted_x = sorted(x.items(), key=lambda kv: kv[1])
+```
+
+* Formating print messages
+```python2
+str = "random string"
+str.zfill(100)     # Padd the string with 0 in the front
+str.rjust(100,'0') # Same effect as above
+```
+
+
 # File IO
 * Read in files from a directory recursively
 ```python
@@ -69,23 +93,6 @@ cat FILE | grep TEXT | python2 -c "import sys; print ''.join(sys.stdin.readlines
 
 
 
-
-# Plain python commands
-* Iterate through a dictionary
-```python
-for key, value in d.items()
-```
-* Sort a dictionary base on its value
-```python2
-import operator
-x = {1:2, 3:4, 4:3}
-sorted_x = sorted(x.items(), key=operator.itemgetter(1))
-```
-
-```python3
-x = {1: 2, 3: 4, 4: 3, 2: 1, 0: 0}
-sorted_x = sorted(x.items(), key=lambda kv: kv[1])
-```
 
 # Selenium
 
