@@ -1,4 +1,10 @@
 # Network tool and commands
+
+* Check network throughput on different interfaces
+```bash
+cat /proc/net/dev
+```
+
 ## `netstat`
 
 * `-r` Show current system's routing table
