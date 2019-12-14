@@ -72,3 +72,8 @@ info b
 ```bash
 gdb -x breaklist
 ```
+
+* Running anyfunction in gdb with `print`, need to declare the return type
+```
+p (char *) generate()
+```
