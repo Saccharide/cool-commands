@@ -6,3 +6,12 @@ ssh-keygen -t rsa -b 4096 -C "email@example.com"
 ```bash
 cat ~/.ssh/id_rsa.pub | ssh user@host "mkdir -p ~/.ssh  && cat >>"
 ```
+
+* Simplify life with `~/.ssh/config`
+```bash
+Host redstar
+    User saccharide
+    HostName github.com
+	Port 22000
+    IdentityFile ~/.ssh/rsa.private
+```
