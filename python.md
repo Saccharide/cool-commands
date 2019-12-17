@@ -136,3 +136,20 @@ driver.find_element_by_id('email').send_keys('sample@email.com')
 driver.find_element_by_id('pass').send_keys('password')
 driver.find_element_by_id('login_button').click()
 ```
+
+* Read until an expected string
+```python
+def read_until(msg):
+    out = ''
+    while msg not in out:
+        out += socket.recv(1000)
+    return out
+```
+
+* hashpumpy lib 
+```python
+import hashpumpy
+for key_len in range(100):
+    new_hash, msg = hashpumpy.hashpump('HASH_DIGEST', 'DATA WE KNOW', 'DATA WE WANT TO APPEND', key_len)
+    print key_len, new_hash, msg
+```
