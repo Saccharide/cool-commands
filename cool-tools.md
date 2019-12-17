@@ -9,7 +9,7 @@ tesseract INPUT.png OUTPUT_FILE
 pdftoppm main.pdf outputname -png
 ```
 
-* Convert pngs to pdf
+* Convert PNG to PDF
 ```bash
 convert *.png output.pdf
 ```
@@ -126,3 +126,8 @@ adb logcat | grep -F "`adb shell ps | grep APP_NAME  | tr -s [:space:] ' ' | cut
 ^A C    Create a new screen
 ```
 
+# pdfunite
+* Combine or concatenate PDFs! cool!
+```bash
+pdfunite 1.pdf 2.pdf out.pdf
+```
