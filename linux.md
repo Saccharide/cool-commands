@@ -75,6 +75,11 @@ cp -R source dest
 du -sh 
 ```
 
+* Get the size of each folder in the current dicretory
+```bash
+du -ch --max-depth=1 .
+```
+
 * Get the size of free space with `df`, disk free, `-h` human readable in `1024` power, `-H` in `1000` power
 ```bash
 df -h 
