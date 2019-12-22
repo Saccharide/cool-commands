@@ -21,6 +21,54 @@ str.zfill(100)     # Padd the string with 0 in the front
 str.rjust(100,'0') # Same effect as above
 ```
 
+* Base64 Endoing and Decoding, very cool!
+```python2
+original = "This is cool!"
+encoded = base64.b64encode(original)
+print "Base 64 encoded = ", encoded
+data = base64.b64decode(encoded)
+print "Base 64 Decoded = ", data
+```
+
+* Print a string as binary
+```python2
+def str_to_bin(s):
+    o = ''
+    for i in s:
+        o += '{0:08b}'.format(ord(i)) # since a printable ASCII has a size of 127 bit
+    return o
+```
+
+* Print a string as HEX, first converts it to binary, then to hex
+```python2
+print hex(int(str_to_bin("This is cool!"),2))
+```
+```python2
+def str_to_hex(s):
+    o = ''
+    for i in s:
+        o += '{0:02x}'.format(ord(i))
+    return o
+print str_to_hex("This is cool!")
+```
+
+* Print out a HEX string as ASCII
+```python2
+hex_string.decode('hex')
+```
+```python3
+bytes.fromhex(hex_string).decode('ascii')
+```
+
+* Print binary string as string
+```python
+def bin_to_str(b):
+    l = [b[i:i+8] for i in xrange(0,len(b),8)]
+    o = ''
+    for i in l:
+        o+=chr(int(i,2))
+    return o
+```
 
 # File IO
 * Read in files from a directory recursively
@@ -58,20 +106,27 @@ with open ("csv_file.csv", "r") as csv_file:
         print(line)
 ```
 
-* Saving data as a pickle file
+* Saving data as a pickle file, cool but very insecure!
 ```python
 from sklearn.external import joblib
 output_file = "output.pkl"
 joblib.dump(clf_pipeline, output_file)
 ```
 
-* Loading model from a pickle file
-```python
+* Loading model from a pickle file, cool but very insecure!
+```python3
 import pickle
 with open(r"saved_model.pickle","rb") as input_file:
     loaded_model = pickle.load(input_file)
 ```
+* Cool pickle commands for sending pickled web request
+```python3
+import pickle
+import base64
 
+pack = lambda x : base64.b64encode(pickle.dumps(x))
+unpack = lambda x : pickle.loads(base64.b64decode(x))
+```
 # Numpy commands
 * remove the first row of a numpy array
 ```
@@ -90,9 +145,6 @@ imageio.imwrte(file_name, data[:, :])
 ```bash
 cat FILE | grep TEXT | python2 -c "import sys; print ''.join(sys.stdin.readlines())"
 ```
-
-
-
 
 # Selenium
 
@@ -152,4 +204,34 @@ import hashpumpy
 for key_len in range(100):
     new_hash, msg = hashpumpy.hashpump('HASH_DIGEST', 'DATA WE KNOW', 'DATA WE WANT TO APPEND', key_len)
     print key_len, new_hash, msg
+```
+
+* Crypto code
+```python
+def egcd(a, b): # can be used to test if numbers are co-primes
+    if a == 0:
+        return (b, 0, 1)
+    else:
+        g, y, x = egcd(b % a, a)
+        return (g, x - (b // a) * y, y)
+
+def modinv(a, m):
+    #returns multiplicative modular inverse of a in mod m
+    g, x, y = egcd(a, m)
+    if g != 1:
+        raise Exception('modular inverse does not exist')
+    else:
+        return x % m
+```
+
+* Encryption with Pad
+```python
+def enc_pad(m,p):
+    # encrypt message m with pad p, return binary string
+    o = ''
+    for i in range(len(m)):
+        o += str(int(m[i]) ^ int(pad[i]))
+    return o
+
+
 ```
