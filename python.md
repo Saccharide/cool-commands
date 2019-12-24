@@ -73,6 +73,13 @@ def bin_to_str(b):
     return o
 ```
 
+* Textwrap!
+```python
+from textwrap import wrap
+s = '1234567890'
+wrap(s, 2) # ['12', '34', '56', '78', '90']
+```
+
 # File IO
 * Read in files from a directory recursively
 ```python

@@ -73,7 +73,13 @@ info b
 gdb -x breaklist
 ```
 
-* Running anyfunction in gdb with `print`, need to declare the return type
+* Running any function in gdb with `print`, need to declare the return type
 ```
 p (char *) generate()
+```
+
+* View a string
+```
+x/1s (char*) life
+p (char*) life
 ```
