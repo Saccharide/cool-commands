@@ -31,7 +31,7 @@ print "Base 64 Decoded = ", data
 ```
 
 * Print a string as binary
-```python2
+```python3
 def str_to_bin(s):
     o = ''
     for i in s:
@@ -40,24 +40,27 @@ def str_to_bin(s):
 ```
 
 * Print a string as HEX, first converts it to binary, then to hex
-```python2
-print hex(int(str_to_bin("This is cool!"),2))
+```python3
+print(hex(int(str_to_bin("This is cool!"),2)))
 ```
-```python2
+
+```python3
 def str_to_hex(s):
     o = ''
     for i in s:
         o += '{0:02x}'.format(ord(i))
     return o
-print str_to_hex("This is cool!")
+print(str_to_hex("This is cool!"))
 ```
 
 * Print out a HEX string as ASCII
 ```python2
 hex_string.decode('hex')
 ```
+
 ```python3
 bytes.fromhex(hex_string).decode('ascii')
+bytes.fromhex(hex(m)[2:]).decode('ascii')
 ```
 
 * Print binary string as string
