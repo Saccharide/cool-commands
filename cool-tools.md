@@ -131,3 +131,9 @@ adb logcat | grep -F "`adb shell ps | grep APP_NAME  | tr -s [:space:] ' ' | cut
 ```bash
 pdfunite 1.pdf 2.pdf out.pdf
 ```
+
+# zsteg
+* User `zsteg` to extract Zlib Compression
+```bash
+zsteg a.png
+```

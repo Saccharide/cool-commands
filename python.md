@@ -73,11 +73,23 @@ def bin_to_str(b):
     return o
 ```
 
+* Regex! `findall` finds all occurances of regular expression in the given string, outputs a list.
+```python
+import re
+r = "<!-- failed after 2 rounds-->"
+num_rounds = re.findall("failed after (\d*?) rounds", r)[0]
+```
+
 * Textwrap!
 ```python
 from textwrap import wrap
 s = '1234567890'
 wrap(s, 2) # ['12', '34', '56', '78', '90']
+```
+
+* Sage Math!
+```python
+from sage.all_cmdline import *
 ```
 
 # File IO
