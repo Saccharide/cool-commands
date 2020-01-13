@@ -1,6 +1,6 @@
 # Rust
 
-* Rust Ternary Operation (Basically just a shortform if and else \u{1F600})
+* Rust Ternary Operation (Basically just a shortform if and else \u{1F602})
 ```rust
 if a > b {return a} else {return b};
 or
@@ -65,4 +65,10 @@ match enum{
 use std::env
 let args: Vec<String> = env::args().collect();
 let commnad = args[1].clone();
+```
+
+* Slicing an array
+```rust
+let a = [0,1,2,3,4,5];
+let slice = &a[1..4];
 ```
