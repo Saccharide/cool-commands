@@ -45,15 +45,6 @@ ESC + x + character
 
 
 
-# Bash scripting
-* `$1`, `$2`, `$3`... are the parameters
-* `"$@"` is an array of all parameters. Can expanded as "$1" "$2" "$3" ... when you print it
-* `"$*"` is the `IFS`, Internal Field Separator, expansion of all parameters into one variable with IFS in between. (pretty useful)
-* `$#` gives the number of parameters
-* `$0` gives the name of the shell script
-
-
-
 # String Manipulation
 * `awk` with print. prints first field.
 ```bash
@@ -164,6 +155,11 @@ find . -type f -name "*.mp3" -print0 | xargs -0 -I file cp file dir/
 ls | grep mp3 | xargs -I file cp file dir/
 ls | grep -avf "BLACKLIST" | xargs -I file COMMANDS file
 ```
+### Awesome `xargs` usage. AWESOMENESS WARNING!!! 
+* MAX EFFICENT GREP USAGE HERE! Use `ls` to generate a list of directory which is then passed into `xargs` , `-P 0` means maximum concurrent threads, and then suppresses error message to `/dev/null`
+```bash
+ls | xargs -P 0 -I folder grep -ri flag folder 2> /dev/null | grep flag{.*}
+```
 
 * Print out the content of a file at LINE number; `-n`: quiet, `p`: print
 ```bash
@@ -191,18 +187,11 @@ head -n X FILE
 history | grep clone | tail -n 2 | head -n 1
 ```
 
-# Shell code
-```
+# Shell code in python
+```python
 sh=b"\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\x53\x89\xe1\xb0\x0b\xcd\x80"
 
 sh=b"\x31\xc0\x48\xbb\xd1\x9d\x96\x91\xd0\x8c\x97\xff\x48\xf7\xdb\x53\x54\x5f\x99\x52\x57\x54\x5e\xb0\x3b\x0f\x05" (27 bytes)
 ```
 
-# For loop in bash
-```
-for value in {1..5}
-do
-    echo $value
-done
-echo Will print 5 numbers starting from 1 to 5
-```
+
