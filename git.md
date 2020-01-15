@@ -103,3 +103,8 @@ git diff --cached FILE
 ```bash
 git diff master^^ FILE
 ```
+
+* Unstage a commit
+```bash
+git reset --soft HEAD~1
+```

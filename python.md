@@ -254,6 +254,9 @@ def enc_pad(m,p):
     for i in range(len(m)):
         o += str(int(m[i]) ^ int(pad[i]))
     return o
+```
 
-
+* To silent connection infomation in pwntool connection, we can run the file with `SILENT=1`
+```bash
+python foo.py SILENT=1
 ```
