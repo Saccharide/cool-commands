@@ -260,3 +260,25 @@ def enc_pad(m,p):
 ```bash
 python foo.py SILENT=1
 ```
+
+* To solve the problem of `[Errno 24] Too many open files` with `ulimit`. `ulimit` get and set user limit of open files, `-n` to `50000` instead of default value of `1024`.
+```bash
+ulimit -n 50000
+```
+
+### Multithreading
+* Using `threading` module
+```python
+import threading
+def runme(start,dummy):
+    print "running: ", start
+
+try:
+    t = threading.Thread(target=runme, args=(x,x))
+    t.start()
+
+except:
+    print "Unable to spawn threads"
+```
+
+
