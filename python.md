@@ -62,6 +62,16 @@ hex_string.decode('hex')
 bytes.fromhex(hex_string).decode('ascii')
 bytes.fromhex(hex(m)[2:]).decode('ascii')
 ```
+* Converting from bytes to int
+```python3
+key = int.from_bytes(urandom(6),'big')
+```
+
+* Converting from int to bytes, use `bit_length` if not base 10 or 2
+```python3
+print("Key = ", key.to_bytes((key.bit_length() + 7) // 8, 'big'))
+```
+
 
 * Print binary string as string
 ```python
@@ -280,5 +290,6 @@ try:
 except:
     print "Unable to spawn threads"
 ```
+
 
 
