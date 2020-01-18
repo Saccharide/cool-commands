@@ -39,7 +39,7 @@ K
 * `>G` Indents until end of file
 * `>}` Indents until next paragraph
 * `>iB` Indents contents of current {  } block, `i`: inner, `B`: Block
-
+* `*` is used to search word under cursor
 
 * ANOTHER COOL WAY TO SAVE AND EXIT VIM equivalent to `:x`
 ```
