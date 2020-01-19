@@ -137,3 +137,9 @@ pdfunite 1.pdf 2.pdf out.pdf
 ```bash
 zsteg a.png
 ```
+
+# dirsearch
+* Command line dirbuster!!! Awesome
+```bash
+python3 dirsearch -u URL -E
+```
