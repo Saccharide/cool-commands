@@ -143,3 +143,17 @@ zsteg a.png
 ```bash
 python3 dirsearch -u URL -E
 ```
+
+# httpie
+* I did not think that there exist such tool that make http request looks so simple and pretty!
+```bash
+http GET URL // Default to GET, can use http URL
+http POST URL hello=world // or http URL hello=world
+```
+
+# jq
+* A command line JSON processor! can combine with `http`
+```bash
+jq .dependencies package.json
+http URL | jq .dependencies
+```
