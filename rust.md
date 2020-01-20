@@ -86,4 +86,8 @@ let y = res.collect::<Vec<Result<i32,DivisionError>>();
 (1..num+1).fold(1, |acc, x| acc + x)
 ```
 
-
+* Get the result from a `Result` using `unwrap`
+```rust
+let a = "20";
+println!("{:?}", a.parse::<i32>().unwrap());
+```
