@@ -91,3 +91,10 @@ let y = res.collect::<Vec<Result<i32,DivisionError>>();
 let a = "20";
 println!("{:?}", a.parse::<i32>().unwrap());
 ```
+
+* Iterate over a split as a vector!
+```rust
+let a = "a,b";
+let split : Vec<&str> = a.split(",").collect();
+println!("{:?}", split[0].to_string());
+```
