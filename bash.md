@@ -6,15 +6,28 @@ do
 done
 echo Will print 5 numbers starting from 1 to 5
 ```
-## `findir`, source it to `~/bin`
+## `findf`
+* Find a file in current directory easily, no need to remember other flags, source it to `~/bin`
 ```bash
 #!/bin/bash
-dir_name="$*"
-if [[ -z $dir_name ]]; then
-    echo "dir name cannot be empty."
+name="$*"
+if [[ -z $name ]]; then
+    echo "name cannot be empty."
     exit 1
 fi
-find $(pwd) -iname "*$dir_name*"
+find $(pwd) -iname "*$name*"
+```
+
+## `gen`
+* Generate a template for writeups
+```bash
+function gen(){
+    if [[ -z $1 ]]; then
+        echo "writeup file name cannot be empty."
+        exit 1
+    fi
+    echo -e "# $1\n## Author: **saccharide**\n\nTask\n\`\`\`\n\n\`\`\`\n\n## Approach\n\n## Flag\n\`\`" > "$1.md"
+}
 ```
 
 ## `$` in bash
