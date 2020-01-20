@@ -72,3 +72,18 @@ let commnad = args[1].clone();
 let a = [0,1,2,3,4,5];
 let slice = &a[1..4];
 ```
+
+* Iterate a vector and perform a function to each element
+```rust
+let nums = vec![16, 9, 4, 1];
+let res  = nums.into_iter().map(|x| sqrt(x));
+let x = res.collect::<Result<Vec<i32>,DivisionError>>();
+let y = res.collect::<Vec<Result<i32,DivisionError>>();
+```
+
+* Iterator function `fold`, takes two parameters, first is initial value, second is a closure with two arguments: accumulator variable and next element in vector
+```rust
+(1..num+1).fold(1, |acc, x| acc + x)
+```
+
+
