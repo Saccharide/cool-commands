@@ -157,3 +157,9 @@ http POST URL hello=world // or http URL hello=world
 jq .dependencies package.json
 http URL | jq .dependencies
 ```
+
+# script
+* Awesome tool for recording terminal session!!! Opens a new session for recording, need to exit to save. File saved as `typescript`
+```bash
+script
+```
