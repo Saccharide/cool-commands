@@ -161,6 +161,7 @@ kill %1
 * Unzip a tarball
 ```bash
 tar xf FILE.tar.xz
+tar xfz FILE.tar.gz
 ```
 
 * Change directory to the output of a command
