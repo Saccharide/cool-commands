@@ -14,6 +14,13 @@ x = {1: 2, 3: 4, 4: 3, 2: 1, 0: 0}
 sorted_x = sorted(x.items(), key=lambda kv: kv[1])
 ```
 
+* Parse python command line arguments
+```python2
+import sys
+print "Num of args: ", len(sys.argv)
+print "Args List: ", str(sys.argv)
+```
+
 * Formating print messages
 ```python2
 str = "random string"
