@@ -299,4 +299,11 @@ except:
 ```
 
 
+### Iterables vs. Generator
+* Lists are iterable and have values stored at memory
+* Generators are also iterable. Although they don't have vaule stored in memory, they will produce vaule one at a time when requested, thus saving space and higher performance.
+
+* `yield` is a generator function, it has the same feature as `return`, however, the function will not be run until the vaule of that generator is being accessed.
+
+
 
