@@ -225,6 +225,11 @@ dpkg --print-architecture
 lsb_release -a
 ```
 
+* Change computer name / hostname
+```bash
+sudo hostname NEW_HOST_NAME
+```
+
 * Getting the current directory name in a cool way, it can be VERY USEFUL!
 ```bash
 basename $PWD
