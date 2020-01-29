@@ -155,7 +155,7 @@ find . -type f -name "*.mp3" -print0 | xargs -0 -I file cp file dir/
 ls | grep mp3 | xargs -I file cp file dir/
 ls | grep -avf "BLACKLIST" | xargs -I file COMMANDS file
 ```
-### Awesome `xargs` usage. AWESOMENESS WARNING!!! 
+# Awesome `xargs` usage. AWESOMENESS WARNING!!! 
 * MAX EFFICENT GREP USAGE HERE! Use `ls` to generate a list of directory which is then passed into `xargs` , `-P 0` means maximum concurrent threads, and then suppresses error message to `/dev/null`
 ```bash
 ls | xargs -P 0 -I folder grep -ri flag folder 2> /dev/null | grep flag{.*}

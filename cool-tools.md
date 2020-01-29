@@ -163,3 +163,9 @@ http URL | jq .dependencies
 ```bash
 script
 ```
+
+# Maximum efficiency grep! 
+* MAX EFFICENT GREP USAGE HERE! Use `ls` to generate a list of directory which is then passed into `xargs` , `-P 0` means maximum concurrent threads, and then suppresses error message to `/dev/null`
+```bash
+ls | xargs -P 0 -I folder grep -ri flag folder 2> /dev/null | grep flag{.*}
+```
