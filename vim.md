@@ -1,5 +1,4 @@
-# TABS!
-* Open file in a new tab!!!
+# TABS!  * Open file in a new tab!!!
 ```
 :tabnew [FILENAME]
 ```
@@ -40,7 +39,7 @@ K
 * `>}` Indents until next paragraph
 * `>iB` Indents contents of current {  } block, `i`: inner, `B`: Block
 * `*` is used to search word under cursor
-
+* `/\<WORD\>` to search for a word. `\<` indicate the beginning of a word.  `\>` indicate the end of a word.
 * ANOTHER COOL WAY TO SAVE AND EXIT VIM equivalent to `:x`
 ```
 ZZ
