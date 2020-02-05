@@ -12,7 +12,7 @@ target: prerequiste
 <TAB> recipe
 ```
 
-* Supressing echoing the recipe, we add `@` to it
+* Suppressing echoing the recipe, we add `@` to it
 ```
 hello:
     @echo "Hello World"
@@ -29,4 +29,8 @@ SHELL := /bin/bash
 
 * `:=` operator in makefile means simply expanded variables
 
-
+# Automatic variables in `Make`
+* [reference](https://www.gnu.org/software/make/manual/html_node/Automatic-Variables.html#Automatic-Variables)
+* `$@` is the file name of the target of the rule
+* `$<` is the name of the first pre-requisite 
+* `$^` is the name of all the pre-requisites
