@@ -108,3 +108,9 @@ git diff master^^ FILE
 ```bash
 git reset --soft HEAD~1
 ```
+
+* Use `reflog` to look at previous commit not shown by `git log`
+```bash
+git reflog
+git checkout 64875728
+```
