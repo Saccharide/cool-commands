@@ -1,4 +1,4 @@
-# Bash Navigation
+# Terminal Navigation
 
 * `Ctrl A`: Move to the beginning of the command
 * `Ctrl E`: Move to the end of the command
@@ -38,6 +38,10 @@ ESC + d
 ESC + x + character
 ```
 
+* List all the directories in current path
+```bash
+ls -d */
+```
 ## Reverse Search
 * `Ctrl R`: Start reverse search
 * `Ctrl R`: Once started, will bring you to the next recent match
