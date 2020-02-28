@@ -1,23 +1,3 @@
-# TABS!  * Open file in a new tab!!!
-```
-:tabnew [FILENAME]
-```
-
-* Move split current split window into its own tab!
-```
-Ctrl + w, T
-```
-
-* Go to next tab
-```
-gt / gT
-```
-
-* Go to any tab
-```
-#gt
-```
-
 # Inside `NORMAL` mode
 
 * Capitalize the whole word `a`: around, `i`: inner, `s`: sentence, `p`: paragraph
@@ -28,6 +8,10 @@ gUaw
 * Merge next line with current line. (VERY USEFUL!)
 ```
 J
+```
+* Edit a new file within the current window
+```
+:e FILE2
 ```
 
 * After selecting a word, a possible command, you can use `SHIFT + k` to look at the manual for it.
@@ -40,7 +24,9 @@ K
 * `>iB` Indents contents of current {  } block, `i`: inner, `B`: Block
 * `*` is used to search word under cursor
 * `/\<WORD\>` to search for a word. `\<` indicate the beginning of a word.  `\>` indicate the end of a word.
-* ANOTHER COOL WAY TO SAVE AND EXIT VIM equivalent to `:x`
+
+
+### ANOTHER COOL WAY TO SAVE AND EXIT VIM equivalent to `:x`
 ```
 ZZ
 ```
@@ -85,6 +71,12 @@ Ctrl + w + <  or Ctrl + w + >
 * String replace words with ending
 ```
 :%s/string\>/replace_string/g
+```
+
+* SUPER COOL way to search & replace words! Use `visual` mode to select the lines where you want to search, and type `:s`
+```
+v
+:s
 ```
 
 # Register manipulations
@@ -287,4 +279,25 @@ Examples:
            a          c
            a          d
            a          e
+# [-] DEPRECATED
+## TABS!  * Open file in a new tab!!! [check vimrc]
+```
+:tabnew [FILENAME]
+```
+
+* Move split current split window into its own tab!
+```
+Ctrl + w, T
+```
+
+* Go to next tab
+```
+gt / gT
+```
+
+* Go to any tab
+```
+#gt
+```
+
 

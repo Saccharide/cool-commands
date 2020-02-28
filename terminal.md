@@ -48,6 +48,9 @@ ls -d */
 * `Ctrl G`: Quits reverse search, and preserve the command already typed
 
 
+## Bashrc note
+* `\[\e]0;\W\a\]` is what sets the terminal title, prepend this to `PS1`
+
 
 # String Manipulation
 * `awk` with print. prints first field.
