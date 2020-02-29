@@ -95,6 +95,11 @@ ls -halt
 cwd=$(pwd)
 ```
 
+* `zip` a directory
+```bash
+zip -r FILE.zip DIR
+```
+
 * Run a process in the background using `&` (`-c` : create a new archive; `-x` : extract; `-z` : gunzip; `-f` : Specify a file)
 ```bash
 tar -cxzf file.tar.gz . &
