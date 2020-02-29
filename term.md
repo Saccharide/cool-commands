@@ -135,6 +135,10 @@ grep -rnw . -e "STRING"
 ```bash
 grep -r --include '*.py' STRING .
 ```
+* `grep`: `-I` ignore binary files when grepping.
+```bash
+grep -riI STRING .
+```
 
 * `grep` with `-o` only output the match parts, `-h` only outputs the result without file name, `-f` indicates the fileanme of the list of words to grep for
 
