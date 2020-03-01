@@ -121,7 +121,7 @@ adb logcat | grep -F "`adb shell ps | grep APP_NAME  | tr -s [:space:] ' ' | cut
 ^A |    vertical split
 ^A tab  switch screen
 ^A d    detach
-^A k    kill
+^A k    kill the current screen session
 ^A Q    only that screen
 ^A C    Create a new screen
 ```
