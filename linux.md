@@ -210,6 +210,15 @@ do
 cat $file
 done
 ```
+## Misc
+* Get number of second since `epoch`
+```bash
+date +%s 
+```
+* Time a command
+```bash
+time bash
+```
 
 ## Redirection
 `ls DIR > dirlist`
