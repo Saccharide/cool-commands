@@ -42,6 +42,12 @@ ESC + x + character
 ```bash
 ls -d */
 ```
+
+* Change default text editor in terminal
+```bash
+sudo update-alternatives --config editor
+```
+
 ## Reverse Search
 * `Ctrl R`: Start reverse search
 * `Ctrl R`: Once started, will bring you to the next recent match
