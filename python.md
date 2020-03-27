@@ -28,7 +28,7 @@ str.zfill(100)     # Padd the string with 0 in the front
 str.rjust(100,'0') # Same effect as above
 ```
 
-* Base64 Endoing and Decoding, very cool!
+## Base64 Endoing and Decoding, very cool!
 ```python2
 original = "This is cool!"
 encoded = base64.b64encode(original)
@@ -48,10 +48,12 @@ def str_to_bin(s):
 
 * Print a string as HEX, first converts it to binary, then to hex
 ```python3
+python3
 print(hex(int(str_to_bin("This is cool!"),2)))
 ```
 
 ```python3
+python3
 def str_to_hex(s):
     o = ''
     for i in s:
@@ -60,15 +62,19 @@ def str_to_hex(s):
 print(str_to_hex("This is cool!"))
 ```
 
-* Print out a HEX string as ASCII
+## Native hex string manipulation
+* Decode hexstring to string
 ```python2
+python2
 hex_string.decode('hex')
 ```
 
 ```python3
+python3
 bytes.fromhex(hex_string).decode('ascii')
 bytes.fromhex(hex(m)[2:]).decode('ascii')
 ```
+
 * Converting from bytes to int
 ```python3
 key = int.from_bytes(urandom(6),'big')
