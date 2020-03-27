@@ -148,6 +148,10 @@ grep -riI STRING .
 
 * `grep` with `-o` only output the match parts, `-h` only outputs the result without file name, `-f` indicates the fileanme of the list of words to grep for
 
+* `egrep` grep with regular expression, same as `grep -E`
+```bash
+echo "this is cool.mp3" | egrep -o ".*mp3"
+```
 
 * `find` all mp3 files in current directory and create a playlist. `\;` denotes the end of command
 ```bash
@@ -164,7 +168,7 @@ find `pwd` -type f -name "*.txt"
 grep -avf "FILE.txt"
 ```
 
-* `xargs` usage, useful pipes, but require the flag `-print0`, `-I`: replaces occurrence of replace-str in the initial arguments with names read from stdin
+* `xargs` usage, useful pipes, but require the flag `-print0`, `-I`: replaces occurrence of replace-str in the initial arguments with names read from stdin. Think of it like for each
 ```bash
 find . -type f -name "*.mp3" -print0 | xargs -0 -I file cp file dir/
 ```
