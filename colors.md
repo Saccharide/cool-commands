@@ -1,10 +1,20 @@
 # Hex Colors:
-* Blue:
+* Blue
 ```
 #00CCFF
 ```
 
-* Grey:
+* Better Blue
+```
+#3399FF
+```
+
+* Purple
+```
+#8A2BE2
+```
+
+* Grey
 ```
 #141414
 ```
