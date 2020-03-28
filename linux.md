@@ -70,6 +70,11 @@ ls | while read f; do while read -r line; do echo $line; done < $f ; done
 cp -R source dest
 ```
 
+* Duplicate a content of a file
+```bash
+cat FILE | tee -a FILE > /dev/null
+```
+
 * Get the size of a directory with `du`, disk usage, `-s` (summary) `-h` human readable
 ```bash
 du -sh 
