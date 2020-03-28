@@ -168,6 +168,13 @@ jobs
 kill %1
 ```
 
+* Check if a state of a process is paused or not, if it is then continue
+```bash
+if [ "$(ps -o state= -p $PID)" = T ]; then
+	kill -CONT $PID
+fi
+```
+
 * Unzip a tarball
 ```bash
 tar xf FILE.tar.xz
