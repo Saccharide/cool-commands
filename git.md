@@ -73,12 +73,23 @@ git stash show -p | git apply -R
 * Merge a change
 ```bash
 git mergetool
-
 ```
+* Fetch another remote branch not in local
+```bash
+git fecth
+git checkout BRANCH
+```
+
+* List all of the remote branch for you
+```bash
+git branch -v -a
+```
+
 * If just wanted to use ours changes
 ```bash
 git checkout --ours filename.c
 ```
+
 * If just wanted to use theirs changes
 ```bash
 git checkout --theirs filename.c
