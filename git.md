@@ -74,7 +74,18 @@ git stash show -p | git apply -R
 ```bash
 git mergetool
 ```
-* Fetch another remote branch not in local
+
+* Find out about what new branches in remote
+```bash
+git fetch
+```
+
+* Get a remote branch and track it locally
+```bash
+git checkout -t origin/BRANCH
+```
+
+* Fetch another remote branch
 ```bash
 git fecth
 git checkout BRANCH
