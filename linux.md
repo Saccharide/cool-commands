@@ -351,5 +351,8 @@ unset REMOTE
 ```bash
 sudo -s
 ```
-
+* Go into root shell with `sudo`
+```bash
+sudo -i
+```
 
