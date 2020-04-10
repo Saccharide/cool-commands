@@ -125,3 +125,26 @@ git reset --soft HEAD~1
 git reflog
 git checkout 64875728
 ```
+
+# Branch and merge workflow
+* Creating a branch and update remote, `git checkout -b` is shortcut for `git branch BRANCH` and then `git checkout BRANCH`
+```bash
+git checkout -b NEW_BRANCH
+git push origin NEW_BRANCH
+```
+* Fetching changes from remote
+```bash
+git fetch origin
+```
+
+* Merging BRANCH with MASTER
+```bash
+git checkout master
+git merge BRANCH
+```
+
+* Deleteing a branch
+```bash
+git branch -d BRANCH
+git push origin --delete BRANCH
+```
