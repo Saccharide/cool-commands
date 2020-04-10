@@ -16,8 +16,9 @@
 \tikzexternalize[prefix=tikz/]
 
 ```
-* Inserting a figure
+* Inserting a figure or picture
 ```
+\usepackage{graphicx}
 \begin{figure}[h]
     \centering
     \includegraphics[width=2.8in]{figs/path} 
@@ -27,6 +28,7 @@
 ```
 * Inserting a figure that spans two columns
 ```
+\usepackage{graphicx}
 \begin{figure*}[t]
     \centering
     \includegraphics[width=\textwidth]{figs/path} 
