@@ -137,17 +137,17 @@ result = glob.glob('*.{}'.format(extension))
 
 * Write to a CSV, no need to import os
 ```python
-with open ("csv_file.csv", "w") as csv_file:
+with open ("file.csv", "w") as f:
     col_1    = "col 1"
     col_2    = "col_2"
     combined = col_1 + "," + '\"' + col_2 + '\"\n'
-    csv_file.write(combined)
+    f.write(combined)
 ```
 
 * Read a file line by line
 ```python
-with open ("csv_file.csv", "r") as csv_file:
-    for line in csv_file.readlines():
+with open ("FILE", "r") as f:
+    for line in f.readlines():
         print(line)
 ```
 
