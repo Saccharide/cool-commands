@@ -60,6 +60,11 @@ shuf FILE -o FILE
 sed -i '$LINE_NUMi \n' foo.txt 
 ```
 
+* Remove line with fewer than `N` of characters in place with sed
+```bash
+sed -r '/^.{,N}$/d' FILE.txt -i.bak
+```
+
 * Read all files in a directory line by line (USE THE NEXT ONE if needed)
 ```bash
 ls | while read f; do while read -r line; do echo $line; done < $f ; done
