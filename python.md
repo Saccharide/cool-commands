@@ -1,8 +1,28 @@
 # Plain python commands
 * Iterate through a dictionary
 ```python
-for key, value in d.items()
+python2 or python3
+for key, value in d.items():
 ```
+* Get list of keys of a dictionary
+```python
+python2
+a = {"a":0,"b":1} 
+list_of_keys = a.keys()
+```
+```python
+python3
+a = {"a":0,"b":1} 
+*list_of_keys, = a
+```
+
+* Another way to interate through dict in python3
+```python
+python3
+for key in a:
+    print(key)
+```
+
 * Sort a dictionary base on its value
 ```python2
 import operator
