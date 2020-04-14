@@ -24,32 +24,37 @@ for key in a:
 ```
 
 * Sort a dictionary base on its value
-```python2
+```python
+python2
 import operator
 x = {1:2, 3:4, 4:3}
 sorted_x = sorted(x.items(), key=operator.itemgetter(1))
 ```
 ```python3
+python3
 x = {1: 2, 3: 4, 4: 3, 2: 1, 0: 0}
 sorted_x = sorted(x.items(), key=lambda kv: kv[1])
 ```
 
 * Parse python command line arguments
-```python2
+```python
+python2
 import sys
 print "Num of args: ", len(sys.argv)
 print "Args List: ", str(sys.argv)
 ```
 
 * Formating print messages
-```python2
+```python
+python2
 str = "random string"
 str.zfill(100)     # Padd the string with 0 in the front
 str.rjust(100,'0') # Same effect as above
 ```
 
 ## Base64 Endoing and Decoding, very cool!
-```python2
+```python
+python2
 original = "This is cool!"
 encoded = base64.b64encode(original)
 print "Base 64 encoded = ", encoded
