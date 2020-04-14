@@ -227,9 +227,15 @@ done
 ```bash
 date +%s 
 ```
+
 * Time a command
 ```bash
 time bash
+```
+
+* Date format string to display
+```bash
+%a %m/%d %R:%S
 ```
 
 ## Redirection
