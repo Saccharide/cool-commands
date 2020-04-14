@@ -5,9 +5,14 @@ git config --global user.email $EMAIL
 git config --global core.editor vim
 ```
 
-* Modify the current commit after committed (i.e., remove a file being uploaded or add a file or change the commit message)
+* Modify the current commit message after a commit 
 ```bash
 git commit --amend
+```
+
+* Remove files from a commit. Simple and elegant, remove all files after staging them to be pushed
+```bash
+git reset HEAD
 ```
 
 * Recursive update submodules
