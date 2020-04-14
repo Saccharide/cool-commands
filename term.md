@@ -125,6 +125,10 @@ sed 'p;p;p;' FILE | tee -a FILE; shuf FILE -o FILE
 awk '1;1;1;1;' FILE | tee FILE; shuf FILE -o FILE
 ```
 
+* Split a file with each file has the same number of lines
+```bash
+split -l 200 FILE
+```
 
 # Search Manipulation
 * `grep` multiple words without storing them to a file 
