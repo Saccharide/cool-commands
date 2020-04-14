@@ -173,6 +173,11 @@ jobs
 kill %1
 ```
 
+* kill all running instance of a program, when you have created many forks
+```bash
+killall python
+```
+
 * Check if a state of a process is paused or not, if it is then continue
 ```bash
 if [ "$(ps -o state= -p $PID)" = T ]; then

@@ -38,9 +38,13 @@ ESC + d
 ESC + x + character
 ```
 
-* List all the directories in current path
+* List all the directories in current directory
 ```bash
 ls -d */
+```
+* List all the files in current directory
+```bash
+ls -p | grep -v / 
 ```
 
 * Change default text editor in terminal
