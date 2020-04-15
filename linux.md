@@ -65,6 +65,12 @@ sed -i '$LINE_NUMi \n' foo.txt
 sed -r '/^.{,N}$/d' FILE.txt -i.bak
 ```
 
+* Remove lines with non-ascii characters
+```bash
+perl -nle 'print if m{^[[:ascii:]]+$}' FILE > NEW_FILE
+mv NEW_FILE FILE
+```
+
 * Read all files in a directory line by line (USE THE NEXT ONE if needed)
 ```bash
 ls | while read f; do while read -r line; do echo $line; done < $f ; done
