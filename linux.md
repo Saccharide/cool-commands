@@ -71,6 +71,11 @@ perl -nle 'print if m{^[[:ascii:]]+$}' FILE > NEW_FILE
 mv NEW_FILE FILE
 ```
 
+* Getting all the line with only alphanumeric characters
+```bash
+perl -nle 'print if m{^[[:alnum:]]+$}' FILE > NEW_FILE
+```
+
 * Read all files in a directory line by line (USE THE NEXT ONE if needed)
 ```bash
 ls | while read f; do while read -r line; do echo $line; done < $f ; done
