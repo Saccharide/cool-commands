@@ -41,10 +41,15 @@ ESC + x + character
 * List all the directories in current directory
 ```bash
 ls -d */
+ls -p | grep /
 ```
 * List all the files in current directory
 ```bash
 ls -p | grep -v / 
+```
+* Get the top five largest file in current directory
+```bash
+ls -S | grep -E "$(ls -S | head -n 5)"
 ```
 
 * Change default text editor in terminal
