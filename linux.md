@@ -55,6 +55,12 @@ shuf FILE -o FILE
 7z x -scs903 ZIPFILE.zip
 ```
 
+* Install Chinese font
+```bash
+sudo apt install fonts-wqy-microhei
+sudo apt install fonts-wqy-zenhei
+```
+
 * Insert a newline at a specific line with sed `-i` `[--in-place]`
 ```bash
 sed -i '$LINE_NUMi \n' foo.txt 
