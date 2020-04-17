@@ -128,6 +128,16 @@ r = "<!-- failed after 2 rounds-->"
 num_rounds = re.findall("failed after (\d*?) rounds", r)[0]
 ```
 
+* Converting Unix Timestamp to local time
+```python
+import time
+def unix_to_ascii (unix_timestamp):
+    utc_time = time.gmtime(unix_timestamp)
+    local_time = time.localtime(unix_timestamp)
+    print(time.strftime("%Y-%m-%d %H:%M:%S", local_time)) 
+    print(time.strftime("%Y-%m-%d %H:%M:%S+00:00 (UTC)", utc_time))  
+```
+
 * Textwrap!
 ```python
 from textwrap import wrap
@@ -216,6 +226,75 @@ imageio.imwrte(file_name, data[:, :])
 cat FILE | grep TEXT | python2 -c "import sys; print ''.join(sys.stdin.readlines())"
 ```
 
+# Crypto Code
+* hashpumpy lib 
+```python
+import hashpumpy
+for key_len in range(100):
+    new_hash, msg = hashpumpy.hashpump('HASH_DIGEST', 'DATA WE KNOW', 'DATA WE WANT TO APPEND', key_len)
+    print key_len, new_hash, msg
+```
+
+```python
+def egcd(a, b): # can be used to test if numbers are co-primes
+    if a == 0:
+        return (b, 0, 1)
+    else:
+        g, y, x = egcd(b % a, a)
+        return (g, x - (b // a) * y, y)
+
+def modinv(a, m):
+    #returns multiplicative modular inverse of a in mod m
+    g, x, y = egcd(a, m)
+    if g != 1:
+        raise Exception('modular inverse does not exist')
+    else:
+        return x % m
+```
+
+* Encryption with Pad
+```python
+def enc_pad(m,p):
+    # encrypt message m with pad p, return binary string
+    o = ''
+    for i in range(len(m)):
+        o += str(int(m[i]) ^ int(pad[i]))
+    return o
+```
+
+* To silent connection infomation in pwntool connection, we can run the file with `SILENT=1`
+```bash
+python foo.py SILENT=1
+```
+
+* To solve the problem of `[Errno 24] Too many open files` with `ulimit`. `ulimit` get and set user limit of open files, `-n` to `50000` instead of default value of `1024`.
+```bash
+ulimit -n 50000
+```
+
+# Multithreading
+* Using `threading` module
+```python
+import threading
+def runme(start,dummy):
+    print "running: ", start
+
+try:
+    t = threading.Thread(target=runme, args=(x,x))
+    t.start()
+
+except:
+    print "Unable to spawn threads"
+```
+
+
+# Iterables vs. Generator
+* Lists are iterable and have values stored at memory
+* Generators are also iterable. Although they don't have vaule stored in memory, they will produce vaule one at a time when requested, thus saving space and higher performance.
+
+* `yield` is a generator function, it has the same feature as `return`, however, the function will not be run until the vaule of that generator is being accessed.
+
+
 # Selenium
 
 * Simulate keys user is typing.
@@ -267,74 +346,5 @@ def read_until(msg):
         out += socket.recv(1000)
     return out
 ```
-
-* hashpumpy lib 
-```python
-import hashpumpy
-for key_len in range(100):
-    new_hash, msg = hashpumpy.hashpump('HASH_DIGEST', 'DATA WE KNOW', 'DATA WE WANT TO APPEND', key_len)
-    print key_len, new_hash, msg
-```
-
-* Crypto code
-```python
-def egcd(a, b): # can be used to test if numbers are co-primes
-    if a == 0:
-        return (b, 0, 1)
-    else:
-        g, y, x = egcd(b % a, a)
-        return (g, x - (b // a) * y, y)
-
-def modinv(a, m):
-    #returns multiplicative modular inverse of a in mod m
-    g, x, y = egcd(a, m)
-    if g != 1:
-        raise Exception('modular inverse does not exist')
-    else:
-        return x % m
-```
-
-* Encryption with Pad
-```python
-def enc_pad(m,p):
-    # encrypt message m with pad p, return binary string
-    o = ''
-    for i in range(len(m)):
-        o += str(int(m[i]) ^ int(pad[i]))
-    return o
-```
-
-* To silent connection infomation in pwntool connection, we can run the file with `SILENT=1`
-```bash
-python foo.py SILENT=1
-```
-
-* To solve the problem of `[Errno 24] Too many open files` with `ulimit`. `ulimit` get and set user limit of open files, `-n` to `50000` instead of default value of `1024`.
-```bash
-ulimit -n 50000
-```
-
-### Multithreading
-* Using `threading` module
-```python
-import threading
-def runme(start,dummy):
-    print "running: ", start
-
-try:
-    t = threading.Thread(target=runme, args=(x,x))
-    t.start()
-
-except:
-    print "Unable to spawn threads"
-```
-
-
-### Iterables vs. Generator
-* Lists are iterable and have values stored at memory
-* Generators are also iterable. Although they don't have vaule stored in memory, they will produce vaule one at a time when requested, thus saving space and higher performance.
-
-* `yield` is a generator function, it has the same feature as `return`, however, the function will not be run until the vaule of that generator is being accessed.
-
 
 
