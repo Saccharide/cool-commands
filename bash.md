@@ -6,6 +6,13 @@ do
 done
 echo Will print 5 numbers starting from 1 to 5
 ```
+
+* Remove last `N` characters form a string
+```bash
+new_str=${str%?} # N = 1
+new_str=${str::-N}
+```
+
 ## `findf`
 * Find a file in current directory easily, no need to remember other flags, source it to `~/bin`
 ```bash

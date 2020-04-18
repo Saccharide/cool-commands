@@ -52,6 +52,11 @@ ls -p | grep -v /
 ls -S | grep -E "$(ls -S | head -n 5)"
 ```
 
+* Sort lines in a file based on number of characters
+```bash
+cat FILE | awk '{ print length, $0 }' | sort -nsr | cut -d" " -f2- > NEWFILE
+```
+
 * Change default text editor in terminal
 ```bash
 sudo update-alternatives --config editor
