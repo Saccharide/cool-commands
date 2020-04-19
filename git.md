@@ -101,6 +101,11 @@ git checkout BRANCH
 git branch -v -a
 ```
 
+* Added a branch to remote
+```bash
+git push origin BRANCH
+```
+
 * If just wanted to use ours changes
 ```bash
 git checkout --ours filename.c
