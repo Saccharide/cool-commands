@@ -104,6 +104,10 @@ tr [a-z] [A-Z] < lowercase.txt > uppercase.txt
 cat file.txt | tr -d ' '
 cat file.txt | tr -s '.'
 ```
+* Another use case for `tr`, remove CRLF ending from a file
+```bash
+tr -d '\015' < FILE > UNIX_FILE
+```
 
 * `paste` merges lines of files
 
