@@ -163,6 +163,18 @@ git fetch origin
 git checkout master
 git merge BRANCH
 ```
+* Completely replace one branch with another, ex: replacing master branch with a feature branch, `-s` sets merge strategy, short for `--strategy=<strategy>` , `ours` strategy favors the current branch, and ignoring all changes from all other branches
+```bash
+git checkout FEATURE
+git merge -s ours master
+git checkout master
+git merge FEATURE
+```
+* Same as function as before? (need to test this out later)
+```bash
+git checkout FEATURE
+git push -f origin master
+```
 
 * Deleteing a branch
 ```bash
