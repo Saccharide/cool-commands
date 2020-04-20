@@ -1,4 +1,10 @@
 # Plain python commands
+* Importing another file, include this to the source file, basically checks if the file is being run as the main file or not, if not, then run nothing, but still have the function available for other files to use. (very useful)
+```python
+if __name__ == '__main__':
+    main()
+```
+
 * Iterate through a dictionary
 ```python
 python2 or python3
