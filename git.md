@@ -15,6 +15,18 @@ git commit --amend
 git reset HEAD
 ```
 
+* Tagging
+```bash
+git tag TAG_NAME
+git push --tags
+```
+
+* Force updating a tag, aka, retag another commit
+```bash
+git tag -f TAG_NAME
+git push -f --tags
+```
+
 * Recursive update submodules
 ```bash
 git submodule update --init --recursive
