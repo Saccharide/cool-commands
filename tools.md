@@ -67,6 +67,12 @@ figlet -f script/shadow/slant
 bzcat file.bz2
 ```
 
+# zipdetails
+* `zipdetails` allows you to see the deatils of a zip, pretty straight forward and useful.
+```bash
+zipdetails file
+```
+
 
 # Bettercap
 * Probe the network first and then see the list of connected host
