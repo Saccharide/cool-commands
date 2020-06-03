@@ -1,8 +1,8 @@
-# Docker...
+# Docker
 
-* Building a docker project from src
+* Building a docker image from `DockerFile`
 ```
-docker build -t PROJECT .<--[location of the Dockerfile]
+docker build -t CUSTOM_NAME .
 ```
 
 * Running the docker project, `--rm` is autoremoval on exit, `-d` is running it in the background, `-p` is the publish of the port from localhost to port inside docker
