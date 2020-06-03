@@ -164,6 +164,12 @@ wrap(s, 2) # ['12', '34', '56', '78', '90']
 from sage.all_cmdline import *
 ```
 
+* Parse string as sage
+```python
+str = "1.0e25"
+sage_eval(str)
+```
+
 # File IO
 * Read in files from a directory recursively
 ```python
