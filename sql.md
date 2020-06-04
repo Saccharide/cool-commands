@@ -62,3 +62,18 @@ ORDER BY name DESC;
 SELECT * FROM student
 LIMIT 2;
 ```
+
+## Querying metadata about the tables
+* Getting all existing tables from `INFORMATION_SCHEMA`
+```
+SELECT * FROM INFORMATION_SCHEMA.TABLES;
+```
+* Getting all column of a table
+```
+SELECT * FROM INFORMATION_SCHEMA.COLUMNS
+WHERE TABLE_NAME = "student";
+```
+* Getting the constraints of a table
+```
+SELECT * FROM INFORMATION_SCHEMA.TABLE_CONSTRAINTS
+WHERE TABLE_NAME = "student";
