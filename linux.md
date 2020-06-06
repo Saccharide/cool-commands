@@ -389,3 +389,7 @@ sudo -s
 sudo -i
 ```
 
+# Fixing the problem of could not get lock /var/lib/dpkg/lock
+```
+sudo dpkg --configure -a
+```
