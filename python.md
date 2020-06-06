@@ -93,6 +93,14 @@ def str_to_hex(s):
 print(str_to_hex("This is cool!"))
 ```
 
+* Print a binary string as ASCII
+```python3
+python3
+binary_string = '01010100010010000100100101010011001000000100100101010011001000000100001101001111010011110100110000100001'
+for i in range (0,len(binary_string), 8):
+    print(chr(int(binary_string[i:i+8],2)),end='')
+```
+
 ## Native hex string manipulation
 * Decode hexstring to string
 ```python2
@@ -154,6 +162,12 @@ wrap(s, 2) # ['12', '34', '56', '78', '90']
 * Sage Math!
 ```python
 from sage.all_cmdline import *
+```
+
+* Parse string as sage
+```python
+str = "1.0e25"
+sage_eval(str)
 ```
 
 # File IO

@@ -54,6 +54,8 @@ net stop beep
 tasklist
 ```
 
+* Copying output correctly in command prompt by selecting the lines and press right click. (This will include the new line character as opposed to single line via shift ctrl c)
+
 # Launch a program with graphics into windows system. (plotting inside bash)
 * To display a python tk output, we will need to install [Xming](https://sourceforge.net/projects/xming/) first, and then export the display
 ```
