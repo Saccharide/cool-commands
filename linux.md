@@ -61,6 +61,12 @@ sudo apt install fonts-wqy-microhei
 sudo apt install fonts-wqy-zenhei
 ```
 
+* Install Chinese pinyin input
+```
+sudo apt-get install ibus-pinyin
+ibus restart
+```
+
 * Insert a newline at a specific line with sed `-i` `[--in-place]`
 ```bash
 sed -i '$LINE_NUMi \n' foo.txt 
