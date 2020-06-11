@@ -27,16 +27,25 @@
 3. ..
 
 
-[Link Text with hidden secondary redirect][Hidden]
+[Like a reference][1]
+
+[1]: https://google.com
+
 ```md
-[Link Text with hidden secondary redirect][Hidden]
+[Like a reference][1]
+
+[1]: https://google.com
 ```
 4. ..
 
 
-This link is like a [variable] 
+This link is like a [variable].
+
+
 [variable]: https://google.com
+
 ```md
-4. This link is like a [variable] 
+This link is like a [variable].
+
 [variable]: https://google.com
 ```
