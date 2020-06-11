@@ -104,6 +104,13 @@ tr [a-z] [A-Z] < lowercase.txt > uppercase.txt
 cat file.txt | tr -d ' '
 cat file.txt | tr -s '.'
 ```
+
+* More cool `tr` usage! `-c` find the complement of the set, `-cd` therefore deletes the complement of the set. In another word, we basically filter the text to only have printable characters. `0-}` is a short hand saying `[a-zA-Z0-9{}]`, since `0` has the lowest ASCII value, and `}` has the greatest in these group, we can use this instead of the long version.
+```bash
+cat file | tr -cd [0-}]
+cat file | tr -cd [:print:]
+cat file | tr -cd [a-zA-Z0-9{}]
+```
 * Another use case for `tr`, remove CRLF ending from a file
 ```bash
 tr -d '\015' < FILE > UNIX_FILE
