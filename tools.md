@@ -156,6 +156,8 @@ python3 dirsearch -u URL -E
 ```bash
 http URL
 http URL hello=world
+http URL Cookie:hello=world
+http URL < request.json # passes in json request 
 http URL < request.json # passes in json request 
 ```
 
