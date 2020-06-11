@@ -24,11 +24,13 @@
 ```md
 [Link Text](https://google.com)
 ```
-3. [Link Text with hidden secondary redirect][Hidden]
+3. ..
+[Link Text with hidden secondary redirect][Hidden]
 ```md
 [Link Text with hidden secondary redirect][Hidden]
 ```
-4. This link is like a [variable] 
+4. ..
+This link is like a [variable] 
 [variable]: https://google.com
 ```md
 4. This link is like a [variable] 
