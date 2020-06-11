@@ -24,10 +24,7 @@
 ```md
 [Link Text](https://google.com)
 ```
-3. ..
-
-
-[Like a reference][1]
+3. [Like a reference][1]
 
 [1]: https://google.com
 
@@ -36,10 +33,7 @@
 
 [1]: https://google.com
 ```
-4. ..
-
-
-This link is like a [variable].
+4. This link is like a [variable].
 
 
 [variable]: https://google.com
