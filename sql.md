@@ -57,10 +57,10 @@ SELECT * FROM student
 ORDER BY name DESC;
 ```
 
-* `LIMIT`: number of output
+* `LIMIT`: number of output, if it has 2 arguments, it will use the first as offset to the first row, and the second argument as number of rows after that offset
 ```
-SELECT * FROM student
-LIMIT 2;
+SELECT * FROM student LIMIT 2;
+SELECT * FROM student LIMIT [offset], num_rows; 
 ```
 
 ## Querying metadata about the tables
