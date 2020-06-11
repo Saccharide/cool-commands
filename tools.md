@@ -152,9 +152,11 @@ python3 dirsearch -u URL -E
 
 # httpie
 * I did not think that there exist such tool that make http request looks so simple and pretty!
+* It will default to GET / POST if you provide any data! VERY easy to use, note that if you want to send speical character in POST, write it to a json file and pass it in stead of cmd
 ```bash
-http GET URL // Default to GET, can use http URL
-http POST URL hello=world // or http URL hello=world
+http URL
+http URL hello=world
+http URL < request.json # passes in json request 
 ```
 
 # jq
