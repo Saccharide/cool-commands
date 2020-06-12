@@ -1,15 +1,24 @@
-## Italics
-* Italic with *asterisks*
+## Italic
+* Italic with *asterisks* or _underscores_
+```md
+*this is italic*
+_this is also italic_
 ```
-*this is italics*
+
+## Bold
+* Bold with **asterisks** or __underscores__
+```md
+**bold**
+__bold__
 ```
 
 ## Insert a picture
-```
+* Basically hidden link text!
+```md
 ![Label](file.PNG)
 ```
 * Change the image scale
-```
+```md
 ![Label](file.PNG =100x20)
 ![Label](file.PNG =100x)
 ```
