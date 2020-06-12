@@ -175,7 +175,14 @@ script
 ```
 
 # Maximum efficiency grep! 
-* MAX EFFICENT GREP USAGE HERE! Use `ls` to generate a list of directory which is then passed into `xargs` , `-P 0` means maximum concurrent threads, and then suppresses error message to `/dev/null`
+* MAX EFFICENT GREP USAGE HERE! Use `ls` to generate a list of directory which is then passed into `xargs` , `-P 0` means maximum concurrent threads, and then suppresses error message to `/dev/null`, `-I folder` means replace all inputs for `xargs` to be `folder`, like setting a vvariable name
 ```bash
 ls | xargs -P 0 -I folder grep -ri flag folder 2> /dev/null | grep flag{.*}
 ```
+
+# PNG recovery tool `PCRT`
+* A very cool [tool](https://github.com/sherlly/PCRT) for recovering / extracting PNG file from a corrupted file.
+```bash
+python2 PCRT.py -v -f input.png
+```
+
