@@ -105,6 +105,7 @@ for i in range (0,len(binary_string), 8):
 * Decode hexstring to string
 ```python2
 python2
+# hex string without `0x` prefix
 hex_string.decode('hex')
 ```
 
