@@ -111,8 +111,8 @@ hex_string.decode('hex')
 
 ```python3
 python3
-bytes.fromhex(hex_string).decode('ascii')
-bytes.fromhex(hex(m)[2:]).decode('ascii')
+bytes.fromhex(hex_string).decode('utf')
+bytes.fromhex(hex(m)[2:]).decode('utf')
 ```
 
 * Converting from bytes to int

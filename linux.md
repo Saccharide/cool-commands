@@ -50,6 +50,16 @@ sort -R playlist -o playlist
 shuf FILE -o FILE
 ```
 
+* Print a file in reverse with `tac`
+```
+cat file | tac
+```
+
+* Print the hexdump of a file in reverse
+```
+xxd -p -c1 file | tac | xxd -r > file.out
+```
+
 * Convert Chinese unreadable filename to correct filename (AWESOME)
 ```bash
 7z x -scs903 ZIPFILE.zip

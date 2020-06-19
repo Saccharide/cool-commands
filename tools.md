@@ -186,3 +186,9 @@ ls | xargs -P 0 -I folder grep -ri flag folder 2> /dev/null | grep flag{.*}
 python2 PCRT.py -v -f input.png
 ```
 
+# xxd
+* Make a hexdump of a file, `-p`  means in plain hexdump no addresses, `-r` means revert from hexdump to binary, `-c{i}` means print `i` amount of colum to print out, where each column is one byte
+* To reverse the entire hex vaule of a file
+```bash
+xdd -p -c1 file.png | tac | xdd -r -p file_rev.png
+```
