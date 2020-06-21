@@ -42,6 +42,10 @@ john unshadow
 ```bash
 nmap -A 192.168.1.1
 ```
+* `-p-` scans all ports, `-sV` scans for version, `-T4` for fast execution
+```bash
+nmap -p- -sV -T4 192.168.1.1
+```
 
 # Showmount
 * `showmount` is used to see which part of the server are mountable to the outside world
