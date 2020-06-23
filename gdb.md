@@ -83,3 +83,8 @@ p (char *) generate()
 x/1s (char*) life
 p (char*) life
 ```
+
+* Look at memory map
+```
+info proc map
+```
