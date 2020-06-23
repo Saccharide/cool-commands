@@ -193,3 +193,11 @@ git push -f origin master
 git branch -d BRANCH
 git push origin --delete BRANCH
 ```
+
+* Define a hook so that when we break, it will execute the gdb commands you specified
+```gdb
+define hook-stop
+x/i $eip
+x/8wx $esp
+end
+```
