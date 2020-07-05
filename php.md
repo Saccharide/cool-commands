@@ -19,3 +19,10 @@ $_POST['VARIABLE']
 ```php
 <?php require_once 'index.php' ?>
 ```
+
+* `${}` is the value of the referenced variable.
+```php
+$name = "Cat";          // name => "Cat";
+${$name} = "Dog";       // name => "Cat"; $Cat => "Dog";
+${${$name}} = "Monkey"; // name => "Cat"; $Cat => "Dog"; $Dog => "Monkey";
+```
