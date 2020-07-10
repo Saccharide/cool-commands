@@ -290,6 +290,13 @@ time bash
 `&>>` does the above in post Bash 4.0 and apending it to a file
 `&>` does the above but overwrites the target file
 
+* File descriptors: 
+| value | name   |
+|:-----:|:------:|
+| 0     | stdin  |
+| 1     | stdout |
+| 2     | stderr |
+
 * Check architecture
 ```bash
 dpkg --print-architecture

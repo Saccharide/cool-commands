@@ -22,7 +22,7 @@ if [[ -z $name ]]; then
     echo "name cannot be empty."
     exit 1
 fi
-find $(pwd) -iname "*$name*"
+find $(pwd) -iname "*$name*" 2>/dev/null
 ```
 
 ## `gen`

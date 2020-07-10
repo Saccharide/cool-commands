@@ -52,3 +52,10 @@ This link is like a [variable].
 
 [variable]: https://google.com
 ```
+
+## Tables
+| value | name   |
+|:-----:|:------:|
+| 0     | stdin  |
+| 1     | stdout |
+| 2     | stderr |
