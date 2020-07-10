@@ -255,3 +255,11 @@ $ffi = FFI::load('/flag.h');
 $a = $ffi->flag_fUn3t1on_fFi();
 var_dump(FFI::string($a));
 ```
+
+
+## PHP extensions
+```
+sudo apt install php-xml
+sudo apt install php7.4-curl
+sudo apt install php7.4-fpm
+```
