@@ -300,13 +300,23 @@ gt / gT
 #gt
 ```
 
-# Vim diff notes
-* Two way diff, get change from other window
+# vimdiff notes
+* Two way diff, get change from other window, or just `DO`!
 ```
 diffg[et]
 ```
 
-* Two way diff, put change to the other window
+* Two way diff, put change to the other window, or just `DP`!
 ```
 diffp[ut]
+```
+
+* Jump to next change
+```
+] + C
+```
+
+* Jump to previous change
+```
+[ + C
 ```

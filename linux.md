@@ -239,9 +239,14 @@ cd ${cd -}
 cd $OLDPWD
 ```
 
-* Install .deb packages
+* Install `.deb` packages with `dpkg`, which is also used by `apt`, and does not require internet access
 ```bash
-dpkg -x file.deb
+dpkg -i file.deb
+```
+
+* Extract `.deb` packages
+```bash
+dpkg -e file.deb
 ```
 
 * Install / open `.rpm` files
@@ -423,3 +428,10 @@ sudo -i
 ```
 sudo dpkg --configure -a
 ```
+
+# APT Update and Upgrade
+* `apt` is a full blown package manager, and will recursively resolve any dependency when installing a package.
+* It stores a locally cached database of the avialble applications in the current OS to speed up the installing process.
+* `apt update` is to update this locally cached database
+* After updating this database with previous command, we can use `apt upgrade` to upgrade all currently installed packages to their latest verisons.
+
