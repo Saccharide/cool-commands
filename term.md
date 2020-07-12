@@ -245,3 +245,18 @@ sh=b"\x31\xc0\x48\xbb\xd1\x9d\x96\x91\xd0\x8c\x97\xff\x48\xf7\xdb\x53\x54\x5f\x9
 ```
 
 
+# Man pages
+* `-k`, keyword search
+```
+man -k passwd
+```
+
+* we can also use regular expression to narrow down the search
+```
+man -k '^passwd$'
+```
+
+* Then, we can select the number thats given in the output of the previous command to see more detail of that particular entry
+```
+man 5 passwd
+```
