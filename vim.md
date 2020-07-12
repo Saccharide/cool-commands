@@ -320,3 +320,11 @@ diffp[ut]
 ```
 [ + C
 ```
+
+# Pathogen package installation
+* Just download the git repo in `~/.vim/bundle` and add the following to `~/.vimrc` and you are done!
+```vim
+execute pathogen#infect()
+syntax on
+filetype plugin indent on
+```
