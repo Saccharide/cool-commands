@@ -39,6 +39,8 @@ sudo ifconfig eth0 down
 sudo ifconfig eth0 up
 ```
 
+* `ss`, socket statistic, `-a` shows all listening and non-listening sockets, `-n` displays the numeric IP, and does not resolve service name, `-t` specifies TCP sockets, `-l` displays only listening sockets, `-p` shows the process that is using the socket
+
 # File Manipulation
 * Shuffles the lines of a file `-R`: random
 ```bash
