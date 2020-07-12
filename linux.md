@@ -336,6 +336,11 @@ lsusb -D /dev/bus/usb/003/023
 mkdir -p PATH && cp FILE PATH
 ```
 
+* Make multiple directories wiht `-p`, braces expansion
+```
+mkdir -p test/{dir1,dir2,dir3}
+```
+
 * List of pip environments
 ```bash
 pip freeze

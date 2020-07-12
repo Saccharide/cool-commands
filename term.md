@@ -52,6 +52,11 @@ ls -p | grep -v /
 ls -S | grep -E "$(ls -S | head -n 5)"
 ```
 
+* `-1` display each result of `ls` in a single line
+```bash
+ls -a1
+```
+
 * Sort lines in a file based on number of characters
 ```bash
 cat FILE | awk '{ print length, $0 }' | sort -nsr | cut -d" " -f2- > NEWFILE
@@ -192,6 +197,11 @@ find . -maxdepth 1 -name "*.mp3" -exec echo "play" {} \; > playlist
 find `pwd` -type f -name "*.txt"
 ```
 
+* If we know the exact name of a file, use `locate` because it is quickest way since it has a built-in database `locate.db` and is updated regularly by the CRON scheduler
+```bash
+locate FILE
+```
+
 * `grep` exclude a file of strings
 ```bash
 grep -avf "FILE.txt"
@@ -260,3 +270,5 @@ man -k '^passwd$'
 ```
 man 5 passwd
 ```
+
+* Can achieve the same with `apropos partition`
