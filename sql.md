@@ -27,6 +27,36 @@ ALTER TABLE student ADD gpa DECIMAL(3,2);
 ```
 ALTER TABLE student DROP COLUMN gpa;
 ```
+
+* Get version of the backend database
+```
+@@version
+```
+
+* Get current database name
+```
+database()
+```
+
+* Combine/group multiple rows into one string, good for sql injection attacks.
+```
+select group_concat(schema_name) from INFORMATION_SCHEMA.schemata
+```
+
+* Getting all the database
+```
+select group_concat(schema_name) from INFORMATION_SCHEMA.schemata
+```
+
+* Getting all the tables from one database
+```
+select group_concat(table_name) from INFORMATION_SCHEMA.tables where table_schema = 'ASISCTF'
+```
+
+* Getting all columns from one table
+```
+select group_concat(column_name) from INFORMATION_SCHEMA.columns where table_name = 'books'
+```
 ## Inserting / Deleting from table
 * Insert an entry to table
 ```
