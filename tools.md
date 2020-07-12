@@ -196,3 +196,9 @@ python2 PCRT.py -v -f input.png
 ```bash
 xdd -p -c1 file.png | tac | xdd -r -p file_rev.png
 ```
+
+# axel
+* command line download accelerator!! `-n` specifies number of multiple connections, `-a` gives a better progress bar. Make sure that the output file does not exist, or will get a state file not exisit error!
+```bash
+axel -a -n 20 -o output https://google.com
+```
