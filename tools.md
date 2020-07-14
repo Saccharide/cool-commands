@@ -202,3 +202,9 @@ xdd -p -c1 file.png | tac | xdd -r -p file_rev.png
 ```bash
 axel -a -n 20 -o output https://google.com
 ```
+
+# cutycapt
+* An awesome tool that takes a screenshot of a given URL!!!
+```bash
+cutycapt --url=http://www.example.org/ --out=localfile.png
+```
