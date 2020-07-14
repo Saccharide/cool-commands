@@ -72,7 +72,7 @@ WHERE name = 'John';
 
 * Delete every row in a table
 ```sql
-DELTE FROM student
+DELETE FROM student
 ```
 
 ## Queries
