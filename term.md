@@ -57,7 +57,7 @@ ls -S | grep -E "$(ls -S | head -n 5)"
 ls -a1
 ```
 
-* Sort lines in a file based on number of characters
+* Sort lines in a file based on number of characters, `-n` is for numeric sort, `-s` is for stable, stabilize sort by disabling last-resort comparison. `-r` for reverse, `cut -f2-` is to get the rest of the line starting from field `2`
 ```bash
 cat FILE | awk '{ print length, $0 }' | sort -nsr | cut -d" " -f2- > NEWFILE
 ```
@@ -81,6 +81,11 @@ sudo update-alternatives --config editor
 * `awk` with print. prints first field.
 ```bash
 echo "Hello World" | awk '{print $1}'
+```
+
+* `-F`, field separator, main difference between this and `cut -d` is that `awk -F` allows the deliminator to be more than one character. If the string is `{print $1 $3}`, then there will be no space in the output
+```bash
+echo "Hello::World::!" | awk -F "::" '{print $1,$3}'
 ```
 
 * `echo` with `-e` interpretation of back slashes
@@ -247,10 +252,24 @@ head -n X FILE
 history | grep clone | tail -n 2 | head -n 1
 ```
 
+* `tail -f`: continuous to follow a file that is being written live.
+```bash
+tail -f /var/log/apache2/access.log
+```
 * Run a command from `history`, first find the command, and then run with `!`
 ```bash
 histroy | grep COMMAND
 !LINE_NUMBER
+```
+
+* Customize `history` command by adding the date and time a command is ran, `%F`, year - month -day, `%T` 24-hr time, (more info `man strftime`)
+```bash
+export HISTTIMEFORMAT='%F %T '
+```
+
+* `watch`, runs a designated command every `2` seconds by default, use `-n [number]` to set it to run every `[number]` of seconds
+```
+watch -n 5 ls
 ```
 
 # Shell code in python

