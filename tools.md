@@ -208,3 +208,12 @@ axel -a -n 20 -o output https://google.com
 ```bash
 cutycapt --url=http://www.example.org/ --out=localfile.png
 ```
+
+# OSINT
+
+## Sherlock
+* Sherlock is a tool that finds social media accounts by username, very handy!
+```bash
+python3 sherlock.py username1
+python3 sherlock.py username1 username2
+```
