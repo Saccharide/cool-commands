@@ -10,7 +10,7 @@ shuf FILE -o FILE
 ```
 
 * Print a file in reverse with `tac`
-    ```bash
+```bash
 cat file | tac
 ```
 
@@ -275,6 +275,7 @@ time bash
 `&>` does the above but overwrites the target file
 
 * File descriptors: 
+
 | value | name   |
 |:-----:|:------:|
 | 0     | stdin  |
