@@ -31,6 +31,14 @@ netstat -p
 ```bash
 netstat -n
 ```
+
+* Restart network manager in kali
+```bash
+#!/bin/bash
+sudo service networking restart
+sudo service network-manager restart
+```
+
 # Network commands
 * nmap -A: Aggressive mode
 ```bash
