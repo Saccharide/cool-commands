@@ -285,7 +285,7 @@ def enc_pad(m,p):
 
 * To silent connection infomation in pwntool connection, we can run the file with `SILENT=1`
 ```bash
-python foo.py SILENT=1
+python x.py SILENT=1
 ```
 
 * To solve the problem of `[Errno 24] Too many open files` with `ulimit`. `ulimit` get and set user limit of open files, `-n` to `50000` instead of default value of `1024`.
@@ -294,6 +294,21 @@ ulimit -n 50000
 ```
 
 # Multithreading
+* Create a new thread
+```python
+t1 = threading.Thread(target=func_name)
+```
+
+* Starting a thread created above
+```python
+t1.start()
+```
+
+* `join`: The main thread literally wait for the target thread to finish before continuing to the next line in main program
+```python
+t1.join()
+t2.join()
+```
 * Using `threading` module
 ```python
 import threading
@@ -359,6 +374,27 @@ driver.find_element_by_id('pass').send_keys('password')
 driver.find_element_by_id('login_button').click()
 ```
 
+## Socket programming
+
+* Create a `TCP` socket
+```python
+import socket
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+```
+
+* Server socket uses `bind` to bind an address and port, and uses `listen` to listen for incoming connection
+```python
+import socket
+ss = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+s.bind(('127.0.0.1',1337))
+s.listen()
+while True:
+    s, addr = ss.accept()
+    msg = s.recv(1024)
+    if msg:
+        print(msg)
+ss.close()
+```
 * Read until an expected string
 ```python
 def read_until(msg):
@@ -368,4 +404,35 @@ def read_until(msg):
     return out
 ```
 
+* Echo server with multi-thread
+```
+import socket
+import threading
+import sys
 
+def echo(s):
+    while True:
+        msg = s.recv(1024).decode('utf-8')
+        if msg:
+            if msg != "quit\n":
+                print("recv: ",msg)
+                s.sendall(msg.encode())
+            else:
+                print("exiting...")
+                break
+
+threads = []
+with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as server_socket:
+    try:
+        server_socket.bind(('127.0.0.1', 1337))
+        while True:
+            server_socket.listen(10)
+            client_socket, address = server_socket.accept()
+            t = threading.Thread(target=echo, args=[client_socket])
+            t.start()
+            threads.append(t)
+    except KeyboardInterrupt:
+        print("\nShutting down server...")
+for thread in threads:
+    thread.join()
+```
