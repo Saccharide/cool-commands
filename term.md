@@ -162,6 +162,11 @@ awk '1;1;1;1;' FILE | tee FILE; shuf FILE -o FILE
 split -l 200 FILE
 ```
 
+* Remove last line of output, `$` on last line, `d` delete it.
+```bash
+echo -e 127.0.0.{1..254}'\n' | sed '$d'
+```
+
 # Search Manipulation
 * `grep` multiple words without storing them to a file 
 ```bash
