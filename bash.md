@@ -37,6 +37,30 @@ function gen(){
 }
 ```
 
+## Mount share folder VM ware
+```bash
+#!/bin/bash
+vmware-hgfsclient | while read folder; do
+  echo "[i] Mounting ${folder}   (/mnt/hgfs/${folder})"
+  mkdir -p "/mnt/hgfs/${folder}"
+  umount -f "/mnt/hgfs/${folder}" 2>/dev/null
+  echo ".host:/${folder}"
+  vmhgfs-fuse -o allow_other -o auto_unmount ".host:/${folder}" "/mnt/hgfs/${folder}"
+done
+```
+
+## Restart VM tools, enable copy pasting from host to VM
+```bash
+#!/bin/bash
+systemctl stop run-vmblock\\x2dfuse.mount
+killall -q -w vmtoolsd
+
+systemctl start run-vmblock\\x2dfuse.mount
+systemctl enable run-vmblock\\x2dfuse.mount
+
+vmware-user-suid-wrapper vmtoolsd -n vmusr 2>/dev/null
+vmtoolsd -b /var/run/vmroot 2>/dev/null
+```
 ## `$` in bash
 * `$1`,`$2`, are the positional parameters
 * `$@` is the array of parameters
