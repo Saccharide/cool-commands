@@ -221,6 +221,11 @@ cd $OLDPWD
 dpkg -i file.deb
 ```
 
+* Install `.deb` with `apt`!! How did I not know this before??
+```bash
+sudo apt install ./file.deb
+```
+
 * Extract `.deb` packages
 ```bash
 dpkg -e file.deb
