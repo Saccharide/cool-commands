@@ -117,6 +117,26 @@ script
 ls | xargs -P 0 -I folder grep -ri flag folder 2> /dev/null | grep flag{.*}
 ```
 
+## rdesktop
+* Remote connect to a machine with GUI control, `-u` indicate username, `-p` for password, `-g` for geometry, `-x` for experience, 
+```bash
+rdesktop 127.0.0.1 -u USER -p PASS -g 1366x864 -x 0x80
+```
+List of experiences
+```
+0x00 = DISABLE_NOTHING    
+0x01 = NO_WALLPAPER   
+0x02 = NO_FULLWINDOWDRAG  
+0x04 = NO_MENUANIMATIONS  
+0x08 = NO_THEMING     
+0x20 = NO_CURSOR_SHADOW   
+0x40 = NO_CURSORSETTINGS    /* disables cursor blinking */  
+0x80 = ENABLE_FONT_SMOOTHING 
+
+## We can add above settings to create `new` experiences
+0x8F   # equals the modem default + font smoothing
+0x81   # equals the broadband default + font smoothing
+```
 
 # Android debugging
 ## apktool
