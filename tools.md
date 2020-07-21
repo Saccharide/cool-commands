@@ -138,6 +138,29 @@ List of experiences
 0x81   # equals the broadband default + font smoothing
 ```
 
+## Creating a simple HTTP server
+
+* We can create a simple HTTP server with `python`, will host anyfile on the current path.
+```bash
+python2
+python -m SimpleHTTPServer 1337
+
+python3
+python3 -m http.server 1337
+```
+
+* We can do the same with `php`
+```bash
+php -S 0.0.0.0:1337
+```
+
+* With `ruby`, `-run` to load `un.rb` which contains replacements for common unix commands, `-e httpd` to run http server, `.` to serve content from current direcotory, `-p` for port number. 
+```bash
+ruby -run -e httpd . -p 1337
+```
+
+
+
 # Android debugging
 ## apktool
 * Recompile apk files
@@ -188,6 +211,9 @@ python3 sherlock.py username1 username2
 2. Go to `http://burp`, then download the `CA certificate`
 3. Drag the file to a new tab, and click `Trust the certificate`
 
+### FoxyProxy Basic 
+* A firefox porxy manager, 
+* Click on icon -> `Options` -> `Add` -> 
 ## Bettercap
 * Probe the network first and then see the list of connected host
 ```bash
