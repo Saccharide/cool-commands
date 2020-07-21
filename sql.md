@@ -13,6 +13,34 @@ CREATE TABLE student (
 SELECT * FROM student;
 ```
 
+* Difference between `UNION` and `UNION ALL`: `UNION` do not allow duplicate entry, and `UNION ALL` will include all entry as is.
+```sql
+table_one:
+Egg   1
+Milk  2
+
+table_two:
+Bread 1
+Egg   1
+Juice 2
+
+SELECT * from table_one UNION SELECT * from table_two;
+
+Result:
+Egg   1
+Milk  2
+Bread 1
+Juice 2
+
+
+SELECT * from table_one UNION SELECT * from table_two;
+Egg   1
+Milk  2
+Bread 1
+Egg   1
+Juice 2
+```
+
 * Show all columns and records in `students` table displaying only records with `id` is `1`
 ```sql
 SELECT * FROM student where id=1;
@@ -88,10 +116,13 @@ SELECT * FROM student;
 
 * ORDER BY `ASC` (Ascending), `DESC` (Descending)
 ```sql
-SELECT * FROM student
-ORDER BY name DESC;
+SELECT * FROM student ORDER BY name DESC;
 ```
 
+* We can also `ORDER BY` a table using column index!
+```sql
+SELECT name FROM student ORDER BY 1;
+```
 * `LIMIT`: number of output, if it has 2 arguments, it will use the first as offset to the first row, and the second argument as number of rows after that offset
 ```sql
 SELECT * FROM student LIMIT 2;
