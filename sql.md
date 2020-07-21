@@ -8,11 +8,16 @@ CREATE TABLE student (
     name VARCHAR(20)
 );
 ```
-* Show table 
+* Show all columns and records in `students` table. The first argument to `SELECT` is a column, where `*` is a sepcial character that represents all columns
 ```sql
-DESCRIBE student;
 SELECT * FROM student;
 ```
+
+* Show all columns and records in `students` table displaying only records with `id` is `1`
+```sql
+SELECT * FROM student where id=1;
+```
+
 * Remove table
 ```sql
 DROP TABLE student;
