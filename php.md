@@ -32,7 +32,7 @@ ${${$name}} = "Monkey"; // name => "Cat"; $Cat => "Dog"; $Dog => "Monkey";
 highlight_file("index.php");
 ```
 
-* `implode` joins all the value array with a string, it will discard all keys of an array and do the operation with each value.
+* `implode(string glue,array)` joins all the value array with a string, it will discard all keys of an array and do the operation with each value.
 ```php
 <?php
     $a1 = array("one","two","three");
@@ -48,6 +48,9 @@ a1 is: one,two,three
 a2 is: a
 b  is: four,five,six
 ```
+
+* `explode(string delimiter, string)`, it is like `split` in python
+
 
 * Bypass `open_basedir` via glob wrapper, this leads to directory listing of `/`, root directory
 ```php
