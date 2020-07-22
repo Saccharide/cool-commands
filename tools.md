@@ -91,6 +91,10 @@ cyclic 800
 ```
 cyclic -l uaah
 ```
+* Or we can use this... (the pure hex value)
+```
+cyclic -l 0x68616175
+```
 
 ## Figlet!
 * Centering with `-c`
