@@ -292,3 +292,15 @@ sqlmap -u http://127.0.0.1/debug.php?id=1 -p "id" --dbms=mysql --dump
 ```bash
 sqlmap -u http://127.0.0.1/debug.php?id=1 -p "id" --dbms=mysql --os-shell
 ```
+
+## Wireshark
+| Field Name | Description |
+|:-----:|:------:|
+| `ip.addr` | Source or Destination Address (IPV4)|
+| `ip.src` | Source IPv4 address|
+| `ip.src_host` | Source Host name (ASCII)|
+| `ip.host` |Source or Destination Host (ASCII) |
+
+## TCPView
+* Microsoft `TCPView` is a Windows Sysinternal tool that is able to show which process is using which port. kind of like `netstat`. `Ctrl + R` to disable resolving addresses for easier view.
+
