@@ -81,8 +81,18 @@ sudo unshadow passwd shadow > unshadow
 john unshadow
 ```
 
-## Figlet!
+## Cyclic
+* Generate a pattern of length `800` characters
+```
+cyclic 800
+```
 
+* To look up pattern `haau` in previously generated pattern, make sure it is in the correct endianess, value show in `eip` is flipped due to senind via a network channel, try both endianess when searching and make an educated guess as to which one is more correct as it will be closer to the target payload length.
+```
+cyclic -l uaah
+```
+
+## Figlet!
 * Centering with `-c`
 ```bash
 figlet -c test
@@ -139,7 +149,6 @@ List of experiences
 ```
 
 ## Creating a simple HTTP server
-
 * We can create a simple HTTP server with `python`, will host anyfile on the current path.
 ```bash
 python2
@@ -159,7 +168,22 @@ php -S 0.0.0.0:1337
 ruby -run -e httpd . -p 1337
 ```
 
+## Immunity Debugger
+* To search for a constant string:
+    * right click the assembly code pane
+    * `Search for` -> `All referenced text strings`
 
+`LEAVE` assembly instruction place the return address on to the top of the stack, and `RETN` pops the top of the stack and jump to it.
+
+| Shortcut | Description |
+|:-----:|:------:|
+| `F2` | Set a break point|
+| `F3` | Open a file|
+| `F7` | Steps into a function|
+| `F8` | Step over an instruction|
+| `F9` | Run a program|
+| `Ctrl + F9` | Execute until the end of return, allow us to see the result of the function call|
+| `Ctrl + F1` | Attach a running process|
 
 # Android debugging
 ## apktool
