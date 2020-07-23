@@ -5,6 +5,17 @@ if __name__ == '__main__':
     main()
 ```
 
+* String manipulation. If we have lines of different strings, we can easily add them with `()`
+```python
+a = ("Hello"
+    "World"
+    ", This"
+    "is ve"
+    "ry c00l")
+
+print(a)
+```
+
 * Iterate through a dictionary
 ```python
 python2 or python3
