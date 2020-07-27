@@ -32,6 +32,14 @@ ${${$name}} = "Monkey"; // name => "Cat"; $Cat => "Dog"; $Dog => "Monkey";
 highlight_file("index.php");
 ```
 
+* Write to a file, `FILE_APPEND` appends data to file, and `LOCK_EX` means `EXCLUSIVE LOCK`, only one process can possess an `EXCLUSIVE LOCK`.
+```php
+<?php
+$data = file_get_contents('php://input');
+$data .= "-----------------------------------------------------------\n\n";
+file_put_contents('/var/www/html/data.txt', print_r($data,true), FILE_APPEND | LOCK_EX);
+?>
+```
 * `implode(string glue,array)` joins all the value array with a string, it will discard all keys of an array and do the operation with each value.
 ```php
 <?php
