@@ -301,8 +301,11 @@ sqlmap -u http://127.0.0.1/debug.php?id=1 -p "id" --dbms=mysql --os-shell
 * Microsoft `TCPView` is a Windows Sysinternal tool that is able to show which process is using which port. kind of like `netstat`. `Ctrl + R` to disable resolving addresses for easier view.
 
 
-## fingerprintjs2
+## `fingerprintjs2`
 [`fingerprintjs2`](https://github.com/fingerprintjs/fingerprintjs2) is a tool that uses `javascript` library that fingerprints client browser and underlying OS.
+
+## `whatismybrowser`
+[`whatismybrowser`](https://developers.whatismybrowser.com/) is a web app that parses User Agent data and outputs the specific version number of Browser and underlying OS.
 
 # Pwn
 ## Immunity Debugger
