@@ -81,6 +81,15 @@ sudo unshadow passwd shadow > unshadow
 john unshadow
 ```
 
+## clipit
+* A very nice clipboard manager for linux
+```bash
+sudo apt install clipit
+```
+
+## diodon
+Similar to `clipit`, but less intuitive
+
 ## searchsploit
 `searchsploit` is an archive of all hosted exploits code in `exploit-db`. You can install and update with `apt`
 
