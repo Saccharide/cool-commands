@@ -61,6 +61,11 @@ print "Num of args: ", len(sys.argv)
 print "Args List: ", str(sys.argv)
 ```
 
+* Upgrading a non-interactive shell to an more interactive one
+```bash
+python -c 'import pty; pty.spawn("/bin/bash")'
+```
+
 * Formating print messages
 ```python
 python2
