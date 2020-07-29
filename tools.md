@@ -81,6 +81,20 @@ sudo unshadow passwd shadow > unshadow
 john unshadow
 ```
 
+## searchsploit
+`searchsploit` is an archive of all hosted exploits code in `exploit-db`. You can install and update with `apt`
+
+The archive is stored at `/usr/share/exploitdb/`, and split into two categories `exploits` and `shellcodes`
+
+To search for an exploit, we should use `searchsploit`.
+```bash
+searchsploit remote smb windows
+```
+`-m` mirror, clone an exploit to current directory
+```bash
+searchsploit -m 43210
+```
+
 ## Figlet!
 * Centering with `-c`
 ```bash
