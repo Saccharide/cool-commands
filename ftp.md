@@ -25,3 +25,8 @@ ftp> put FILE.txt
 ```bash
 ftp> delete FILE.txt
 ```
+
+* Switch to `passive` mode to run commands
+```bash
+ftp> passive
+```
