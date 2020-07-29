@@ -325,11 +325,9 @@ t2.join()
 import threading
 def runme(start,dummy):
     print "running: ", start
-
 try:
     t = threading.Thread(target=runme, args=(x,x))
     t.start()
-
 except:
     print "Unable to spawn threads"
 ```
@@ -343,7 +341,6 @@ except:
 
 
 # Selenium
-
 * Simulate keys user is typing.
 ```python
 element.send_keys("KEY_STROKE")
@@ -406,6 +403,7 @@ while True:
         print(msg)
 ss.close()
 ```
+
 * Read until an expected string
 ```python
 def read_until(msg):
@@ -446,4 +444,30 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as server_socket:
         print("\nShutting down server...")
 for thread in threads:
     thread.join()
+```
+
+# request
+* Sending a `POST` request using `request` module
+```python
+import request
+
+base_url = "http://google.com"
+page     = "/login.php"
+username = "admin"
+password = "password"
+data     = {
+        "username"   : username,
+        "password"   : password,
+        "loginsubmit": "Submit"
+}
+
+response    = request.post(url, data=data, allow_redirects=False)
+status_code = repsonse.status_code
+if status_code == 302: # Authenticated successfully
+    print response.cookies
+```
+
+* `verify=False` skips `SSL` certificate validation
+```
+response    = request.post(url, data=data, allow_redirects=False, verify=False)
 ```
