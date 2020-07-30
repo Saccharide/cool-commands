@@ -9,6 +9,17 @@ gUaw
 ```
 J
 ```
+
+* Look at vim command history, and press `enter` to select a command to run!
+```
+q:
+```
+
+* Look at vim search history, press `enter` to search!
+```
+q/
+```
+
 * Edit a new file within the current window
 ```
 :e FILE2
