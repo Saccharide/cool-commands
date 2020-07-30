@@ -8,3 +8,8 @@ set PATH=C:\
 ```bash
 setx PATH C:\
 ```
+
+* Show file content with `type`
+```bash
+type FILE.txt
+```
