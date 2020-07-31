@@ -386,6 +386,22 @@ cyclic -l uaah
 ```
 cyclic -l 0x68616175
 ```
+## `shellter`
+`shellter` is a dynamic shellcode injection tool that can inject a non malicious program with a malicious shellcode and bypass AV.
+
+1. Install `shellter` and `wine32`
+```
+sudo apt install -y shellter wine32
+```
+
+2. Select `A`, Auto Mode.
+
+3. Select a benign PE, for ex, `wrar.exe`
+
+4. Enable `Stealth Mode`
+
+5. We can then select a payload from the list using `L`, Listed payload, option. And configure the `LHOST` `LPORT` parameter for our reverse shell.
+
 
 ## `msf-nasm_shell`
 `nasm`, the Netwide Assembler, is an assembler and disassembler for Intel x86 architecture. We can `msf-nasm_shell` use to find a corresponding Assembly Opcodes for a target Assembly code.
