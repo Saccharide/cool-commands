@@ -1,3 +1,10 @@
+# System
+* Find out OS name, OS version, and System Type! 
+```bash
+uname -a
+```
+
+
 # File Manipulation
 * Shuffles the lines of a file `-R`: random
 ```bash
@@ -172,6 +179,11 @@ kill 1337
 ```
 ```bash
 kill $(ps | grep play | awk '{print $1;}')
+```
+
+* Process Enumeration, `a` is list all process with terminal(`tty`), `ax` list all process with/without a `tty`, lifts the restriction of needing a `tty`, `u` is user readable format
+```bash
+ps aux
 ```
 
 * kill a process with `pkill` (MUCH EASIER :D)
