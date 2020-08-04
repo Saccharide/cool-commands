@@ -23,6 +23,15 @@ net user $USER
 net user
 ```
 
+* We can check the integrity level using 
+```cmd
+whoami /groups
+```
+
+* Start a command prompt as admin user
+```cmd
+powershell start-process cmd -Verb runAs
+```
 * Find out OS name, OS version, and System Type! pretty useful, `/b` match pattern at the beginning of a line, `/c` specifies the literal search string 
 ```cmd
 systeminfo | findstr /b /c:"OS Name" /c:"OS Version" /c:"System Type"
