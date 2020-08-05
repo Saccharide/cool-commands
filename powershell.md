@@ -17,6 +17,12 @@ Get-ExecutionPolicy
 Get-WmiObject Win32_PnPSignedDriver | Select-Object DeviceName, DriverVersion | Where-Object {$_.DeviceName -like "*USB*"}
 ```
 
+## List running services
+We can list all running services with `tasklist` or with following powershell code
+```powershell
+Get-WmiObject win32_service | Select-Object Name, State, PathName | Where-Object {$_.State -like 'Running'}
+```
+
 * Comments in `powershell` scripts using `#`, `<#` and `#>`
 ```powershell
 # This is a comment
