@@ -439,3 +439,15 @@ sudo dpkg --configure -a
 ## cron
 * The Linux based job scheduler is called `cron`, and is separated into `cron.hourly`, `cron.daily`, `cron.weekly`, `cron.monthly` under `/etc/`.
 * We can add our own scheduled task to be run in `/etc/crontab`. 
+
+
+## Cross compiling binary
+We can use a cross compiler `mingw-w64`, and compile the exploit to windows executable, `-lws2_32` will link the `winsock` library. And then run the exploit in Linux using `wine`. No need to run it in Windows.
+1. Install `mingw-w64`
+```bash
+sudo apt install mingw-w64
+```
+2. We can use `mingw-w64` to compile `c` code into windows executable
+```bash
+i686-w64-mingw32-gcc SOURCE.c -o OUT.exe
+```
