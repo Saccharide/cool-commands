@@ -69,9 +69,15 @@ whoami /priv
 ```cmd
 powershell start-process cmd -Verb runAs
 ```
-* Find out OS name, OS version, and System Type! pretty useful, `/b` match pattern at the beginning of a line, `/c` specifies the literal search string 
+
+* Find out OS name, OS version, and System Type (architecture)! pretty useful, `/b` match pattern at the beginning of a line, `/c` specifies the literal search string 
 ```cmd
 systeminfo | findstr /b /c:"OS Name" /c:"OS Version" /c:"System Type"
+```
+
+* List drivers that are installed on the system, `/v` for verbose output
+```cmd
+driverquery /v
 ```
 
 * Process Enumeration, listing running process! `/svc` displays services hosted in each process. Running `cmd` as admin can see all running processes.
