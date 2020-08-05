@@ -11,6 +11,12 @@ Y
 Get-ExecutionPolicy
 ```
 
+## List driver version
+* To find the version number of all drivers, we can use `Get-WmiObject Win32_PnPSignedDriver`, which provides detail information of all `Win32_PnPSignedDriver`. We can then select specific property using `Select-Object` such as `DeviceName`, and use `Where-Object` to filter the result, like `grep`.
+```ps
+Get-WmiObject Win32_PnPSignedDriver | Select-Object DeviceName, DriverVersion | Where-Object {$_.DeviceName -like "*USB*"}
+```
+
 * Comments in `powershell` scripts using `#`, `<#` and `#>`
 ```powershell
 # This is a comment
