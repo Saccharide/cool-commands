@@ -44,6 +44,11 @@ net user
 whoami /groups
 ```
 
+* We can check the privilege owned by the current user
+```cmd
+whoami /priv
+```
+
 * Start a command prompt as admin user
 ```cmd
 powershell start-process cmd -Verb runAs
@@ -56,4 +61,9 @@ systeminfo | findstr /b /c:"OS Name" /c:"OS Version" /c:"System Type"
 * Process Enumeration, listing running process! `/svc` displays services hosted in each process. Running `cmd` as admin can see all running processes.
 ```cmd
 tasklist /svc
+```
+
+* Look at the start option for a service using `wmic`
+```cmd
+wmic service where name="SERVICE_NAME" get name, state, startmode
 ```
