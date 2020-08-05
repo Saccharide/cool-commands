@@ -15,10 +15,21 @@ shutdown /p
 shutdown /r /t 0
 ```
 
-*  Replace system sound
+* Show account on local machine
+```cmd
+net user
+```
+
+* Show administrator account groups
+```cmd
+net localgroup administrators
+```
+
+* Stop a service
 ```cmd
 net stop beep
 ```
+
 * Show file content with `type`
 ```cmd
 type FILE.txt
