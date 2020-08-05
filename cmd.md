@@ -10,6 +10,11 @@ dir /r
 shutdown /p
 ```
 
+* Restart the machine with `/r`, and `/t 0` means in `0` seconds
+```cmd
+shutdown /r /t 0
+```
+
 *  Replace system sound
 ```cmd
 net stop beep
