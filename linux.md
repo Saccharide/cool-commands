@@ -4,6 +4,10 @@
 uname -a
 ```
 
+* We can checkout `/etc/issue` for system identification
+```bash
+cat /etc/issue
+```
 
 # File Manipulation
 * Shuffles the lines of a file `-R`: random
@@ -440,6 +444,10 @@ sudo dpkg --configure -a
 * The Linux based job scheduler is called `cron`, and is separated into `cron.hourly`, `cron.daily`, `cron.weekly`, `cron.monthly` under `/etc/`.
 * We can add our own scheduled task to be run in `/etc/crontab`. 
 
+We can locate `cron` jobs by looking at `/etc/cron`, or we can inspect the `cron` logfiles in `/var/log/cron.log` for running jobs.
+```bash
+grep "CRON" /var/log/cron.log
+```
 
 ## Cross compiling binary
 We can use a cross compiler `mingw-w64`, and compile the exploit to windows executable, `-lws2_32` will link the `winsock` library. And then run the exploit in Linux using `wine`. No need to run it in Windows.
