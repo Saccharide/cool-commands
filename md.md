@@ -54,9 +54,9 @@ This link is like a [variable].
 ```
 
 ## Tables
-| value | name   |
-|:-----:|:------:|
-| 0     | stdin  |
-| 1     | stdout |
-| 2     | stderr |
-| ``    |        |
+| value | name    |
+|:-----:|:-------:|
+| `0`   | `stdin` |
+| `1`   | `stdout`|
+| `2`   | `stderr`|
+| ``    |         |
