@@ -46,6 +46,12 @@ sudo apt-get install ibus-pinyin
 ibus restart
 ```
 
+* Remove a repository from local `apt` package list, a package will end up here after failed to do a system update
+```bash
+ls /etc/apt/sources.list.d/*
+sudo rm -rf /etc/apt/sources.list.d/*
+```
+
 * Insert a newline at a specific line with sed `-i` `[--in-place]`
 ```bash
 sed -i '$LINE_NUMi \n' foo.txt 
