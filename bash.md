@@ -13,6 +13,18 @@ new_str=${str%?} # N = 1
 new_str=${str::-N}
 ```
 
+* String comparsion in `bash`, use `[  ]` when using `=`, and `[[  ]]` when using `==`
+```bash
+if [ "A" = "A" ]; then
+    echo "equal"
+fi
+
+if [[ "A" == "A" ]]; then
+    echo "equal"
+fi
+
+```
+
 ## `findf`
 * Find a file in current directory easily, no need to remember other flags, source it to `~/bin`
 ```bash

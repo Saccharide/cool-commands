@@ -1,16 +1,4 @@
-# Windows
-
-* Display alternate data stream
-```
-dir /r
-```
-
-* Shutdown immediately
-```
-shutdown /p
-```
-
-# Linux Subsystem
+# wsl
 
 * Change the password of a user
 ```bash
@@ -42,16 +30,6 @@ cat FILE | clip
 function start(){
     /mnt/c/Windows/System32/cmd.exe /c start $1
 }
-```
-
-*  Replace system sound
-```command prompt
-net stop beep
-```
-
-* `tasklist` displays list of running process in windows command prompt
-```
-tasklist
 ```
 
 * Copying output correctly in command prompt by selecting the lines and press right click. (This will include the new line character as opposed to single line via shift ctrl c)

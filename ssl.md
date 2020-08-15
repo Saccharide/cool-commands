@@ -1,3 +1,9 @@
+# Password related
+* Generate a password hash with plain text password `evil`, to be added to `/etc/passwd`
+```bash
+openssl passwd evil
+```
+
 # Generate a Self-signed certificate using `openssl`
 * Generate a self signed `x509 ssl` certificate with `rsa`
 ```bash
